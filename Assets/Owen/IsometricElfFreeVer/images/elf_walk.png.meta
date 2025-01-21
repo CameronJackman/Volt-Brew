@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: bc9217795ee51ab49b8060b3bec8cecc
+guid: 7465ef4f8274330419bdc1abe808b291
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,6 +64,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -75,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -87,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -99,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -111,6 +116,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -123,6 +129,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -135,13 +142,14 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: elf_item_0
+      name: elf_walk_0
       rect:
         serializedVersion: 2
         x: 0
@@ -155,14 +163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a919ff5e71c90834ebf7d4a355f1b884
-      internalID: -340920346
+      spriteID: 3b6de78372f75a24b97c7093ebddcc6f
+      internalID: 1959512401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elf_item_1
+      name: elf_walk_1
       rect:
         serializedVersion: 2
         x: 32
@@ -176,14 +184,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb5345a7a79f95f478ba834d24163673
-      internalID: 1724574311
+      spriteID: 33089e328a8efc34189d96b430761de1
+      internalID: -2066276087
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elf_item_2
+      name: elf_walk_2
       rect:
         serializedVersion: 2
         x: 64
@@ -197,35 +205,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4141a8ab841bf24abd820a1908c2330
-      internalID: 1506015433
+      spriteID: 91e06c47429eb6e47a877f3c35c3a67b
+      internalID: 1752326033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elf_item_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aabebe2040ced5b4f964ea373c4557f1
-      internalID: 1952961150
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: elf_item_4
+      name: elf_walk_3
       rect:
         serializedVersion: 2
         x: 0
@@ -239,14 +226,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa71aa678a3acc64388b978584c48d70
-      internalID: 522640532
+      spriteID: 684d2220f13cc9f44a85f359f5d98d6e
+      internalID: 1026435002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elf_item_5
+      name: elf_walk_4
       rect:
         serializedVersion: 2
         x: 32
@@ -260,14 +247,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9ef5cc9e77b03248a3058f4e0d20fd2
-      internalID: -637971244
+      spriteID: 24c206b5e2566ab4ea67b7cf0c23786d
+      internalID: -1292077054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elf_item_6
+      name: elf_walk_5
       rect:
         serializedVersion: 2
         x: 64
@@ -281,35 +268,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62149b562db7e9645a76d79436dc2bb3
-      internalID: 1926738294
+      spriteID: 2170e1fa2e1149b44b70c9bce4217c14
+      internalID: -227178654
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elf_item_7
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6fb25fbf06bdd8148b95380ee5e0a5e6
-      internalID: -1669116296
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: elf_item_8
+      name: elf_walk_6
       rect:
         serializedVersion: 2
         x: 0
@@ -323,14 +289,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f756ca4c74e710c4fafda3383e30b01d
-      internalID: 116617068
+      spriteID: 4b2cadd90a9d2fe4ebe44f4dd997fd20
+      internalID: -419784673
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elf_item_9
+      name: elf_walk_7
       rect:
         serializedVersion: 2
         x: 32
@@ -344,14 +310,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b972a1ee889731342ade137c8144f486
-      internalID: -1671164499
+      spriteID: e85bc5ccbbbf1234c98cd60dcf3141e5
+      internalID: 1930637773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elf_item_10
+      name: elf_walk_8
       rect:
         serializedVersion: 2
         x: 64
@@ -365,35 +331,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9b47dba512e7274899fc29882c17a76
-      internalID: -590595535
+      spriteID: 6456a0145dddf2b46bb206334812fea8
+      internalID: -748362351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elf_item_11
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89a3b4b69e3dc01498cddc221d580741
-      internalID: -1374402603
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: elf_item_12
+      name: elf_walk_9
       rect:
         serializedVersion: 2
         x: 0
@@ -407,14 +352,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d402317a66eb800448f3142983c8dd3e
-      internalID: 884287395
+      spriteID: 223ff4c6eff177d4eac079d2ef1a171c
+      internalID: -1383260436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elf_item_13
+      name: elf_walk_10
       rect:
         serializedVersion: 2
         x: 32
@@ -428,14 +373,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d117a668d1263340a40a66bbc7e2703
-      internalID: -575427381
+      spriteID: 60a457efc8897c64b82330c1760bd754
+      internalID: 1256139514
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: elf_item_14
+      name: elf_walk_11
       rect:
         serializedVersion: 2
         x: 64
@@ -449,29 +394,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a0d413662caf8946996169d965b4552
-      internalID: 1262846149
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: elf_item_15
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec4929f21d6e43c4ca5a61e37301c62a
-      internalID: -221805348
+      spriteID: 0091d6274ee4fb948a092dc24e4eb938
+      internalID: -371402264
       vertices: []
       indices: 
       edges: []
@@ -487,25 +411,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      elf_item_8: 116617068
-      elf_item_0: -340920346
-      elf_item_13: -575427381
-      elf_item_15: -221805348
-      elf_item_2: 1506015433
-      elf_item_14: 1262846149
-      elf_item_4: 522640532
-      elf_item_5: -637971244
-      elf_item_7: -1669116296
-      elf_item_6: 1926738294
-      elf_item_9: -1671164499
-      elf_item_10: -590595535
-      elf_item_3: 1952961150
-      elf_item_11: -1374402603
-      elf_item_1: 1724574311
-      elf_item_12: 884287395
-  spritePackingTag: 
+      elf_walk_0: 1959512401
+      elf_walk_1: -2066276087
+      elf_walk_10: 1256139514
+      elf_walk_11: -371402264
+      elf_walk_2: 1752326033
+      elf_walk_3: 1026435002
+      elf_walk_4: -1292077054
+      elf_walk_5: -227178654
+      elf_walk_6: -419784673
+      elf_walk_7: 1930637773
+      elf_walk_8: -748362351
+      elf_walk_9: -1383260436
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
