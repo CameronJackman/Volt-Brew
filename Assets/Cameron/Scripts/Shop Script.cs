@@ -55,10 +55,10 @@ public class ShopScript : MonoBehaviour
         }
     }
 
-    public void _menuClose()
+    public void CloseMenu()
     {
         Time.timeScale = 1.0f;
-
-
     }
+
+    
 }
