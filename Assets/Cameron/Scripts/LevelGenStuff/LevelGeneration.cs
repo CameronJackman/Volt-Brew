@@ -15,6 +15,8 @@ public class LevelGeneration : MonoBehaviour
     
     private string parent = "DefaultGrid";
 
+    
+
 
 
     // Start is called before the first frame update
@@ -104,4 +106,5 @@ public class LevelGeneration : MonoBehaviour
             
         }
     }
+
 }
