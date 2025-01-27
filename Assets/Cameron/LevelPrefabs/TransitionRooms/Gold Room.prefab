@@ -1018,7 +1018,7 @@ MonoBehaviour:
   setActiveStart: {fileID: 3588058817194656023}
   leftSpawn: {fileID: 877095365323747672}
   rightSpawn: {fileID: 6677216449268572039}
-  fadeSpeed: 1
+  fadeSpeed: 3
   fadeDuration: 200
   Interact: {fileID: 2635530339061315005}
 --- !u!1 &5709756851773830800
@@ -1643,6 +1643,6 @@ MonoBehaviour:
   setActiveStart: {fileID: 6234026955176261861}
   leftSpawn: {fileID: 877095365323747672}
   rightSpawn: {fileID: 6677216449268572039}
-  fadeSpeed: 1
+  fadeSpeed: 3
   fadeDuration: 200
   Interact: {fileID: 7716430492097740221}
