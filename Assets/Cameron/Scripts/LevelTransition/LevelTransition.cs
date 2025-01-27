@@ -97,7 +97,7 @@ public class LevelTransition : MonoBehaviour
         }
 
 
-        if (_blackFade.alpha >= 0.999993 && transition)
+        if (_blackFade.alpha >= 0.9 && transition)
         {
             Debug.Log("triggered");
 
