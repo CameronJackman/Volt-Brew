@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isSprinting;
 
+    private bool spawnLeft = true;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
         
         rawInput = new Vector2(horizontal, vertical).normalized;
+
     }
 
     void FixedUpdate()
@@ -88,6 +91,30 @@ public class PlayerMovement : MonoBehaviour
 
         
 
+    }
+
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("leftTrig"))
+        {
+            spawnLeft = true;
+        }
+
+        if (collision.CompareTag("rightTrig"))
+        {
+            spawnLeft = false;
+        }
+    }
+
+    public bool spawnLocationCheck()
+    {
+        return spawnLeft;
+    }
+
+    public void setLocation(GameObject targetLocation)
+    {
+        gameObject.transform.position = targetLocation.transform.position;
     }
 
   
