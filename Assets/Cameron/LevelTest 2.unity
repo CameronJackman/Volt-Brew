@@ -420,9 +420,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+
     - target: {fileID: 3796189421039557953, guid: ace94520b97ce504da265cab531fbaa4, type: 3}
       propertyPath: fadeSpeed
       value: 3
+
       objectReference: {fileID: 0}
     - target: {fileID: 5120878648290865127, guid: ace94520b97ce504da265cab531fbaa4, type: 3}
       propertyPath: m_ColliderPaths.Array.size
@@ -5964,6 +5966,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 4184070309653524920}
     m_Modifications:
     - target: {fileID: 3434364404215416142, guid: 92646948ccc6e584e9e4c5698a4a02f0, type: 3}
+      propertyPath: fadeSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6057096633048266876, guid: 92646948ccc6e584e9e4c5698a4a02f0, type: 3}
       propertyPath: fadeSpeed
       value: 3
       objectReference: {fileID: 0}
