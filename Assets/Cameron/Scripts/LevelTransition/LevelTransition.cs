@@ -108,7 +108,7 @@ public class LevelTransition : MonoBehaviour
             Transform parentTransform = GameObject.Find("DefaultGrid").transform;
             nextLevel.transform.SetParent(parentTransform);
 
-            levelheading.SetActive(false);
+            Destroy(levelheading);
 
             transition = false;
 
