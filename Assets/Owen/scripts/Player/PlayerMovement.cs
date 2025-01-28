@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 1.5f;
     
 
-    public float acceleration = 11.61f;   
-    public float deceleration = 11.1f;
+    public float acceleration = 11f;   
+    public float deceleration = 15f;
 
     //Dash Settings
     public float dashDuration = 0.2f;
