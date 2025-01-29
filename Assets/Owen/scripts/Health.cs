@@ -34,7 +34,7 @@ public class Health : MonoBehaviour
             SceneManager.LoadScene(0);
             Debug.Log("Dead");
         }
-        else if (currentHealth <= 0 && gameObject.CompareTag("Enemy"))
+        else if (currentHealth <= 0 && gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             Destroy(gameObject);
         }
