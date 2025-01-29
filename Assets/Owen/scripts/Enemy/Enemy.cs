@@ -11,12 +11,20 @@ public class Enemy : MonoBehaviour
     private PlayerMovement _player;
     private bool isDashing;
 
-    public Transform player;
+    private GameObject playerObj;
+    private Transform player;
     private float playerPosition;
     public float moveSpeed = 3;
     public float spawnCooldown = 2f;
     public float enemyDistance = 4;
     private bool isSeeking;
+
+    private void Awake()
+    {
+        playerObj = GameObject.FindGameObjectWithTag("Player");
+
+        player = playerObj.transform;
+    }
 
     void OnCollisionStay2D(Collision2D collision)
     {
