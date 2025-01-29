@@ -15,10 +15,9 @@ public class Enemy : MonoBehaviour
     private float playerPosition;
     public float moveSpeed = 3;
     public float spawnCooldown = 2f;
+    public float enemyDistance = 4;
+    private bool isSeeking;
 
-
-
-   
     void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && damageCooldown <= 0f && !isDashing)
@@ -35,18 +34,50 @@ public class Enemy : MonoBehaviour
         
         Vector2 moveToPlayer = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
         transform.position = moveToPlayer;
+        isSeeking = true;
 
     }
 
-    void RetreatPlayer(Vector2 keepDistance)
+    void RetreatPlayer()
     {
+        
+        {
+            float keepDistance = 1f;
+            Vector2 playerPosition = player.position;
+            float distance = Vector2.Distance(playerPosition, transform.position);
 
+            if (distance < keepDistance)
+            {
+                isSeeking = false;
+                Vector2 direction = ((Vector2)transform.position - playerPosition).normalized;
+                float step = moveSpeed * Time.deltaTime;
+                transform.position = Vector2.MoveTowards(transform.position, (Vector2)transform.position + direction, step);
+                
+
+            }
+            else
+            {
+                Vector2 direction = (playerPosition - (Vector2)transform.position).normalized;
+                float step = moveSpeed * Time.deltaTime;
+                transform.position = Vector2.MoveTowards(transform.position, (Vector2)transform.position + direction, step);
+                isSeeking = true;
+            }
+        }
     }
 
     private void Update()
     {
         damageCooldown -= Time.deltaTime;
-        SeekPlayer();
 
+        // Only Melee enemies seek
+        if (CompareTag("EnemyMelee"))
+        {
+            SeekPlayer();
+        }
+        // Only Ranged enemies handle the "keep distance" logic
+        else if (CompareTag("EnemyRange"))
+        {
+            RetreatPlayer();
+        }
     }
 }
