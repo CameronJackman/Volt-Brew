@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float deceleration = 15f;
 
     //Dash Settings
-    public float dashDuration = 0.2f;
+    public float dashDuration = 10f;
     public float dashSpeedMultiplier = 3f;
     public float dashCoolDownTime = 1.5f;
 
@@ -27,8 +27,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 rawInput = Vector2.zero;
 
 
-    private bool isDashing = false;
+    public bool isDashing = false;
     private bool spawnLeft = true;
+  
 
     void Awake()
     {
@@ -99,13 +100,6 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 originalVelocity = rb.velocity;
         rb.velocity = originalVelocity * dashSpeedMultiplier;
-
-        // Option 2 (alternative approach): If you just want to move 
-        // in the direction of input, ignoring current velocity, do:
-        // Vector2 dashDirection = rawInput.x * -isoRight + rawInput.y * isoUp;
-        // rb.velocity = dashDirection.normalized * (moveSpeed * dashSpeedMultiplier);
-
-        //Consider this ^
 
         yield return new WaitForSeconds(dashDuration);
 
