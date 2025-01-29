@@ -11,6 +11,11 @@ public class Enemy : MonoBehaviour
     private PlayerMovement _player;
     private bool isDashing;
 
+    public Transform player;
+    private float playerPosition;
+    public float moveSpeed = 3;
+    public float spawnCooldown = 2f;
+
 
 
    
@@ -25,8 +30,16 @@ public class Enemy : MonoBehaviour
 
     }
 
+    void SeekPlayer()
+    {
+        Vector2 moveToPlayer = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+
+        transform.position = moveToPlayer;
+    }
+
     private void Update()
     {
         damageCooldown -= Time.deltaTime;
+        SeekPlayer();
     }
 }
