@@ -32,14 +32,21 @@ public class Enemy : MonoBehaviour
 
     void SeekPlayer()
     {
+        
         Vector2 moveToPlayer = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
-
         transform.position = moveToPlayer;
+
+    }
+
+    void RetreatPlayer(Vector2 keepDistance)
+    {
+
     }
 
     private void Update()
     {
         damageCooldown -= Time.deltaTime;
         SeekPlayer();
+
     }
 }
