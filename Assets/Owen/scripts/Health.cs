@@ -1,16 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public float playerHealth = 100;
-    
+    public float maxHealth = 100;
+
+    [HideInInspector]
+    public float currentHealth;
+
+
+    void Start()
+    {
+        currentHealth = maxHealth;
+        
+    }
 
     public void TakeDamage(float damage)
     {
-            playerHealth -= damage;
+            currentHealth -= damage;
             Debug.Log("Player Hit!");
     }
 
@@ -18,10 +29,19 @@ public class Health : MonoBehaviour
     {
         
 
-        if (playerHealth <= 0)
+        if (currentHealth <= 0 && gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene(0);
             Debug.Log("Dead");
         }
+        else if (currentHealth <= 0 && gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+
+        
     }
 }
+
+
+    
