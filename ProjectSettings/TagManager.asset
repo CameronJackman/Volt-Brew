@@ -8,6 +8,8 @@ TagManager:
   - rightTrig
   - EnemyMelee
   - EnemyRange
+  - CombatZone
+  - NotCombatZone
   layers:
   - Default
   - TransparentFX

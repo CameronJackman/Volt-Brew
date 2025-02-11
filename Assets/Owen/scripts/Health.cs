@@ -11,18 +11,29 @@ public class Health : MonoBehaviour
 
     [HideInInspector]
     public float currentHealth;
+    public Spawner spawner;
+
+    private DebugToggle _dt;
+
 
 
     void Start()
     {
         currentHealth = maxHealth;
         
+        
+        
+    }
+
+    private void Awake()
+    {
+        spawner = FindObjectOfType<Spawner>();
     }
 
     public void TakeDamage(float damage)
     {
             currentHealth -= damage;
-            Debug.Log("Player Hit!");
+            
     }
 
     private void Update()
@@ -34,11 +45,28 @@ public class Health : MonoBehaviour
             SceneManager.LoadScene(0);
             Debug.Log("Dead");
         }
-        else if (currentHealth <= 0 && gameObject.layer == LayerMask.NameToLayer("Enemy"))
+
+        CheckEnemyCount();
+        
+    }
+
+    public void CheckEnemyCount()
+    {
+        if (currentHealth <= 0 && gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             Destroy(gameObject);
-        }
+            if (spawner != null)
+            {
+                spawner._totalEnemies--;
 
+                
+            }
+            else if (spawner == null && _dt.debugIsActive)
+            {
+                Debug.LogWarning("Spawner Was Null, Can't Decrement Enemies");
+            }
+
+        }
         
     }
 }

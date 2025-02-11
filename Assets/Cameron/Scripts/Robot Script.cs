@@ -8,6 +8,8 @@ public class RobotScript : MonoBehaviour
     private GameObject bullet;
     [SerializeField]
     private GameObject bulletSpawn;
+
+   
     
     // Start is called before the first frame update
     void Start()
@@ -16,18 +18,33 @@ public class RobotScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    
+
+    public void AimAtScreenPosition(Vector2 screenPos)
     {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 direction = mousePosition - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg * Time.timeScale;
+        float distanceToCamera = Mathf.Abs(Camera.main.transform.position.z);
+        Vector3 screenPos3D = new Vector3(screenPos.x, screenPos.y, distanceToCamera);
+        Vector3 worldPos = Camera.main.ScreenToWorldPoint(screenPos3D);
+        worldPos.z = 0f;
+        Vector3 direction = worldPos - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+    }
 
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+    public void AimWithController(Vector2 direction)
+    {
+        // direction is a normalized or near-normalized stick vector, e.g. (0.6, -0.4)
+        if (direction.sqrMagnitude > 0.001f) // if not basically zero
         {
-            Instantiate(bullet, bulletSpawn.transform.position, transform.rotation);
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
         }
     }
+
+    public void Firing()
+    {
+        Instantiate(bullet, bulletSpawn.transform.position, transform.rotation);
+    }
+
         
 }
