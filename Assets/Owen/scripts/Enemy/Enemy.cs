@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     private bool isDashing;
 
 
+
+
     private GameObject playerObj;
     private Transform player;
     private float playerPosition;
@@ -24,13 +26,17 @@ public class Enemy : MonoBehaviour
     private bool isSeeking;
 
 
+
+
     private void Awake()
     {
         playerObj = GameObject.FindGameObjectWithTag("Player");
 
         player = playerObj.transform;
+
        
     }
+
 
 
     void OnCollisionStay2D(Collision2D collision)
