@@ -15,12 +15,13 @@ public class Spawner : MonoBehaviour
     
     private bool isCombatLevel = false;
     private bool canStartWaves = true;
-    public int waveCount = 0;
+    public int waveCount = 1;
     public float waveBufferTimer = 5f;
+    private bool hasDisplayed = false;
 
     public int _desiredEnemies = 5;
     public float _spawnRate = 0.25f;
-    int difficultyMuliplier = 2;
+    int difficultyMuliplier;
 
     private float _timeSinceLastSpawn = 0.0f;
 
@@ -33,21 +34,27 @@ public class Spawner : MonoBehaviour
 
 
     
-
+    void Start()
+    {
+        _enemyCount = _desiredEnemies;
+        difficultyMuliplier = Random.Range(8, 15);
+    }
     private void Update()
     {
         if (IsCombatMap(true))
         {
-            if (_enemyCount == _desiredEnemies && _totalEnemies == 0 && waveBufferTimer >= 0f)
-            {
-                waveBufferTimer -= Time.deltaTime;
-                Debug.Log(waveBufferTimer);
-            }
             if (_totalEnemies <= 0 && canStartWaves && waveBufferTimer <= 0f)
             {
                 StartNextWave();
                 canStartWaves = false;
+                waveBufferTimer = 5f;
             }
+            if (_enemyCount == _desiredEnemies && _totalEnemies == 0 && waveBufferTimer >= 0f)
+            {
+                waveBufferTimer -= Time.deltaTime;
+                
+            }
+            
             
             UpdateSpawnTimer();
             SpawnDesiredEnemies();
@@ -62,23 +69,26 @@ public class Spawner : MonoBehaviour
 
     }
 
+   
+
     void StartNextWave()
     {
         if (waveBufferTimer <= 0f)
         {
             if (waveCount < 3 && _totalEnemies == 0)
             {
-                _desiredEnemies = 5 + waveCount * difficultyMuliplier;
-                Debug.Log(_desiredEnemies + ": " + waveCount);
                 waveCount++;
+                _desiredEnemies = Random.Range(5,7) + waveCount * difficultyMuliplier;
+                Debug.Log(_desiredEnemies + ": " + waveCount);
                 _enemyCount = 0;
                 
 
                 Debug.Log("Starting Wave " + waveCount + "with" + _desiredEnemies + "enemies");
             }
-            else if (waveCount == 3)
+            else if (waveCount == 3 && !hasDisplayed)
             {
                 Debug.Log("Wave 3 Complete: Next Level");
+                hasDisplayed = true;
             }
         }
         
@@ -115,17 +125,17 @@ public class Spawner : MonoBehaviour
          
         if (easy)
         {
-            difficultyMuliplier = waveEnemyMultiplier * 1;
+            difficultyMuliplier = waveEnemyMultiplier * 2;
         }
             
         if (hard)
         {
-            difficultyMuliplier = waveEnemyMultiplier * 3;
+            difficultyMuliplier = waveEnemyMultiplier * 8;
         }
             
         if (nightmare)
         {
-            difficultyMuliplier = waveEnemyMultiplier * 5;
+            difficultyMuliplier = waveEnemyMultiplier * 13;
         }
             
 

@@ -587,10 +587,12 @@ MonoBehaviour:
   - {fileID: 3204238768125699415}
   - {fileID: 6147778388096435370}
   - {fileID: 6387086397018596784}
-  _combatLevels: []
+  waveEnemyMultiplier: 2
+  waveCount: 0
+  waveBufferTimer: 5
   _desiredEnemies: 5
-  _spawnRate: 2
-  _totalEnemies: 0
+  _spawnRate: 0.25
+  _enemyCount: 0
 --- !u!1839735485 &3057721369491324035
 Tilemap:
   m_ObjectHideFlags: 0
