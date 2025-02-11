@@ -34,6 +34,7 @@ public class Health : MonoBehaviour
     {
             currentHealth -= damage;
             
+            Debug.Log("Player Hit!");
     }
 
     private void Update()
@@ -68,6 +69,12 @@ public class Health : MonoBehaviour
 
         }
         
+
+        else if (currentHealth <= 0 && gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+
     }
 }
 

@@ -11,13 +11,18 @@ public class Enemy : MonoBehaviour
     private PlayerMovement _player;
     private bool isDashing;
 
+
     private GameObject playerObj;
     private Transform player;
     private float playerPosition;
     public float moveSpeed = 1.5f;
+
+    
+
     public float spawnCooldown = 2f;
     public float enemyDistance = 4;
     private bool isSeeking;
+
 
     private void Awake()
     {
@@ -26,6 +31,7 @@ public class Enemy : MonoBehaviour
         player = playerObj.transform;
        
     }
+
 
     void OnCollisionStay2D(Collision2D collision)
     {
@@ -40,7 +46,7 @@ public class Enemy : MonoBehaviour
 
     void SeekPlayer()
     {
-        
+
         Vector2 moveToPlayer = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
         transform.position = moveToPlayer;
         isSeeking = true;
