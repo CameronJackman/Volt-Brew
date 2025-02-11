@@ -71,7 +71,7 @@ public class LevelTransition : MonoBehaviour
 
             
 
-            Debug.Log("fading");
+            
             
         } else if (!fade)
             {
@@ -99,7 +99,7 @@ public class LevelTransition : MonoBehaviour
 
         if (_blackFade.alpha >= 0.99 && transition)
         {
-            Debug.Log("triggered");
+            
 
             int num = Random.Range(0, levelList.Length);
 

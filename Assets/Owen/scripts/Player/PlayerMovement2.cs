@@ -1,0 +1,232 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class PlayerMovement2 : MonoBehaviour
+{
+
+    [SerializeField] private RobotScript _rs;
+
+    public float moveSpeed = 1.5f;
+    
+
+    public float acceleration = 11f;   
+    public float deceleration = 15f;
+
+    //Dash Settings
+    public float dashDuration = 10f;
+    public float dashSpeedMultiplier = 3f;
+    public float dashCoolDownTime = 1.5f;
+
+    private float dashCoolDownTimer = 0f;
+
+    private Vector2 isoRight = new Vector2(-1.75f, 1.0f);
+    private Vector2 isoUp = new Vector2(1.75f, 1.0f);
+
+    private Rigidbody2D rb;
+
+    private Vector2 currentVelocity = Vector2.zero;
+    private Vector2 rawInput = Vector2.zero;
+
+    
+    public bool isDashing = false;
+    private bool spawnLeft = true;
+
+    private PlayerDefault _PD;
+    private System.Action<InputAction.CallbackContext> _onAimWithController;
+    private bool _usingMouseInput = true;
+    private PlayerInput _playerInput;
+    private string _currentControlScheme;
+    public string _mouseInputName = "MouseKey";
+    public string _controllerInputName = "Controller";
+
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 0f;
+        _PD = new PlayerDefault();
+        _rs = GetComponent<RobotScript>();
+        Transform rotatePoint = transform.Find("RotatePoint");
+        _rs = rotatePoint.GetComponent<RobotScript>();
+        _onAimWithController = ctx => _rs.AimAtScreenPosition(ctx.ReadValue<Vector2>());
+
+      
+    }
+
+    public void UpdateCurrentControlScheme()
+    {
+        if (_playerInput != null)
+        {
+            _currentControlScheme = _playerInput.currentControlScheme;
+
+            if (_mouseInputName == _currentControlScheme)
+            {
+                _usingMouseInput = true;
+                Debug.Log("Using Mouse Input");
+            }
+            else
+            {
+                _usingMouseInput = false;
+                Debug.Log("Using Controller input");
+            }
+        }
+    }
+
+    void Update()
+    {
+
+        if (dashCoolDownTimer > 0)
+        {
+            dashCoolDownTimer -= Time.deltaTime;
+        }
+
+    }
+
+    void MovePlayer(InputAction.CallbackContext ctx)
+    {
+        Vector2 input = ctx.ReadValue<Vector2>();
+        float horizontal = input.x;
+        float vertical = input.y;
+        rawInput = new Vector2(horizontal, vertical).normalized;
+    }
+
+    void FixedUpdate()
+    {
+
+        if (isDashing) return;
+
+
+        Vector2 desiredMove = rawInput.x * -isoRight + rawInput.y * isoUp;
+
+      
+        Vector2 targetVelocity = desiredMove * moveSpeed;
+
+        
+        if (desiredMove != Vector2.zero)
+        {
+           
+            currentVelocity = Vector2.MoveTowards(
+                currentVelocity,
+                targetVelocity,
+                acceleration * Time.fixedDeltaTime
+            );
+        }
+        else
+        {
+            
+            currentVelocity = Vector2.MoveTowards(
+                currentVelocity,
+                Vector2.zero,
+                deceleration * Time.fixedDeltaTime
+            );
+        }
+
+        
+        rb.velocity = currentVelocity;
+
+    }
+
+    private void OnDashPerformed(InputAction.CallbackContext ctx)
+    {
+        if (dashCoolDownTimer <= 0f && !isDashing)
+        {
+            StartCoroutine(PerformDash());
+        }
+    }
+    private void OnAimWithMouse(InputAction.CallbackContext ctx)
+    {
+        // This is for actual mouse SCREEN coordinates
+        _rs.AimAtScreenPosition(ctx.ReadValue<Vector2>());
+    }
+
+    
+
+    private void OnFiring(InputAction.CallbackContext ctx)
+    {
+        _rs.Firing();
+    }
+    private void OnEnable()
+    {
+        _PD.Enable();
+
+        _PD.DefaultMovement.Movement.performed += MovePlayer;
+        _PD.DefaultMovement.Movement.canceled += MovePlayer;
+
+        _PD.DefaultMovement.Dash.performed += OnDashPerformed;
+
+        _PD.DefaultMovement.Aiming.performed += OnAimWithMouse;
+        _PD.DefaultMovement.Aiming.canceled += OnAimWithMouse;
+
+        _PD.DefaultMovement.AimingController.performed += OnAimWithController;
+        _PD.DefaultMovement.AimingController.canceled += OnAimWithController;
+
+        _PD.DefaultMovement.firing.started += OnFiring;
+    }
+    private void OnDisable()
+    {
+        _PD.Disable();
+
+        _PD.DefaultMovement.Movement.performed -= MovePlayer;
+        _PD.DefaultMovement.Movement.canceled -= MovePlayer;
+
+        _PD.DefaultMovement.Dash.performed -= OnDashPerformed;
+
+        _PD.DefaultMovement.Aiming.performed -= OnAimWithMouse;
+        _PD.DefaultMovement.Aiming.canceled -= OnAimWithMouse;
+
+        _PD.DefaultMovement.Aiming.performed -= OnAimWithController;
+        _PD.DefaultMovement.Aiming.canceled -= OnAimWithController;
+
+        _PD.DefaultMovement.firing.started -= OnFiring;
+
+    }
+
+    private void OnAimWithController(InputAction.CallbackContext ctx)
+    {
+        _rs.AimWithController(ctx.ReadValue<Vector2>());
+    }
+
+    private IEnumerator PerformDash()
+    {
+        isDashing = true;
+
+        Vector2 originalVelocity = rb.velocity;
+        rb.velocity = originalVelocity * dashSpeedMultiplier;
+
+        yield return new WaitForSeconds(dashDuration);
+
+        isDashing = false;
+        rb.velocity = originalVelocity;
+
+        dashCoolDownTimer = dashCoolDownTime;
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("leftTrig"))
+        {
+            spawnLeft = true;
+        }
+
+        if (collision.CompareTag("rightTrig"))
+        {
+            spawnLeft = false;
+        }
+    }
+
+    public bool spawnLocationCheck()
+    {
+        return spawnLeft;
+    }
+
+    public void setLocation(GameObject targetLocation)
+    {
+        gameObject.transform.position = targetLocation.transform.position;
+    }
+
+  
+}
+

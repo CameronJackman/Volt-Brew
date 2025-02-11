@@ -50,4 +50,5 @@ public class ProjectileScript : MonoBehaviour
 
         Destroy(gameObject);
     }
+
 }

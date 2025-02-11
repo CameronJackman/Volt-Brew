@@ -4,8 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - leftTrig
   - rightTrig
+  - leftTrig
+  - CombatZone
+  - NotCombatZone
+  - Shield
   - EnemyMelee
   - EnemyRange
   layers:
@@ -44,7 +47,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: BaseLevels
-    uniqueID: 1091781423
     locked: 0
