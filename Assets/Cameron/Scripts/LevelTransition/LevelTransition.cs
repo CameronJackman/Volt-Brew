@@ -44,7 +44,7 @@ public class LevelTransition : MonoBehaviour
 
         setActiveStart.SetActive(true);
 
-        PlayerMovement player = FindAnyObjectByType<PlayerMovement>();
+        PlayerMovement2 player = FindAnyObjectByType<PlayerMovement2>();
 
         if (player.spawnLocationCheck())
         {
