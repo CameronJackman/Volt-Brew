@@ -24,7 +24,7 @@ public class ProjectileScript : MonoBehaviour
     {
         projectileCount -= Time.deltaTime;
 
-        if (projectileCount <= 0)
+        if(projectileCount <= 0)
         {
             Destroy(gameObject);
         }
@@ -50,4 +50,5 @@ public class ProjectileScript : MonoBehaviour
 
         Destroy(gameObject);
     }
+
 }
