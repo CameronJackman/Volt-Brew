@@ -1219,7 +1219,7 @@ MonoBehaviour:
   _spawnParent: {fileID: 358316324197507997}
   _enemyTypes:
   - {fileID: 6719380633752482833, guid: 7248a6f096ed4be4dac7c373b567f411, type: 3}
-  - {fileID: 2172883872942864499, guid: 8f17d79926cd55c47aa002b6154dedbf, type: 3}
+  - {fileID: 2172883872942864499, guid: 3e2bd10fdc96ce34bb9a7e29086be833, type: 3}
   _spawnPoints:
   - {fileID: 1988616264628845521}
   - {fileID: 7870598515044560209}

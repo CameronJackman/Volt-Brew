@@ -421,7 +421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe08ef5a22e8bf248972e19977737e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugIsActive: 1
 --- !u!4 &2138462600
 Transform:
   m_ObjectHideFlags: 0
@@ -5572,6 +5571,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8838131766912288482, guid: cb72fd159cec879479affb5f5b1a1c65, type: 3}
+      propertyPath: _enemyTypes.Array.data[1]
+      value: 
+      objectReference: {fileID: 2172883872942864499, guid: 3e2bd10fdc96ce34bb9a7e29086be833, type: 3}
+    - target: {fileID: 8838131766912288482, guid: cb72fd159cec879479affb5f5b1a1c65, type: 3}
       propertyPath: _combatLevels.Array.data[0]
       value: 
       objectReference: {fileID: 2559489464364555958}
@@ -5777,6 +5780,10 @@ PrefabInstance:
       propertyPath: _combatLevels.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8047303917771788085, guid: e9847825528b3d74ab4982b209214c2f, type: 3}
+      propertyPath: _enemyTypes.Array.data[0]
+      value: 
+      objectReference: {fileID: 2172883872942864499, guid: 3e2bd10fdc96ce34bb9a7e29086be833, type: 3}
     - target: {fileID: 8047303917771788085, guid: e9847825528b3d74ab4982b209214c2f, type: 3}
       propertyPath: _combatLevels.Array.data[0]
       value: 
@@ -6652,6 +6659,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4418302345807208478, guid: 17cc0d4c5d8448745a3f272900cd8591, type: 3}
+      propertyPath: _enemyTypes.Array.data[1]
+      value: 
+      objectReference: {fileID: 2172883872942864499, guid: 3e2bd10fdc96ce34bb9a7e29086be833, type: 3}
+    - target: {fileID: 4418302345807208478, guid: 17cc0d4c5d8448745a3f272900cd8591, type: 3}
       propertyPath: _combatLevels.Array.data[0]
       value: 
       objectReference: {fileID: 2559489464364555958}
@@ -6766,6 +6777,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8344989770467810931, guid: 2766132ffa0e7374e8d861bd2188175e, type: 3}
+      propertyPath: _enemyTypes.Array.data[1]
+      value: 
+      objectReference: {fileID: 2172883872942864499, guid: 3e2bd10fdc96ce34bb9a7e29086be833, type: 3}
+    - target: {fileID: 8344989770467810931, guid: 2766132ffa0e7374e8d861bd2188175e, type: 3}
       propertyPath: _combatLevels.Array.data[0]
       value: 
       objectReference: {fileID: 2559489464364555958}
@@ -6872,6 +6887,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3141770458547525187, guid: ced10d1b011786a43b647cc071e19514, type: 3}
+      propertyPath: _enemyTypes.Array.data[1]
+      value: 
+      objectReference: {fileID: 2172883872942864499, guid: 3e2bd10fdc96ce34bb9a7e29086be833, type: 3}
+    - target: {fileID: 3141770458547525187, guid: ced10d1b011786a43b647cc071e19514, type: 3}
       propertyPath: _combatLevels.Array.data[0]
       value: 
       objectReference: {fileID: 2559489464364555958}
@@ -6922,4 +6941,6 @@ SceneRoots:
   - {fileID: 3716794717453358359}
   - {fileID: 1835640304}
   - {fileID: 5918880557775344682}
-  - {fileID: 1760140724}
+  - {fileID: 1132536736}
+  - {fileID: 1399769060}
+  - {fileID: 2138462600}

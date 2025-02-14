@@ -30,9 +30,18 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (player == null || playerObj == null)
+        {
+            if (DebugToggle._debug)
+            {
+                Debug.LogWarning("Player Transform Or gameObject is Null");
+            }
+            playerObj = GameObject.FindGameObjectWithTag("Player");
+        }
+        
 
         player = playerObj.transform;
+        
 
        
     }
