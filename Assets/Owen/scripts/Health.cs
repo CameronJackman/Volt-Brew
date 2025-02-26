@@ -15,13 +15,17 @@ public class Health : MonoBehaviour
 
     private DebugToggle _dt;
 
+    private GameManager gameManager;
+
+    private enemyWaveSpawns curEnemySpawnScpt;
+
 
 
     void Start()
     {
         currentHealth = maxHealth;
         
-        
+        gameManager = FindAnyObjectByType<GameManager>();
         
     }
 
@@ -34,12 +38,13 @@ public class Health : MonoBehaviour
     {
             currentHealth -= damage;
             
-            Debug.Log("Player Hit!");
+            
     }
 
     private void Update()
     {
-        
+        //finding the current room spawns
+        curEnemySpawnScpt = FindAnyObjectByType<enemyWaveSpawns>();
 
         if (currentHealth <= 0 && gameObject.CompareTag("Player"))
         {
@@ -47,35 +52,14 @@ public class Health : MonoBehaviour
             Debug.Log("Dead");
         }
 
-        CheckEnemyCount();
-        
-    }
-
-    public void CheckEnemyCount()
-    {
-        if (currentHealth <= 0 && gameObject.layer == LayerMask.NameToLayer("Enemy"))
-        {
-            Destroy(gameObject);
-            if (spawner != null)
-            {
-                spawner._totalEnemies--;
-
-                
-            }
-            else if (spawner == null && _dt.debugIsActive)
-            {
-                Debug.LogWarning("Spawner Was Null, Can't Decrement Enemies");
-            }
-
-        }
-        
-
         else if (currentHealth <= 0 && gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
+            curEnemySpawnScpt.currentAmtEnemys--;
             Destroy(gameObject);
         }
 
     }
+
 }
 
 

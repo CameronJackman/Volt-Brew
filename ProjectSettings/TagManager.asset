@@ -11,6 +11,7 @@ TagManager:
   - Shield
   - EnemyMelee
   - EnemyRange
+  - WaveTxt
   layers:
   - Default
   - TransparentFX
