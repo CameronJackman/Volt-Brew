@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelList : MonoBehaviour
 {
     public GameObject[] ListOfLevels;
+    public GameObject shopLevel;
     // Start is called before the first frame update
     void Start()
     {

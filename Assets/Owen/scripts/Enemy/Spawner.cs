@@ -197,6 +197,8 @@ public class Spawner : MonoBehaviour
 
         Instantiate(_enemyTypes[enemyType], _spawnPoints[spawnPoint].position, _spawnPoints[spawnPoint].rotation, _spawnParent);
         _totalEnemies++;
+
+        
         
     }
 

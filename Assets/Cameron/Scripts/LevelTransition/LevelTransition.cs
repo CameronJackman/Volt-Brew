@@ -10,6 +10,9 @@ public class LevelTransition : MonoBehaviour
     private GameObject[] levelList;
 
     [SerializeField]
+    private GameObject shopObj;
+
+    [SerializeField]
     private GameObject levelheading;
 
     [SerializeField]
@@ -34,17 +37,23 @@ public class LevelTransition : MonoBehaviour
 
     private GameObject spawn;
 
-   
+    private GameManager gameManager;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindAnyObjectByType<GameManager>();
+
         levelList = FindObjectOfType<LevelList>().ListOfLevels;
+        shopObj = FindAnyObjectByType<LevelList>().shopLevel;
 
         fade = false; transition = false;
 
         setActiveStart.SetActive(true);
 
-        PlayerMovement player = FindAnyObjectByType<PlayerMovement>();
+        PlayerMovement2 player = FindAnyObjectByType<PlayerMovement2>();
 
         if (player.spawnLocationCheck())
         {
@@ -84,7 +93,8 @@ public class LevelTransition : MonoBehaviour
         {
             if (gameObject.CompareTag("rightTrig") || gameObject.CompareTag("leftTrig"))
             {
-
+                gameManager.EnteredNewRoom();
+                
                 transition = true;
 
                 fade = true;
@@ -99,11 +109,19 @@ public class LevelTransition : MonoBehaviour
 
         if (_blackFade.alpha >= 0.9 && transition)
         {
+            GameObject nextLevel;
+
+            if (gameManager.roomsEntered % 5 == 0)
+            {
+                 nextLevel = Instantiate(shopObj);
+            }
+            else
+            {
+                int num = Random.Range(0, levelList.Length);
+
+                nextLevel = Instantiate(levelList[num]);
+            }
             
-
-            int num = Random.Range(0, levelList.Length);
-
-            GameObject nextLevel = Instantiate(levelList[num]);
 
             Transform parentTransform = GameObject.Find("DefaultGrid").transform;
             nextLevel.transform.SetParent(parentTransform);
