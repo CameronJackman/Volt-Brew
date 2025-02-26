@@ -44,7 +44,7 @@ public class EnemyProjectileScript : MonoBehaviour
             Health playerHealth = collision.gameObject.GetComponent<Health>();
             Debug.Log("Hit!");
             playerHealth.TakeDamage(projectileDamage);
-            if (playerHealth != null)
+            if (playerHealth == null)
             {
                 Debug.Log("Playerhealth is Null");
             }

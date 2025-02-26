@@ -13,7 +13,7 @@ public class Health : MonoBehaviour
     public float currentHealth;
     public Spawner spawner;
 
-    
+    private DebugToggle _dt;
 
 
 
@@ -62,7 +62,7 @@ public class Health : MonoBehaviour
 
                 
             }
-            else if (spawner == null && DebugToggle._debug)
+            else if (spawner == null && _dt.debugIsActive)
             {
                 Debug.LogWarning("Spawner Was Null, Can't Decrement Enemies");
             }
