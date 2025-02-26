@@ -3,15 +3,23 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - rightTrig
+  - leftTrig
+  - CombatZone
+  - NotCombatZone
+  - Shield
+  - EnemyMelee
+  - EnemyRange
+  - WaveTxt
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
