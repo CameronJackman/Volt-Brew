@@ -43,6 +43,7 @@ public class enemyWaveSpawns : MonoBehaviour
         canSpawn = false;
         timeInbetweenWaves = gameManager.secBetweenEnemySpawns;
         defualtTimeBetWaves = timeInbetweenWaves;
+        spawnInterval = howFastEnemysSpawn;
     }
 
     void FixedUpdate()
@@ -60,7 +61,7 @@ public class enemyWaveSpawns : MonoBehaviour
                 if (spawnTimer <= 0)
                 {
                     //spawn enemy
-                    if (enemiesToSpawn.Count > 0)
+                    if (enemiesToSpawn.Count > 0 && spawnTimer <= 0)
                     {
                         int spawnPoint = Random.Range(0, spawnLocations.Count);
                         Instantiate(enemiesToSpawn[0], spawnLocations[spawnPoint].position, Quaternion.identity);
@@ -73,6 +74,12 @@ public class enemyWaveSpawns : MonoBehaviour
                         amountOfWaves--;
                         
                         GenerateWave();
+                        if (spawnInterval >= 0.5)
+                        {
+                            spawnInterval = howFastEnemysSpawn / (enemiesToSpawn.Count * 0.2f);
+                            Debug.Log(spawnInterval);
+                        }
+
                         timeInbetweenWaves = defualtTimeBetWaves;
                     }
                     else if (currentAmtEnemys == 0)
@@ -116,8 +123,10 @@ public class enemyWaveSpawns : MonoBehaviour
         
         GenerateEnemies();
 
-        spawnInterval = howFastEnemysSpawn / enemiesToSpawn.Count;
-        waveTimer = howFastEnemysSpawn;
+        
+        waveTimer = 3;
+
+        Debug.Log(spawnInterval);
     }
 
 
@@ -146,6 +155,10 @@ public class enemyWaveSpawns : MonoBehaviour
         enemiesToSpawn.Clear();
         enemiesToSpawn = generatedEnemies;
 
+    }
+
+    public void Update()
+    {
     }
 
 }

@@ -31,10 +31,7 @@ public class Enemy : MonoBehaviour
     {
         if (player == null || playerObj == null)
         {
-            if (DebugToggle._debug)
-            {
-                Debug.LogWarning("Player Transform Or gameObject is Null");
-            }
+           
             playerObj = GameObject.FindGameObjectWithTag("Player");
         }
         

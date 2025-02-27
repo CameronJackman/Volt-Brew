@@ -87,7 +87,6 @@ public class Spawner : MonoBehaviour
             }
             else if (waveCount == 3 && !hasDisplayed)
             {
-                Debug.Log("Wave 3 Complete: Next Level");
                 hasDisplayed = true;
             }
         }
