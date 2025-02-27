@@ -29,9 +29,15 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (player == null || playerObj == null)
+        {
+           
+            playerObj = GameObject.FindGameObjectWithTag("Player");
+        }
+        
 
         player = playerObj.transform;
+        
 
        
     }

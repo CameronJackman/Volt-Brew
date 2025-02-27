@@ -21,6 +21,7 @@ public class PlayerMovement2 : MonoBehaviour
 
     private float dashCoolDownTimer = 0f;
 
+    public bool isoToggle = false;
     private Vector2 isoRight = new Vector2(-1.75f, 1.0f);
     private Vector2 isoUp = new Vector2(1.75f, 1.0f);
 
@@ -54,6 +55,8 @@ public class PlayerMovement2 : MonoBehaviour
 
       
     }
+
+  
 
     public void UpdateCurrentControlScheme()
     {
@@ -92,41 +95,81 @@ public class PlayerMovement2 : MonoBehaviour
         rawInput = new Vector2(horizontal, vertical).normalized;
     }
 
+   
+
     void FixedUpdate()
     {
 
         if (isDashing) return;
 
-
-        Vector2 desiredMove = rawInput.x * -isoRight + rawInput.y * isoUp;
-
-      
-        Vector2 targetVelocity = desiredMove * moveSpeed;
-
-        
-        if (desiredMove != Vector2.zero)
+        if (isoToggle)
         {
-           
-            currentVelocity = Vector2.MoveTowards(
-                currentVelocity,
-                targetVelocity,
-                acceleration * Time.fixedDeltaTime
-            );
+            Vector2 desiredMove = rawInput.x * -isoRight + rawInput.y * isoUp;
+
+
+            Vector2 targetVelocity = (desiredMove * moveSpeed);
+
+
+
+            if (desiredMove != Vector2.zero)
+            {
+
+                currentVelocity = Vector2.MoveTowards(
+                    currentVelocity,
+                    targetVelocity,
+                    acceleration * Time.fixedDeltaTime
+                );
+            }
+            else
+            {
+
+                currentVelocity = Vector2.MoveTowards(
+                    currentVelocity,
+                    Vector2.zero,
+                    deceleration * Time.fixedDeltaTime
+                );
+            }
+
+
+            rb.velocity = currentVelocity;
         }
         else
         {
-            
-            currentVelocity = Vector2.MoveTowards(
-                currentVelocity,
-                Vector2.zero,
-                deceleration * Time.fixedDeltaTime
-            );
+            Vector2 desiredMove = new Vector2 (rawInput.x * 2 , rawInput.y * 2);
+
+
+            Vector2 targetVelocity = desiredMove * moveSpeed;
+
+
+
+            if (desiredMove != Vector2.zero)
+            {
+
+                currentVelocity = Vector2.MoveTowards(
+                    currentVelocity,
+                    targetVelocity,
+                    acceleration * Time.fixedDeltaTime
+                );
+            }
+            else
+            {
+
+                currentVelocity = Vector2.MoveTowards(
+                    currentVelocity,
+                    Vector2.zero,
+                    deceleration * Time.fixedDeltaTime
+                );
+            }
+
+
+            rb.velocity = currentVelocity;
         }
 
         
-        rb.velocity = currentVelocity;
-
+        
     }
+
+    
 
     private void OnDashPerformed(InputAction.CallbackContext ctx)
     {

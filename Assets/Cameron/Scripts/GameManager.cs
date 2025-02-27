@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
             //Waves left txt
             wavesLeftTxt.text = ("Waves Left: "+ currentRoom.amountOfWaves);
             //current amount of enemys display
-            enemysLeftTxt.text = ("Enemies Left: " + currentRoom.currentAmtEnemys);
+            enemysLeftTxt.text = ("Enemies Left: " + (currentRoom.enemiesToSpawn.Count + currentRoom.currentAmtEnemys));
         }
 
         

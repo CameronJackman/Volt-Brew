@@ -107,7 +107,7 @@ public class LevelTransition : MonoBehaviour
         }
 
 
-        if (_blackFade.alpha >= 0.99 && transition)
+        if (_blackFade.alpha >= 0.9 && transition)
         {
             GameObject nextLevel;
 
