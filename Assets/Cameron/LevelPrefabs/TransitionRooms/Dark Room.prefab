@@ -838,10 +838,10 @@ MonoBehaviour:
   - {fileID: 5775602011254288658}
   - {fileID: 8020958396450078080}
   - {fileID: 1828260807544621797}
-  howFastEnemysSpawn: 20
   amountOfWaves: 3
   doorBar: {fileID: 2114211174894341428}
   dircArrows: {fileID: 6062355824223200374}
+  currentAmtEnemys: 0
 --- !u!60 &3202789152358400143
 PolygonCollider2D:
   m_ObjectHideFlags: 0

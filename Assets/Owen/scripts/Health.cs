@@ -54,8 +54,10 @@ public class Health : MonoBehaviour
 
         else if (currentHealth <= 0 && gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            curEnemySpawnScpt.currentAmtEnemys--;
+            
             Destroy(gameObject);
+            curEnemySpawnScpt.currentAmtEnemys--;
+
         }
 
     }

@@ -25,7 +25,7 @@ public class PlayerMovement2 : MonoBehaviour
     private Vector2 isoRight = new Vector2(-1.75f, 1.0f);
     private Vector2 isoUp = new Vector2(1.75f, 1.0f);
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     private Vector2 currentVelocity = Vector2.zero;
     private Vector2 rawInput = Vector2.zero;
@@ -269,6 +269,7 @@ public class PlayerMovement2 : MonoBehaviour
     {
         gameObject.transform.position = targetLocation.transform.position;
     }
+
 
   
 }

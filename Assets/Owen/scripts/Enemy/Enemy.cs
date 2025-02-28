@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     Rigidbody2D rb;
     public float contactDamage = 0.5f;
     public float damageCooldown = 1.0f;
-    private PlayerMovement _player;
+    private PlayerMovement2 _player;
     private bool isDashing;
 
 
@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
     public float enemyDistance = 4;
     private bool isSeeking;
 
+    public float knockbackForce;
+
 
 
 
@@ -34,11 +36,11 @@ public class Enemy : MonoBehaviour
            
             playerObj = GameObject.FindGameObjectWithTag("Player");
         }
+        rb = gameObject.GetComponent<Rigidbody2D>();
         
 
         player = playerObj.transform;
         
-
        
     }
 
@@ -51,8 +53,28 @@ public class Enemy : MonoBehaviour
                 Health player = collision.gameObject.GetComponent<Health>();
                 player.TakeDamage(contactDamage);
                 damageCooldown = 1.0f;
+
+            
+
+
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            Rigidbody2D playerRb = playerObj.gameObject.GetComponent<Rigidbody2D>();
+            Vector2 knockbackDirection = (player.transform.position - transform.position).normalized;
+            playerRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+
+
+            Debug.Log("Player Knocked Back With " + knockbackForce * knockbackDirection + "strength");
+            Debug.Log(knockbackDirection);
+        }
+
+        
     }
 
     void SeekPlayer()
