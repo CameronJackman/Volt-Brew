@@ -18,7 +18,10 @@ public class GameManager : MonoBehaviour
     public float secBetweenEnemySpawns;
 
     [SerializeField]
-    private TMP_Text wavesLeftTxt, Roomstxt, enemysLeftTxt;
+    private TMP_Text wavesLeftTxt, Roomstxt, enemysLeftTxt, coinsTxt;
+
+    [HideInInspector]
+    public double coins;
 
 
 
@@ -41,6 +44,9 @@ public class GameManager : MonoBehaviour
             enemysLeftTxt.text = ("Enemies Left: " + (currentRoom.enemiesToSpawn.Count + currentRoom.currentAmtEnemys));
         }
 
+        // display coins
+
+        coinsTxt.text = ("Coins: " + coins);
         
     }
 

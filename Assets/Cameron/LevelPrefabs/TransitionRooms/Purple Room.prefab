@@ -492,6 +492,37 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &1417339835203607752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5153955833752737642}
+  m_Layer: 0
+  m_Name: CurrentCoins
+  m_TagString: CurrentCoinsObj
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5153955833752737642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417339835203607752}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7649483133077184067}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1450439894214601443
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,10 +876,10 @@ MonoBehaviour:
   - {fileID: 7419495125955511740}
   - {fileID: 3982203224775779864}
   - {fileID: 5086895794576926995}
-  howFastEnemysSpawn: 20
   amountOfWaves: 3
   doorBar: {fileID: 2893921074308990678}
   dircArrows: {fileID: 1896864960406695614}
+  currentAmtEnemys: 0
 --- !u!60 &1879431332432554172
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1198,6 +1229,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5153955833752737642}
   - {fileID: 3201894318168060523}
   - {fileID: 3759306992224455782}
   - {fileID: 3943402871409505468}

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -42,6 +43,8 @@ public class PlayerMovement2 : MonoBehaviour
     public string _mouseInputName = "MouseKey";
     public string _controllerInputName = "Controller";
 
+    private GameManager gameManager;
+
 
     void Awake()
     {
@@ -52,8 +55,8 @@ public class PlayerMovement2 : MonoBehaviour
         Transform rotatePoint = transform.Find("RotatePoint");
         _rs = rotatePoint.GetComponent<RobotScript>();
         _onAimWithController = ctx => _rs.AimAtScreenPosition(ctx.ReadValue<Vector2>());
+        gameManager = FindAnyObjectByType<GameManager>();
 
-      
     }
 
   
@@ -257,6 +260,12 @@ public class PlayerMovement2 : MonoBehaviour
         if (collision.CompareTag("rightTrig"))
         {
             spawnLeft = false;
+        }
+
+        if (collision.CompareTag("Coin"))
+        {
+            gameManager.coins++;
+            Destroy(collision.gameObject);
         }
     }
 

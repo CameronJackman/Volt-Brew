@@ -181,6 +181,8 @@ MonoBehaviour:
   moveSpeed: 1
   spawnCooldown: 2
   enemyDistance: 4
+  amountOfCoinsDropped: 0
+  coinPrefab: {fileID: 1536518890945812926, guid: 97882c94ab2386445b36c357d26c7c9c, type: 3}
 --- !u!70 &3498193571325523864
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

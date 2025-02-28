@@ -8,19 +8,35 @@ public class ShopScript : MonoBehaviour
     [SerializeField] private TMP_Text Interact;
     [SerializeField] private GameObject shopMenu;
     private bool ePress = false;
+
+    private Health playerHealth;
+    private PlayerMovement2 playerMovement;
+    private GameManager gameManager;
+
+    private bool canBuy = true;
+
+    [SerializeField]
+    private float healthCost;
     // Start is called before the first frame update
     void Start()
     {
         //Sets Interact text to invisible start game
         Interact.CrossFadeAlpha(0.0f, 1.0f, false);
-        
+
+        playerMovement = FindAnyObjectByType<PlayerMovement2>();
+        playerHealth = playerMovement.GetComponent<Health>();
+        gameManager = FindAnyObjectByType<GameManager>();
     }
+
+   
 
     // Update is called once per frame
     void Update()
     {
+        
+        
         //set shop menu active
-        if (ePress == true && Input.GetKeyDown(KeyCode.E))
+        if (ePress == true && Input.GetKeyDown(KeyCode.E) && shopMenu != null && canBuy == true)
         {
             shopMenu.SetActive(true);
 
@@ -59,6 +75,27 @@ public class ShopScript : MonoBehaviour
     {
         Time.timeScale = 1.0f;
     }
+
+    public void HealthPot()
+    {
+        if (gameManager.coins >= healthCost)
+        {
+
+            playerHealth.currentHealth += 25;
+            gameManager.coins -= healthCost;
+
+            if (playerHealth.currentHealth > playerHealth.maxHealth)
+            {
+                playerHealth.currentHealth = playerHealth.maxHealth;
+            }
+
+            canBuy = false; //include this at end of every buff/power up for the shop so the shop cant be opened again
+            CloseMenu();
+        }
+         
+    }
+
+    
 
     
 }

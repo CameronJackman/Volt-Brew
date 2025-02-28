@@ -43,7 +43,7 @@ public class enemyWaveSpawns : MonoBehaviour
         canSpawn = false;
         timeInbetweenWaves = gameManager.secBetweenEnemySpawns;
         defualtTimeBetWaves = timeInbetweenWaves;
-        spawnInterval = howFastEnemysSpawn;
+        spawnInterval = gameManager.secBetweenEnemySpawns;
     }
 
     void FixedUpdate()
@@ -76,7 +76,9 @@ public class enemyWaveSpawns : MonoBehaviour
                         GenerateWave();
                         if (spawnInterval >= 0.5)
                         {
-                            spawnInterval = howFastEnemysSpawn / (enemiesToSpawn.Count * 0.2f);
+
+                            /// (enemiesToSpawn.Count * 0.2f)
+                            spawnInterval = gameManager.secBetweenEnemySpawns ;
                             Debug.Log(spawnInterval);
                         }
 

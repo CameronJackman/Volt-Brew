@@ -24,6 +24,10 @@ public class Enemy : MonoBehaviour
     public float enemyDistance = 4;
     private bool isSeeking;
 
+    public double amountOfCoinsDropped;
+    public GameObject coinPrefab;
+
+    private GameObject CoinsParent;
 
 
 
@@ -37,8 +41,8 @@ public class Enemy : MonoBehaviour
         
 
         player = playerObj.transform;
-        
 
+        CoinsParent = GameObject.FindGameObjectWithTag("CurrentCoinsObj");
        
     }
 
@@ -105,5 +109,16 @@ public class Enemy : MonoBehaviour
         {
             RetreatPlayer();
         }
+    }
+
+    public void DropCoin()
+    {
+        GameObject coin;
+        coin = Instantiate(coinPrefab, gameObject.transform);
+
+        coin.transform.localScale = new Vector2(3.41f, 3.41f);
+        coin.transform.parent = CoinsParent.transform;
+        Debug.Log("Coin Dropped");
+
     }
 }

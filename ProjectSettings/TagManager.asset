@@ -12,6 +12,9 @@ TagManager:
   - EnemyMelee
   - EnemyRange
   - WaveTxt
+  - ShopMenu
+  - Coin
+  - CurrentCoinsObj
   layers:
   - Default
   - TransparentFX
