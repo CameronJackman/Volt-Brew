@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class EnemyProjectileScript : MonoBehaviour
 {
     [SerializeField] private Health playerHealth;
+    private PlayerMovement2 _player;
 
     public Rigidbody2D enemyProjectileRb;
     public float speed = 5f;
@@ -27,6 +29,11 @@ public class EnemyProjectileScript : MonoBehaviour
             //Fallback direction if no player found
             direction = transform.right;
         }
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            _player = playerObj.GetComponent<PlayerMovement2>();
+        }
 
         //Destroy after projectileLife seconds
         Destroy(gameObject, projectileLife); 
@@ -41,11 +48,8 @@ public class EnemyProjectileScript : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            Health playerHealth = collision.gameObject.GetComponent<Health>();
+            StartCoroutine(DamageFeedback());
             
-            playerHealth.TakeDamage(projectileDamage);
-            
-            Destroy(gameObject);
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Shield"))
         {
@@ -62,5 +66,19 @@ public class EnemyProjectileScript : MonoBehaviour
         //{
         //    Destroy(gameObject);
         //}
+    }
+
+    private IEnumerator DamageFeedback()
+    {
+        if (_player.sr != null)
+        {
+            _player.sr.color = Color.red;
+            yield return new WaitForSeconds(0.2f);
+            _player.sr.color = Color.white;
+        }
+        Health playerHealth = _player.GetComponent<Health>();
+        playerHealth.TakeDamage(projectileDamage);
+
+        Destroy(gameObject);
     }
 }

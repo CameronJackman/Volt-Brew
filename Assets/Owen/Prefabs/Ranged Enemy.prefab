@@ -621,10 +621,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contactDamage: 0.5
   damageCooldown: 1
+  _player: {fileID: 0}
   moveSpeed: 1
   spawnCooldown: 2
   enemyDistance: 4
-  knockbackForce: 500
+  knockbackForce: 5
 --- !u!70 &3498193571325523864
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
