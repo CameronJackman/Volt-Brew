@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TMP_Text wavesLeftTxt, Roomstxt, enemysLeftTxt, coinsTxt;
 
-    [HideInInspector]
+    //[HideInInspector]
     public double coins;
 
 

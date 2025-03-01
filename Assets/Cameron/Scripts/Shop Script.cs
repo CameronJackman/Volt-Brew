@@ -74,6 +74,7 @@ public class ShopScript : MonoBehaviour
     public void CloseMenu()
     {
         Time.timeScale = 1.0f;
+        shopMenu.SetActive(false);
     }
 
     public void HealthPot()

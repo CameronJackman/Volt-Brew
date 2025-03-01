@@ -116,8 +116,9 @@ public class Enemy : MonoBehaviour
         GameObject coin;
         coin = Instantiate(coinPrefab, gameObject.transform);
 
+        
+        coin.transform.SetParent(CoinsParent.transform, true);
         coin.transform.localScale = new Vector2(3.41f, 3.41f);
-        coin.transform.parent = CoinsParent.transform;
         Debug.Log("Coin Dropped");
 
     }
