@@ -8,7 +8,7 @@ public class PlayerShield : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && activeShield == null)
+        if (Input.GetKeyDown(KeyCode.C) && activeShield == null)
         {
             ActivateShield();
         }
