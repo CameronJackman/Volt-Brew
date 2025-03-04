@@ -40,19 +40,22 @@ public class Enemy : MonoBehaviour
     bool reachedEndOfPath;
     Seeker seeker;
 
+    public AIPath aiPath;
+
+    // end AI Variables
+
+    private Transform enemyGFX;
+
     private void Awake()
     {
         //ai pathfinding start
         target = GameObject.FindGameObjectWithTag("Player").transform;
-
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
-
         InvokeRepeating("UpdatePath", 0f, .5f);
-
-
         //end of Ai stuff
 
+        enemyGFX = gameObject.GetComponent<Transform>();
 
         if (player == null || playerObj == null)
         {
@@ -69,25 +72,23 @@ public class Enemy : MonoBehaviour
     void FixedUpdate()
     {
         //Ai Stuff
-        
-        
+
+
 
         //meleeEnemy
-      /*  if (CompareTag("EnemyMelee"))
-        {
-            Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position);
-            Vector2 force = (direction * moveSpeed * Time.deltaTime);
+        /*  if (CompareTag("EnemyMelee"))
+          {
+              Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position);
+              Vector2 force = (direction * moveSpeed * Time.deltaTime);
 
 
-            rb.AddForce(force);
-            float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-            if (distance < nextWayPointDistance)
-            {
-                currentWaypoint++;  
-            }
-        } */
-
-
+              rb.AddForce(force);
+              float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+              if (distance < nextWayPointDistance)
+              {
+                  currentWaypoint++;  
+              }
+          } */
 
         if (CompareTag("EnemyRange"))
         {
@@ -127,13 +128,26 @@ public class Enemy : MonoBehaviour
             {
                 currentWaypoint++;
             }
+
+            // flips which way GFX is facing 
+            
         }
-        
+
+        if (CompareTag("EnemyMelee"))
+        {
+            // flips which way GFX is facing 
+
+            
 
 
-        damageCooldown -= Time.deltaTime;
+        }
 
         //End Ai Stuff
+
+        // flips which way GFX is facing 
+
+
+
 
 
 
@@ -151,6 +165,10 @@ public class Enemy : MonoBehaviour
             RetreatPlayer();
         }
         OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT  */
+
+
+
+        damageCooldown -= Time.deltaTime;
     }
 
 

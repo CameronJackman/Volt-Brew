@@ -860,9 +860,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - enemyPrefab: {fileID: 7271697150464289909, guid: 7248a6f096ed4be4dac7c373b567f411, type: 3}
+  - enemyPrefab: {fileID: 7480679431892186652, guid: 02fd324e09aa0c44e88d23f07b353ff7, type: 3}
     cost: 1
-  - enemyPrefab: {fileID: 3619548521304863254, guid: 3e2bd10fdc96ce34bb9a7e29086be833, type: 3}
+  - enemyPrefab: {fileID: 6206686502293649972, guid: 64e0953b707835f40adf3d132f20e015, type: 3}
     cost: 2
   difficulty: 0
   enemiesToSpawn: []

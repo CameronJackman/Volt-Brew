@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         }
 
         roomsEntered++;
-        difficulty += 1;
+        difficulty += 2;
 
 
         // rooms entered txt

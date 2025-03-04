@@ -40,8 +40,6 @@ public class enemyWaveSpawns : MonoBehaviour
 
     
 
-    
-
     void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>();
@@ -147,7 +145,7 @@ public class enemyWaveSpawns : MonoBehaviour
     public void GenerateWave()
     {
        
-        waveValue = difficulty * 10;
+        waveValue = difficulty * 2;
         
         GenerateEnemies();
 
