@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Pathfinding;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,11 +25,16 @@ public class GameManager : MonoBehaviour
     public double coins;
 
 
+    
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         difficulty = startingDifficulty;
+
+       
     }
 
     // Update is called once per frame
@@ -52,6 +58,8 @@ public class GameManager : MonoBehaviour
 
     public void EnteredNewRoom()
     {
+        
+
         if (secBetweenEnemySpawns > 1)
         {
             secBetweenEnemySpawns -= 0.25f;

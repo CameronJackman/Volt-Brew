@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.Animations;
 using Random = UnityEngine.Random;
 
 public class enemyWaveSpawns : MonoBehaviour
@@ -37,6 +38,10 @@ public class enemyWaveSpawns : MonoBehaviour
     [HideInInspector]
     public int currentAmtEnemys;
 
+    
+
+    
+
     void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>();
@@ -44,10 +49,15 @@ public class enemyWaveSpawns : MonoBehaviour
         timeInbetweenWaves = gameManager.secBetweenEnemySpawns;
         defualtTimeBetWaves = timeInbetweenWaves;
         spawnInterval = gameManager.secBetweenEnemySpawns;
+
+
+        //Starts GridScanOnStart after 0.05ms second to give the next room to load 
+        Invoke("GridScanOnStart", 0.05f);
     }
 
     void FixedUpdate()
     {
+
 
         if (canSpawn)
         {
@@ -107,6 +117,19 @@ public class enemyWaveSpawns : MonoBehaviour
 
     }
 
+
+
+    //AI STUFF
+
+    private void GridScanOnStart()
+    {
+        //scans Ai Nav Grid
+        AstarPath.active.Scan();
+    }
+
+
+    //END AI STUFF
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -114,6 +137,9 @@ public class enemyWaveSpawns : MonoBehaviour
             canSpawn = true;
 
             doorBar.SetActive(true);
+
+            
+            
 
         }
     }

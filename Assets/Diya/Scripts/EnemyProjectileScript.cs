@@ -28,6 +28,8 @@ public class EnemyProjectileScript : MonoBehaviour
             direction = transform.right;
         }
 
+        
+
         //Destroy after projectileLife seconds
         Destroy(gameObject, projectileLife); 
     }
@@ -62,5 +64,9 @@ public class EnemyProjectileScript : MonoBehaviour
         //{
         //    Destroy(gameObject);
         //}
+
+
+        //Destroys On collision with anything with collider
+        Destroy(gameObject);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class Enemy : MonoBehaviour
 {
@@ -16,9 +17,9 @@ public class Enemy : MonoBehaviour
     private GameObject playerObj;
     private Transform player;
     private float playerPosition;
-    public float moveSpeed = 1.5f;
 
-    
+
+
 
     public float spawnCooldown = 2f;
     public float enemyDistance = 4;
@@ -29,23 +30,154 @@ public class Enemy : MonoBehaviour
 
     private GameObject CoinsParent;
 
+    // Ai variables:
+    private Transform target;
+    public float moveSpeed = 200f;
+    public float nextWayPointDistance = 3f;
 
+    Path path;
+    int currentWaypoint = 0;
+    bool reachedEndOfPath;
+    Seeker seeker;
 
     private void Awake()
     {
+        //ai pathfinding start
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+
+        seeker = GetComponent<Seeker>();
+        rb = GetComponent<Rigidbody2D>();
+
+        InvokeRepeating("UpdatePath", 0f, .5f);
+
+
+        //end of Ai stuff
+
+
         if (player == null || playerObj == null)
         {
-           
+
             playerObj = GameObject.FindGameObjectWithTag("Player");
         }
-        
+
 
         player = playerObj.transform;
 
         CoinsParent = GameObject.FindGameObjectWithTag("CurrentCoinsObj");
-       
+
+    }
+    void FixedUpdate()
+    {
+        //Ai Stuff
+        
+        
+
+        //meleeEnemy
+      /*  if (CompareTag("EnemyMelee"))
+        {
+            Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position);
+            Vector2 force = (direction * moveSpeed * Time.deltaTime);
+
+
+            rb.AddForce(force);
+            float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+            if (distance < nextWayPointDistance)
+            {
+                currentWaypoint++;  
+            }
+        } */
+
+
+
+        if (CompareTag("EnemyRange"))
+        {
+            if (path == null)
+            {
+                return;
+            }
+
+            if (currentWaypoint >= path.vectorPath.Count)
+            {
+                reachedEndOfPath = true;
+                return;
+            }
+            else
+            {
+                reachedEndOfPath = false;
+            }
+
+
+            float keepDistance = 1f;
+
+
+            Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position);
+            Vector2 force = (direction * moveSpeed * Time.deltaTime);
+            float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+
+            if (distance > keepDistance)
+            {
+                rb.AddForce(force);
+            }
+            else if (distance < keepDistance)
+            {
+                rb.AddForce(-force);
+            }
+
+            if (distance < nextWayPointDistance)
+            {
+                currentWaypoint++;
+            }
+        }
+        
+
+
+        damageCooldown -= Time.deltaTime;
+
+        //End Ai Stuff
+
+
+
+        /* OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT 
+
+
+        // Only Melee enemies seek
+        if (CompareTag("EnemyMelee"))
+        {
+            SeekPlayer();
+        }
+        // Only Ranged enemies handle the "keep distance" logic
+        else if (CompareTag("EnemyRange"))
+        {
+            RetreatPlayer();
+        }
+        OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT  */
     }
 
+
+
+
+
+    //Ai PathFinding Stuff
+
+    void UpdatePath()
+    {
+        if (seeker.IsDone())
+        {
+            seeker.StartPath(rb.position, target.position, OnPathComplete);
+        }
+        
+    }
+
+    void OnPathComplete(Path p)
+    {
+        if (!p.error)
+        {
+            path = p;
+            currentWaypoint = 0;
+        }
+    }
+
+    //End of Ai stuff
 
 
     void OnCollisionStay2D(Collision2D collision)
@@ -58,7 +190,11 @@ public class Enemy : MonoBehaviour
         }
 
     }
+   
 
+
+
+    /*
     void SeekPlayer()
     {
 
@@ -94,22 +230,8 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+    */
 
-    private void Update()
-    {
-        damageCooldown -= Time.deltaTime;
-
-        // Only Melee enemies seek
-        if (CompareTag("EnemyMelee"))
-        {
-            SeekPlayer();
-        }
-        // Only Ranged enemies handle the "keep distance" logic
-        else if (CompareTag("EnemyRange"))
-        {
-            RetreatPlayer();
-        }
-    }
 
     public void DropCoin()
     {
@@ -118,7 +240,7 @@ public class Enemy : MonoBehaviour
 
         
         coin.transform.SetParent(CoinsParent.transform, true);
-        coin.transform.localScale = new Vector2(3.41f, 3.41f);
+        coin.transform.localScale = new Vector2(2.32f, 2.32f);
         Debug.Log("Coin Dropped");
 
     }

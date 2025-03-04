@@ -15,6 +15,7 @@ TagManager:
   - ShopMenu
   - Coin
   - CurrentCoinsObj
+  - PathFinder
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - 
+  - Colliders
   - 
   - 
   - 
