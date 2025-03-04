@@ -16,7 +16,16 @@ public class ShopScript : MonoBehaviour
     private bool canBuy = true;
 
     [SerializeField]
+    //Costs of shop items
     private float healthCost;
+    public float projectileShieldCost;
+
+    //Projectile shield variables
+    public GameObject player;
+    public GameObject shieldPrefab;
+    private GameObject activeProjectileShield;
+    private bool isProjectileShieldOwned;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,14 +37,10 @@ public class ShopScript : MonoBehaviour
         gameManager = FindAnyObjectByType<GameManager>();
     }
 
-   
-
     // Update is called once per frame
     void Update()
     {
-        
-        
-        //set shop menu active
+        //Set shop menu active
         if (ePress == true && Input.GetKeyDown(KeyCode.E) && shopMenu != null && canBuy == true)
         {
             shopMenu.SetActive(true);
@@ -44,7 +49,11 @@ public class ShopScript : MonoBehaviour
         }
 
         //Set shop menu inactive
-        
+
+        if (Input.GetKeyDown(KeyCode.C) && activeProjectileShield == null && isProjectileShieldOwned == true)
+        {
+            ActivateProjectileShield();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -77,6 +86,7 @@ public class ShopScript : MonoBehaviour
         shopMenu.SetActive(false);
     }
 
+    //SHOP ITEM #1 --> Health Pot
     public void HealthPot()
     {
         if (gameManager.coins >= healthCost)
@@ -92,11 +102,58 @@ public class ShopScript : MonoBehaviour
 
             canBuy = false; //include this at end of every buff/power up for the shop so the shop cant be opened again
             CloseMenu();
-        }
-         
+        } 
     }
 
-    
+    //SHOP ITEM #2 --> Projectile Shield
+    public void ProjectileShield()
+    {
+        if (gameManager.coins >= projectileShieldCost)
+        {
+            //Activate projectile shield  --> Need to add a display & code for shields remaining
+            ActivateProjectileShield();
 
-    
+            //Calculate the player's current balance after purchase
+            gameManager.coins -= projectileShieldCost;
+
+            isProjectileShieldOwned = true;
+
+            //Include this at end of every buff/power up for the shop so the shop cant be opened again
+            canBuy = false; 
+            CloseMenu();
+        }
+    }
+
+    //Activates projectile shield
+    public void ActivateProjectileShield()
+    {
+        activeProjectileShield = Instantiate(shieldPrefab, transform.position, Quaternion.identity);
+
+        //Set proper scale of shield 
+        activeProjectileShield.transform.localScale = Vector3.one * 0.4f;
+
+        //Start coroutine to follow player
+        StartCoroutine(FollowPlayerForSeconds(5f));
+    }
+
+    //Makes the projectile shield follow the player 
+    IEnumerator FollowPlayerForSeconds(float seconds)
+    {
+        float timer = 0f;
+        while (timer < seconds)
+        {
+            if (activeProjectileShield != null && player != null)
+            {
+                //Keeps shield on player
+                activeProjectileShield.transform.position = player.transform.position;
+            }
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        if (activeProjectileShield != null)
+        {
+            Destroy(activeProjectileShield);
+        }
+    }
 }
