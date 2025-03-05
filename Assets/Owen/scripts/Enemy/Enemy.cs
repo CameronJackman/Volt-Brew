@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
 
     // end AI Variables
 
-    private Transform enemyGFX;
+    
 
     private void Awake()
     {
@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour
         InvokeRepeating("UpdatePath", 0f, .5f);
         //end of Ai stuff
 
-        enemyGFX = gameObject.GetComponent<Transform>();
+        
 
         if (player == null || playerObj == null)
         {
@@ -118,6 +118,7 @@ public class Enemy : MonoBehaviour
             if (distance > keepDistance)
             {
                 rb.AddForce(force);
+                
             }
             else if (distance < keepDistance)
             {
@@ -130,16 +131,35 @@ public class Enemy : MonoBehaviour
             }
 
             // flips which way GFX is facing 
-            
+
+            if (force.x > 0.01f)
+            {
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+            else if (force.x < -0.01f)
+            {
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+
+
         }
+
+
 
         if (CompareTag("EnemyMelee"))
         {
+            //movement handled by A* ai movement
+
+
             // flips which way GFX is facing 
-
-            
-
-
+            if (aiPath.desiredVelocity.x > 0.01f)
+            {
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+            else if (aiPath.desiredVelocity.x < -0.01f)
+            {
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
         }
 
         //End Ai Stuff
