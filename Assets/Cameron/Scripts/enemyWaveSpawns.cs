@@ -31,7 +31,7 @@ public class enemyWaveSpawns : MonoBehaviour
 
     private bool canSpawn = false;
     [SerializeField]
-    private GameObject doorBar;
+    private GameObject nextRoomInteract;
     [SerializeField]
     private GameObject dircArrows;
 
@@ -96,7 +96,7 @@ public class enemyWaveSpawns : MonoBehaviour
                     {
                         // end room
                         waveTimer = 0;
-                        doorBar.SetActive(false);
+                        nextRoomInteract.SetActive(true);
                         dircArrows.SetActive(true);
                     }
                 }
@@ -134,7 +134,7 @@ public class enemyWaveSpawns : MonoBehaviour
         {
             canSpawn = true;
 
-            doorBar.SetActive(true);
+            nextRoomInteract.SetActive(false);
 
             
             
