@@ -57,9 +57,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - enemyPrefab: {fileID: 7271697150464289909, guid: 7248a6f096ed4be4dac7c373b567f411, type: 3}
+  - enemyPrefab: {fileID: 7480679431892186652, guid: 02fd324e09aa0c44e88d23f07b353ff7, type: 3}
     cost: 1
-  - enemyPrefab: {fileID: 3619548521304863254, guid: 3e2bd10fdc96ce34bb9a7e29086be833, type: 3}
+  - enemyPrefab: {fileID: 6206686502293649972, guid: 64e0953b707835f40adf3d132f20e015, type: 3}
     cost: 2
   difficulty: 0
   enemiesToSpawn: []
@@ -73,10 +73,10 @@ MonoBehaviour:
   - {fileID: 20349366874051649}
   - {fileID: 461075264865837998}
   - {fileID: 2920923181658934449}
-  howFastEnemysSpawn: 20
   amountOfWaves: 3
   doorBar: {fileID: 7343962774592909312}
   dircArrows: {fileID: 3762914632039532935}
+  currentAmtEnemys: 0
 --- !u!60 &5854130284488889615
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -413,6 +413,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6732185906925616556}
   - {fileID: 6383451238488532704}
   - {fileID: 6558616016061701293}
   - {fileID: 2409363555353831124}
@@ -977,6 +978,37 @@ Transform:
   - {fileID: 1421509727702518355}
   m_Father: {fileID: 2409363555353831124}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1792075656312037853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6732185906925616556}
+  m_Layer: 0
+  m_Name: CurrentCoins
+  m_TagString: CurrentCoinsObj
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6732185906925616556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792075656312037853}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.34, y: 1.34, z: 1.34}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 5659577324342625018}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1888009723345104400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,7 +1123,7 @@ GameObject:
   - component: {fileID: 9115233956863281767}
   - component: {fileID: 260128680350694792}
   - component: {fileID: 1497868863073383943}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

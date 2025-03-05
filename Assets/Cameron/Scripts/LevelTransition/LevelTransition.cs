@@ -39,6 +39,8 @@ public class LevelTransition : MonoBehaviour
 
     private GameManager gameManager;
 
+    // AI Scan Grid
+    private bool canScan;
 
 
     // Start is called before the first frame update
@@ -67,6 +69,8 @@ public class LevelTransition : MonoBehaviour
         player.setLocation(spawn);
 
         Interact.CrossFadeAlpha(0.0f, 1.0f, false);
+
+        
     }
 
     // Update is called once per frame
@@ -77,14 +81,15 @@ public class LevelTransition : MonoBehaviour
         {
             
             _blackFade.alpha = Mathf.Lerp(_blackFade.alpha, 1.0f, fadeSpeed/ fadeDuration);
-
             
-
             
             
         } else if (!fade)
             {
                 _blackFade.alpha = Mathf.Lerp(_blackFade.alpha, 0.0f, fadeSpeed / fadeDuration);
+                
+
+                
             }
 
 
@@ -107,7 +112,7 @@ public class LevelTransition : MonoBehaviour
         }
 
 
-        if (_blackFade.alpha >= 0.99 && transition)
+        if (_blackFade.alpha >= 0.9 && transition)
         {
             GameObject nextLevel;
 
@@ -126,7 +131,11 @@ public class LevelTransition : MonoBehaviour
             Transform parentTransform = GameObject.Find("DefaultGrid").transform;
             nextLevel.transform.SetParent(parentTransform);
 
+            
+
             Destroy(levelheading);
+
+            
 
             transition = false;
 

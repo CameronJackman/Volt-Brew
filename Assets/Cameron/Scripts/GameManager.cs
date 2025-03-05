@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Pathfinding;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,7 +19,13 @@ public class GameManager : MonoBehaviour
     public float secBetweenEnemySpawns;
 
     [SerializeField]
-    private TMP_Text wavesLeftTxt, Roomstxt, enemysLeftTxt;
+    private TMP_Text wavesLeftTxt, Roomstxt, enemysLeftTxt, coinsTxt;
+
+    //[HideInInspector]
+    public double coins;
+
+
+    
 
 
 
@@ -26,6 +33,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         difficulty = startingDifficulty;
+
+       
     }
 
     // Update is called once per frame
@@ -38,21 +47,26 @@ public class GameManager : MonoBehaviour
             //Waves left txt
             wavesLeftTxt.text = ("Waves Left: "+ currentRoom.amountOfWaves);
             //current amount of enemys display
-            enemysLeftTxt.text = ("Enemies Left: " + currentRoom.currentAmtEnemys);
+            enemysLeftTxt.text = ("Enemies Left: " + (currentRoom.enemiesToSpawn.Count + currentRoom.currentAmtEnemys));
         }
 
+        // display coins
+
+        coinsTxt.text = ("Coins: " + coins);
         
     }
 
     public void EnteredNewRoom()
     {
+        
+
         if (secBetweenEnemySpawns > 1)
         {
             secBetweenEnemySpawns -= 0.25f;
         }
 
         roomsEntered++;
-        difficulty += 1;
+        difficulty += 2;
 
 
         // rooms entered txt

@@ -28,6 +28,8 @@ public class EnemyProjectileScript : MonoBehaviour
             direction = transform.right;
         }
 
+        
+
         //Destroy after projectileLife seconds
         Destroy(gameObject, projectileLife); 
     }
@@ -42,17 +44,18 @@ public class EnemyProjectileScript : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             Health playerHealth = collision.gameObject.GetComponent<Health>();
-            Debug.Log("Hit!");
+            
             playerHealth.TakeDamage(projectileDamage);
-            if (playerHealth == null)
-            {
-                Debug.Log("Playerhealth is Null");
-            }
+            
             Destroy(gameObject);
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Shield"))
         {
-            Debug.Log("Projectile collided with shield");
+            
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("CombatZone"))
+        {
             Destroy(gameObject);
         }
 
@@ -61,5 +64,9 @@ public class EnemyProjectileScript : MonoBehaviour
         //{
         //    Destroy(gameObject);
         //}
+
+
+        //Destroys On collision with anything with collider
+        Destroy(gameObject);
     }
 }

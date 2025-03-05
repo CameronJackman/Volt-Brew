@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.Animations;
 using Random = UnityEngine.Random;
 
 public class enemyWaveSpawns : MonoBehaviour
@@ -37,16 +38,24 @@ public class enemyWaveSpawns : MonoBehaviour
     [HideInInspector]
     public int currentAmtEnemys;
 
+    
+
     void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>();
         canSpawn = false;
         timeInbetweenWaves = gameManager.secBetweenEnemySpawns;
         defualtTimeBetWaves = timeInbetweenWaves;
+        spawnInterval = gameManager.secBetweenEnemySpawns;
+
+
+        //Starts GridScanOnStart after 0.05ms second to give the next room to load 
+        Invoke("GridScanOnStart", 0.05f);
     }
 
     void FixedUpdate()
     {
+
 
         if (canSpawn)
         {
@@ -60,7 +69,7 @@ public class enemyWaveSpawns : MonoBehaviour
                 if (spawnTimer <= 0)
                 {
                     //spawn enemy
-                    if (enemiesToSpawn.Count > 0)
+                    if (enemiesToSpawn.Count > 0 && spawnTimer <= 0)
                     {
                         int spawnPoint = Random.Range(0, spawnLocations.Count);
                         Instantiate(enemiesToSpawn[0], spawnLocations[spawnPoint].position, Quaternion.identity);
@@ -73,6 +82,14 @@ public class enemyWaveSpawns : MonoBehaviour
                         amountOfWaves--;
                         
                         GenerateWave();
+                        if (spawnInterval >= 0.5)
+                        {
+
+                            /// (enemiesToSpawn.Count * 0.2f)
+                            spawnInterval = gameManager.secBetweenEnemySpawns ;
+                            Debug.Log(spawnInterval);
+                        }
+
                         timeInbetweenWaves = defualtTimeBetWaves;
                     }
                     else if (currentAmtEnemys == 0)
@@ -98,6 +115,19 @@ public class enemyWaveSpawns : MonoBehaviour
 
     }
 
+
+
+    //AI STUFF
+
+    private void GridScanOnStart()
+    {
+        //scans Ai Nav Grid
+        AstarPath.active.Scan();
+    }
+
+
+    //END AI STUFF
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -106,18 +136,23 @@ public class enemyWaveSpawns : MonoBehaviour
 
             doorBar.SetActive(true);
 
+            
+            
+
         }
     }
 
     public void GenerateWave()
     {
        
-        waveValue = difficulty * 10;
+        waveValue = difficulty * 2;
         
         GenerateEnemies();
 
-        spawnInterval = howFastEnemysSpawn / enemiesToSpawn.Count;
-        waveTimer = howFastEnemysSpawn;
+        
+        waveTimer = 3;
+
+        Debug.Log(spawnInterval);
     }
 
 
@@ -146,6 +181,10 @@ public class enemyWaveSpawns : MonoBehaviour
         enemiesToSpawn.Clear();
         enemiesToSpawn = generatedEnemies;
 
+    }
+
+    public void Update()
+    {
     }
 
 }

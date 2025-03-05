@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DebugToggle : MonoBehaviour
 {
-    public bool debugIsActive = true;
+    public static bool _debug = true;
 
     //This isn't working yet
 

@@ -87,7 +87,6 @@ public class Spawner : MonoBehaviour
             }
             else if (waveCount == 3 && !hasDisplayed)
             {
-                Debug.Log("Wave 3 Complete: Next Level");
                 hasDisplayed = true;
             }
         }
@@ -117,7 +116,7 @@ public class Spawner : MonoBehaviour
     public int CheckDifficulty()  
     {
 
-        if (_dt.debugIsActive)
+        if (DebugToggle._debug)
         {
             Debug.LogWarning("No Option To Set Difficulty Is Programmmed");
             Debug.LogWarning("Add in a difficulty setting to the code to program harder waves and set the difficulty multiplier inside of this method instead of at the top");
