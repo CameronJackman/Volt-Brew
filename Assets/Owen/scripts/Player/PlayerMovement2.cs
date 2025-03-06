@@ -46,6 +46,12 @@ public class PlayerMovement2 : MonoBehaviour
     private GameManager gameManager;
 
 
+    //Projectile shield variables
+    public GameObject shieldPrefab;
+    private GameObject activeProjectileShield;
+
+    [HideInInspector] public bool isProjectileShieldOwned;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -82,6 +88,12 @@ public class PlayerMovement2 : MonoBehaviour
 
     void Update()
     {
+        //shield
+        if (Input.GetKeyDown(KeyCode.C) && activeProjectileShield == null && isProjectileShieldOwned == true)
+        {
+            ActivateProjectileShield();
+        }
+
 
         if (dashCoolDownTimer > 0)
         {
@@ -279,6 +291,45 @@ public class PlayerMovement2 : MonoBehaviour
         gameObject.transform.position = targetLocation.transform.position;
     }
 
-  
+
+
+
+
+
+
+    //Sheild Stuff
+
+    //Activates projectile shield
+    public void ActivateProjectileShield()
+    {
+        activeProjectileShield = Instantiate(shieldPrefab, transform.position, Quaternion.identity);
+
+        //Set proper scale of shield 
+        activeProjectileShield.transform.localScale = Vector3.one * 0.4f;
+
+        //Start coroutine to follow player
+        StartCoroutine(FollowPlayerForSeconds(5f));
+    }
+
+    //Makes the projectile shield follow the player 
+    IEnumerator FollowPlayerForSeconds(float seconds)
+    {
+        float timer = 0f;
+        while (timer < seconds)
+        {
+            if (activeProjectileShield != null)
+            {
+                //Keeps shield on player
+                activeProjectileShield.transform.position = gameObject.transform.position;
+            }
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        if (activeProjectileShield != null)
+        {
+            Destroy(activeProjectileShield);
+        }
+    }
 }
 
