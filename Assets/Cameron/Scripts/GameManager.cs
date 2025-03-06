@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviour
 
     private enemyWaveSpawns currentRoom;
 
-    public int startingDifficulty;
-    [HideInInspector]
     public int difficulty;
 
     public float secBetweenEnemySpawns;
@@ -32,7 +30,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        difficulty = startingDifficulty;
+        
 
        
     }
@@ -66,12 +64,13 @@ public class GameManager : MonoBehaviour
         }
 
         roomsEntered++;
-        difficulty += 2;
+        difficulty = roomsEntered;
+        difficulty += 5;
 
 
         // rooms entered txt
         Roomstxt.text = ("Rooms Entered: " +roomsEntered);
 
-        difficulty = roomsEntered;
+        
     }
 }

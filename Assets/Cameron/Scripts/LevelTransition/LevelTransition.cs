@@ -7,7 +7,8 @@ using static UnityEngine.GraphicsBuffer;
 
 public class LevelTransition : MonoBehaviour
 {
-    private GameObject[] levelList;
+    private GameObject[] GreenlevelList;
+    private GameObject[] RedlevelList;
 
     [SerializeField]
     private GameObject shopObj;
@@ -48,7 +49,8 @@ public class LevelTransition : MonoBehaviour
     {
         gameManager = FindAnyObjectByType<GameManager>();
 
-        levelList = FindObjectOfType<LevelList>().ListOfLevels;
+        GreenlevelList = FindObjectOfType<LevelList>().GreenListOfLevels;
+        RedlevelList = FindObjectOfType<LevelList>().RedListOfLevels;
         shopObj = FindAnyObjectByType<LevelList>().shopLevel;
 
         fade = false; transition = false;
@@ -116,15 +118,29 @@ public class LevelTransition : MonoBehaviour
         {
             GameObject nextLevel;
 
+
+            // shop every 5 levels
+
             if (gameManager.roomsEntered % 5 == 0)
             {
                  nextLevel = Instantiate(shopObj);
             }
+
+            // if rooms entered is over 5 rooms then red rooms generate
+            else if (gameManager.roomsEntered > 5)
+            {
+                int num = Random.Range(0, RedlevelList.Length);
+
+                nextLevel = Instantiate(RedlevelList[num]);
+            }
+
+
+            // else just a default green level
             else
             {
-                int num = Random.Range(0, levelList.Length);
+                int num = Random.Range(0, GreenlevelList.Length);
 
-                nextLevel = Instantiate(levelList[num]);
+                nextLevel = Instantiate(GreenlevelList[num]);
             }
             
 

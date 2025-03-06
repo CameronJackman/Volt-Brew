@@ -22,7 +22,7 @@ public class LevelGeneration : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        levelList = FindObjectOfType<LevelList>().ListOfLevels;
+        levelList = FindObjectOfType<LevelList>().GreenListOfLevels;
 
         centerPos = gameObject.transform.GetChild(0).gameObject;
 
