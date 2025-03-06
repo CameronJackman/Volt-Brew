@@ -14,4 +14,9 @@ public class PlayerData
     {
         level = player.level;
     }
+
+    public PlayerData(PlayerEXP player)
+    {
+        exp = player.exp;
+    }
 }

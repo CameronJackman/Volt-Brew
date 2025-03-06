@@ -1,10 +1,11 @@
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System;
 
 public static class SaveSystem
 {
-    public static void SavePlayerr(TestingSave player)
+    public static void SavePlayer(TestingSave player)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/player.save";
