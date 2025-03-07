@@ -11,7 +11,7 @@ public class PlayerEXP : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        exp = 12338;
+        exp = 100;
         exp_Text = GetComponent<Text>();
     }
 
@@ -28,5 +28,19 @@ public class PlayerEXP : MonoBehaviour
     public void SubtractEXP()
     {
         exp -= 25;
+    }
+
+    public void SavePlayerEXP()
+    {
+        SaveSystem.SavePlayer(FindObjectOfType<TestingSave>(), this);
+    }
+
+    public void LoadPlayerEXP()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        if (data != null)
+        {
+            exp = data.exp;
+        }
     }
 }

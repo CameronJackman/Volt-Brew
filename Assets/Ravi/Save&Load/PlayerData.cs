@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [System.Serializable]
 public class PlayerData
@@ -10,13 +11,9 @@ public class PlayerData
     public int currency;
     public int exp;
 
-    public PlayerData(TestingSave player)
+    public PlayerData(TestingSave testingSave, PlayerEXP playerEXP)
     {
-        level = player.level;
-    }
-
-    public PlayerData(PlayerEXP player)
-    {
-        exp = player.exp;
+        level = testingSave.level;
+        exp = playerEXP.exp;
     }
 }

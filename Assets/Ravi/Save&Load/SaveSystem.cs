@@ -3,15 +3,16 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System;
 
+
 public static class SaveSystem
 {
-    public static void SavePlayer(TestingSave player)
+    public static void SavePlayer(TestingSave testingSave, PlayerEXP playerEXP)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/player.save";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        PlayerData data = new PlayerData(player);
+        PlayerData data = new PlayerData(testingSave, playerEXP);
 
         formatter.Serialize(stream, data);
         stream.Close();

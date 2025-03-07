@@ -8,7 +8,6 @@ public class TestingSave : MonoBehaviour
 {
     public Text level_Text;
     public int level;
-    public int exp;
 
     // Start is called before the first frame update
     public void Start()
@@ -31,5 +30,19 @@ public class TestingSave : MonoBehaviour
     public void SubtractLevel()
     {
         level -= 1;
+    }
+
+    public void SavePlayerLevel()
+    {
+        SaveSystem.SavePlayer(this, FindObjectOfType<PlayerEXP>());
+    }
+
+    public void LoadPlayerLevel()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        if (data != null)
+        {
+            level = data.level;
+        }
     }
 }
