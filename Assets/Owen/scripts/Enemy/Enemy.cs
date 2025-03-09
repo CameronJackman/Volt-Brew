@@ -77,6 +77,8 @@ public class Enemy : MonoBehaviour
         
     }
 
+    
+
     void SeekPlayer()
     {
 
