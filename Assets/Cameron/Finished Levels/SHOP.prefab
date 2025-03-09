@@ -5047,8 +5047,6 @@ MonoBehaviour:
   shopMenu: {fileID: 3866308121694629949}
   healthCost: 5
   projectileShieldCost: 5
-  player: {fileID: 0}
-  shieldPrefab: {fileID: 3535619353788164388, guid: 00d924acd8a2e4aac82f9ae5f1f2de9a, type: 3}
 --- !u!60 &6193054712942639708
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8850,8 +8848,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.48735, y: 0.48735, z: 0.48735}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4616566994931633608}
   - {fileID: 3160086624140998495}

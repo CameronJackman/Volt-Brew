@@ -20,7 +20,7 @@ public class PlayerMovement2 : MonoBehaviour
     public float dashSpeedMultiplier = 3f;
     public float dashCoolDownTime = 1.5f;
 
-    private float dashCoolDownTimer = 0f;
+    [HideInInspector] public float dashCoolDownTimer = 0f;
 
     public bool isoToggle = false;
     private Vector2 isoRight = new Vector2(-1.75f, 1.0f);

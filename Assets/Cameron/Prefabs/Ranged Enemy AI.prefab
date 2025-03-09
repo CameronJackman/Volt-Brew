@@ -682,7 +682,7 @@ Rigidbody2D:
   m_LinearDrag: 1.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 406af8d4926e0b041959ae211087f663, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -710,7 +710,7 @@ MonoBehaviour:
   spawnCooldown: 2
   enemyDistance: 4
   amountOfCoinsDropped: 0
-  coinPrefab: {fileID: 1536518890945812926, guid: 97882c94ab2386445b36c357d26c7c9c, type: 3}
+  coinPrefab: {fileID: 5422449294674524693, guid: 97882c94ab2386445b36c357d26c7c9c, type: 3}
   moveSpeed: 1200
   nextWayPointDistance: 1.2
   aiPath: {fileID: 0}
@@ -723,7 +723,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 6206686502293649972}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 406af8d4926e0b041959ae211087f663, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
