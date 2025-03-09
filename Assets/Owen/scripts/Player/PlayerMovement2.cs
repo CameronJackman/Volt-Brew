@@ -234,6 +234,7 @@ public class PlayerMovement2 : MonoBehaviour
 
     public void ApplyKnockback(Vector2 force)
     {
+
         isKnockback = true;
         knockbackTimer = knockbackDuration;
         rb.velocity = force;
