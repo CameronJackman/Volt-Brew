@@ -16,6 +16,11 @@ TagManager:
   - Coin
   - CurrentCoinsObj
   - PathFinder
+  - ArrowPointL
+  - ArrowPointR
+  - LeftArrow
+  - RightArrow
+  - arrowSetPoint
   layers:
   - Default
   - TransparentFX

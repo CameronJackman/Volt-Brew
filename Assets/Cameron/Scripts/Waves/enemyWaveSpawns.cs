@@ -32,7 +32,7 @@ public class enemyWaveSpawns : MonoBehaviour
     private bool canSpawn = false;
     [SerializeField]
     private GameObject nextRoomInteract;
-    [SerializeField]
+    
     private GameObject dircArrows;
 
     [HideInInspector]
@@ -47,10 +47,13 @@ public class enemyWaveSpawns : MonoBehaviour
         timeInbetweenWaves = gameManager.secBetweenEnemySpawns;
         defualtTimeBetWaves = timeInbetweenWaves;
         spawnInterval = gameManager.secBetweenEnemySpawns;
+        dircArrows = GameObject.FindGameObjectWithTag("arrowSetPoint");
 
 
         //Starts GridScanOnStart after 0.05ms second to give the next room to load 
         Invoke("GridScanOnStart", 0.05f);
+
+        dircArrows.SetActive(false);
     }
 
     void FixedUpdate()
