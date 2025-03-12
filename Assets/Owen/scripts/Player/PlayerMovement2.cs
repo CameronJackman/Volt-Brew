@@ -184,7 +184,7 @@ public class PlayerMovement2 : MonoBehaviour
         
     }
 
-    
+
 
     private void OnDashPerformed(InputAction.CallbackContext ctx)
     {
