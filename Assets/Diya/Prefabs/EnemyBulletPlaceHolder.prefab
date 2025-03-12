@@ -148,7 +148,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2425305230219031205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e8a84e72aa5f4cb284f907c22e00a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: {fileID: 7638935832281944381, guid: 3ddf0911af208ff49bb7240a75f78491, type: 3}
   enemyProjectileRb: {fileID: 3648591771771189063}
   speed: 3
   projectileLife: 3

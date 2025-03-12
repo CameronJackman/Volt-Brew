@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyProjectileScript : MonoBehaviour
 {
+    [SerializeField] private Health playerHealth;
+
     public Rigidbody2D enemyProjectileRb;
     public float speed = 5f;
     public float projectileLife = 3f;
@@ -26,6 +28,8 @@ public class EnemyProjectileScript : MonoBehaviour
             direction = transform.right;
         }
 
+        
+
         //Destroy after projectileLife seconds
         Destroy(gameObject, projectileLife); 
     }
@@ -35,22 +39,23 @@ public class EnemyProjectileScript : MonoBehaviour
         enemyProjectileRb.velocity = direction * speed;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D (Collision2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             Health playerHealth = collision.gameObject.GetComponent<Health>();
-
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(projectileDamage);
-            }
-
+            
+            playerHealth.TakeDamage(projectileDamage);
+            
             Destroy(gameObject);
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Shield"))
         {
-            Debug.Log("Projectile collided with shield");
+            
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("CombatZone"))
+        {
             Destroy(gameObject);
         }
 
@@ -59,5 +64,9 @@ public class EnemyProjectileScript : MonoBehaviour
         //{
         //    Destroy(gameObject);
         //}
+
+
+        //Destroys On collision with anything with collider
+        Destroy(gameObject);
     }
 }

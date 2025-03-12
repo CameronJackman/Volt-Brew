@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Playables;
 using UnityEngine;
+using Pathfinding;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,12 +11,212 @@ public class Enemy : MonoBehaviour
     private PlayerMovement _player;
     private bool isDashing;
 
-    public Transform player;
+
+
+
+    private GameObject playerObj;
+    private Transform player;
     private float playerPosition;
-    public float moveSpeed = 3;
+
+
+
+
     public float spawnCooldown = 2f;
     public float enemyDistance = 4;
     private bool isSeeking;
+
+    public double amountOfCoinsDropped;
+    public GameObject coinPrefab;
+
+    private GameObject CoinsParent;
+
+    // Ai variables:
+    private Transform target;
+    public float moveSpeed = 200f;
+    public float nextWayPointDistance = 3f;
+
+    Path path;
+    int currentWaypoint = 0;
+    bool reachedEndOfPath;
+    Seeker seeker;
+
+    public AIPath aiPath;
+
+    // end AI Variables
+
+    
+
+    private void Awake()
+    {
+        //ai pathfinding start
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        seeker = GetComponent<Seeker>();
+        rb = GetComponent<Rigidbody2D>();
+        InvokeRepeating("UpdatePath", 0f, .5f);
+        //end of Ai stuff
+
+        
+
+        if (player == null || playerObj == null)
+        {
+
+            playerObj = GameObject.FindGameObjectWithTag("Player");
+        }
+
+
+        player = playerObj.transform;
+
+        CoinsParent = GameObject.FindGameObjectWithTag("CurrentCoinsObj");
+
+    }
+    void FixedUpdate()
+    {
+        //Ai Stuff
+
+
+
+        //meleeEnemy
+        /*  if (CompareTag("EnemyMelee"))
+          {
+              Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position);
+              Vector2 force = (direction * moveSpeed * Time.deltaTime);
+
+
+              rb.AddForce(force);
+              float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+              if (distance < nextWayPointDistance)
+              {
+                  currentWaypoint++;  
+              }
+          } */
+
+        if (CompareTag("EnemyRange"))
+        {
+            if (path == null)
+            {
+                return;
+            }
+
+            if (currentWaypoint >= path.vectorPath.Count)
+            {
+                reachedEndOfPath = true;
+                return;
+            }
+            else
+            {
+                reachedEndOfPath = false;
+            }
+
+
+            float keepDistance = 1f;
+
+
+            Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position);
+            Vector2 force = (direction * moveSpeed * Time.deltaTime);
+            float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+
+            if (distance > keepDistance)
+            {
+                rb.AddForce(force);
+                
+            }
+            else if (distance < keepDistance)
+            {
+                rb.AddForce(-force);
+            }
+
+            if (distance < nextWayPointDistance)
+            {
+                currentWaypoint++;
+            }
+
+            // flips which way GFX is facing 
+
+            if (force.x > 0.01f)
+            {
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+            else if (force.x < -0.01f)
+            {
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+
+
+        }
+
+
+
+        if (CompareTag("EnemyMelee"))
+        {
+            //movement handled by A* ai movement
+
+
+            // flips which way GFX is facing 
+            if (aiPath.desiredVelocity.x > 0.01f)
+            {
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+            else if (aiPath.desiredVelocity.x < -0.01f)
+            {
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+        }
+
+        //End Ai Stuff
+
+        // flips which way GFX is facing 
+
+
+
+
+
+
+        /* OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT 
+
+
+        // Only Melee enemies seek
+        if (CompareTag("EnemyMelee"))
+        {
+            SeekPlayer();
+        }
+        // Only Ranged enemies handle the "keep distance" logic
+        else if (CompareTag("EnemyRange"))
+        {
+            RetreatPlayer();
+        }
+        OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT OLD MOVEMENT  */
+
+
+
+        damageCooldown -= Time.deltaTime;
+    }
+
+
+
+
+
+    //Ai PathFinding Stuff
+
+    void UpdatePath()
+    {
+        if (seeker.IsDone())
+        {
+            seeker.StartPath(rb.position, target.position, OnPathComplete);
+        }
+        
+    }
+
+    void OnPathComplete(Path p)
+    {
+        if (!p.error)
+        {
+            path = p;
+            currentWaypoint = 0;
+        }
+    }
+
+    //End of Ai stuff
+
 
     void OnCollisionStay2D(Collision2D collision)
     {
@@ -28,9 +228,14 @@ public class Enemy : MonoBehaviour
         }
 
     }
+   
 
+
+
+    /*
     void SeekPlayer()
     {
+
         Vector2 moveToPlayer = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
         transform.position = moveToPlayer;
         isSeeking = true;
@@ -63,20 +268,18 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+    */
 
-    private void Update()
+
+    public void DropCoin()
     {
-        damageCooldown -= Time.deltaTime;
+        GameObject coin;
+        coin = Instantiate(coinPrefab, gameObject.transform);
 
-        // Only Melee enemies seek
-        if (CompareTag("EnemyMelee"))
-        {
-            SeekPlayer();
-        }
-        // Only Ranged enemies handle the "keep distance" logic
-        else if (CompareTag("EnemyRange"))
-        {
-            RetreatPlayer();
-        }
+        
+        coin.transform.SetParent(CoinsParent.transform, true);
+        coin.transform.localScale = new Vector2(2.32f, 2.32f);
+        Debug.Log("Coin Dropped");
+
     }
 }

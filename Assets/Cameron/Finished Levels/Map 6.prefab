@@ -55922,9 +55922,9 @@ MonoBehaviour:
     cost: 2
   - enemyPrefab: {fileID: 6206686502293649972, guid: 64e0953b707835f40adf3d132f20e015, type: 3}
     cost: 2
-  - enemyPrefab: {fileID: 7274872755150959981, guid: 098fb4ea6f9f24e3d9a8c8ad57ad9e23, type: 3}
+  - enemyPrefab: {fileID: 288672466445487221, guid: 7da8dd495107640289cab2580bf6aa3d, type: 3}
     cost: 1
-  - enemyPrefab: {fileID: 3573939418434277820, guid: d1c243d5f9a1c4d59b0b114444c00087, type: 3}
+  - enemyPrefab: {fileID: 3562590354557011895, guid: bf28105826b514248aad99f4104eb049, type: 3}
     cost: 1
   difficulty: 0
   enemiesToSpawn: []

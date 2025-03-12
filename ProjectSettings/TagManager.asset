@@ -3,17 +3,34 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - rightTrig
+  - leftTrig
+  - CombatZone
+  - NotCombatZone
+  - Shield
+  - EnemyMelee
+  - EnemyRange
+  - WaveTxt
+  - ShopMenu
+  - Coin
+  - CurrentCoinsObj
+  - PathFinder
+  - ArrowPointL
+  - ArrowPointR
+  - LeftArrow
+  - RightArrow
+  - arrowSetPoint
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Enemy
+  - Colliders
+  - EnemyBullets
   - 
   - 
   - 
