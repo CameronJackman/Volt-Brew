@@ -695,6 +695,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5e9ea92d25943146a42034fde45b419, type: 3}
+--- !u!1001 &273904125
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 288672466445487221, guid: 7da8dd495107640289cab2580bf6aa3d, type: 3}
+      propertyPath: m_Name
+      value: SlowRanged Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 288672466445487221, guid: 7da8dd495107640289cab2580bf6aa3d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636346681009519961, guid: 7da8dd495107640289cab2580bf6aa3d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636346681009519961, guid: 7da8dd495107640289cab2580bf6aa3d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636346681009519961, guid: 7da8dd495107640289cab2580bf6aa3d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636346681009519961, guid: 7da8dd495107640289cab2580bf6aa3d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636346681009519961, guid: 7da8dd495107640289cab2580bf6aa3d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636346681009519961, guid: 7da8dd495107640289cab2580bf6aa3d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636346681009519961, guid: 7da8dd495107640289cab2580bf6aa3d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636346681009519961, guid: 7da8dd495107640289cab2580bf6aa3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636346681009519961, guid: 7da8dd495107640289cab2580bf6aa3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636346681009519961, guid: 7da8dd495107640289cab2580bf6aa3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7da8dd495107640289cab2580bf6aa3d, type: 3}
 --- !u!1 &281176663
 GameObject:
   m_ObjectHideFlags: 0
@@ -2829,6 +2890,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249049545}
   m_CullTransparentMesh: 1
+--- !u!1001 &1299526541
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1157089090095015441, guid: bf28105826b514248aad99f4104eb049, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157089090095015441, guid: bf28105826b514248aad99f4104eb049, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157089090095015441, guid: bf28105826b514248aad99f4104eb049, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157089090095015441, guid: bf28105826b514248aad99f4104eb049, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157089090095015441, guid: bf28105826b514248aad99f4104eb049, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157089090095015441, guid: bf28105826b514248aad99f4104eb049, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157089090095015441, guid: bf28105826b514248aad99f4104eb049, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157089090095015441, guid: bf28105826b514248aad99f4104eb049, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157089090095015441, guid: bf28105826b514248aad99f4104eb049, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157089090095015441, guid: bf28105826b514248aad99f4104eb049, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562590354557011895, guid: bf28105826b514248aad99f4104eb049, type: 3}
+      propertyPath: m_Name
+      value: SlowMelee Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562590354557011895, guid: bf28105826b514248aad99f4104eb049, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bf28105826b514248aad99f4104eb049, type: 3}
 --- !u!1 &1326829156
 GameObject:
   m_ObjectHideFlags: 0
@@ -74716,7 +74838,7 @@ PrefabInstance:
       objectReference: {fileID: 3535619353788164388, guid: 00d924acd8a2e4aac82f9ae5f1f2de9a, type: 3}
     - target: {fileID: 9025159931729128916, guid: 7c3ad681b25bbb8468ca2dfdb35445b4, type: 3}
       propertyPath: m_SortingOrder
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -86158,6 +86280,8 @@ SceneRoots:
   - {fileID: 2138462600}
   - {fileID: 4277774671095768337}
   - {fileID: 8469995877530500501}
+  - {fileID: 273904125}
+  - {fileID: 1299526541}
   - {fileID: 6738130701987236383}
   - {fileID: 2108650858}
   - {fileID: 645278065}

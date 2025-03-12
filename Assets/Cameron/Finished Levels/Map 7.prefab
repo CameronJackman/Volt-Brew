@@ -27764,9 +27764,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - enemyPrefab: {fileID: 7480679431892186652, guid: 02fd324e09aa0c44e88d23f07b353ff7, type: 3}
-    cost: 1
+    cost: 2
   - enemyPrefab: {fileID: 6206686502293649972, guid: 64e0953b707835f40adf3d132f20e015, type: 3}
     cost: 2
+  - enemyPrefab: {fileID: 288672466445487221, guid: 7da8dd495107640289cab2580bf6aa3d, type: 3}
+    cost: 1
+  - enemyPrefab: {fileID: 3562590354557011895, guid: bf28105826b514248aad99f4104eb049, type: 3}
+    cost: 1
   difficulty: 0
   enemiesToSpawn: []
   spawnLocations:
