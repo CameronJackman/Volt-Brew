@@ -45,6 +45,8 @@ public class PlayerMovement2 : MonoBehaviour
 
     private GameManager gameManager;
 
+    [SerializeField] private ParticleSystem shieldBreak = default;
+
 
     //Projectile shield variables
     public GameObject shieldPrefab;
@@ -297,12 +299,13 @@ public class PlayerMovement2 : MonoBehaviour
 
 
 
-    //Sheild Stuff
+    //Shield Stuff
 
     //Activates projectile shield
     public void ActivateProjectileShield()
     {
         activeProjectileShield = Instantiate(shieldPrefab, transform.position, Quaternion.identity);
+        shieldBreak = Instantiate(shieldBreak, transform.position, Quaternion.identity);
 
         //Set proper scale of shield 
         activeProjectileShield.transform.localScale = Vector3.one * 0.4f;
@@ -319,9 +322,11 @@ public class PlayerMovement2 : MonoBehaviour
         {
             if (activeProjectileShield != null)
             {
-                //Keeps shield on player
+                //Keeps shield & particle effect on player
                 activeProjectileShield.transform.position = gameObject.transform.position;
+                shieldBreak.transform.position = gameObject.transform.position;
             }
+
             timer += Time.deltaTime;
             yield return null;
         }
@@ -329,6 +334,12 @@ public class PlayerMovement2 : MonoBehaviour
         if (activeProjectileShield != null)
         {
             Destroy(activeProjectileShield);
+
+            //Particle explosion effect
+            shieldBreak.Play();
+
+            Debug.Log("shield broke");
+
         }
     }
 }
