@@ -31189,7 +31189,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -416646
+  m_InstanceId: 69398
   m_LocalBounds:
     m_Center: {x: -0.000000059604645, y: 0, z: 0}
     m_Extent: {x: 0.5, y: 0.5, z: 0}
@@ -41402,6 +41402,8 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 7480679431892186652, guid: 02fd324e09aa0c44e88d23f07b353ff7, type: 3}
     cost: 1
   - enemyPrefab: {fileID: 6206686502293649972, guid: 64e0953b707835f40adf3d132f20e015, type: 3}
+    cost: 1
+  - enemyPrefab: {fileID: 710197135316769247, guid: 2b8ed27aecba64614b2a414e8a950752, type: 3}
     cost: 2
   difficulty: 5
   enemiesToSpawn: []
