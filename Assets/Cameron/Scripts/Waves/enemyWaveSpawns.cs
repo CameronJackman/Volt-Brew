@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Animations;
 using Random = UnityEngine.Random;
@@ -37,6 +38,9 @@ public class enemyWaveSpawns : MonoBehaviour
 
     [HideInInspector]
     public int currentAmtEnemys;
+
+    [HideInInspector]
+    public bool Display;
 
     
 
@@ -101,6 +105,7 @@ public class enemyWaveSpawns : MonoBehaviour
                         waveTimer = 0;
                         nextRoomInteract.SetActive(true);
                         dircArrows.SetActive(true);
+                        Display = true;
                     }
                 }
                 else

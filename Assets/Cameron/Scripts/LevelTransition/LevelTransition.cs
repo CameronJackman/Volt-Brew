@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using TMPro;
+using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
@@ -40,9 +43,20 @@ public class LevelTransition : MonoBehaviour
 
     private GameManager gameManager;
 
+    private enemyWaveSpawns waveScript;
+
     // AI Scan Grid
     private bool canScan;
 
+
+    //PowerUpStuff
+    private GameObject[] RarePwrs;
+    private GameObject[] CommonPwrs;
+    public GameObject power;
+    private GameObject displayPosL;
+    private GameObject displayPosR;
+    private bool canDisplay;
+    private bool checkDis;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +66,9 @@ public class LevelTransition : MonoBehaviour
         GreenlevelList = FindObjectOfType<LevelList>().GreenListOfLevels;
         RedlevelList = FindObjectOfType<LevelList>().RedListOfLevels;
         shopObj = FindAnyObjectByType<LevelList>().shopLevel;
+
+        waveScript = FindAnyObjectByType<enemyWaveSpawns>();
+        
 
         fade = false; transition = false;
 
@@ -72,6 +89,17 @@ public class LevelTransition : MonoBehaviour
 
         Interact.CrossFadeAlpha(0.0f, 1.0f, false);
 
+        
+
+
+        if (gameManager.roomsEntered > 0)
+        {
+            power = ChoosePowerUp(power);
+            canDisplay = false;
+            checkDis = true;
+        }
+
+        
         
     }
 
@@ -98,9 +126,34 @@ public class LevelTransition : MonoBehaviour
 
         if (ePress && Input.GetKeyDown(KeyCode.E))
         {
-            if (gameObject.CompareTag("rightTrig") || gameObject.CompareTag("leftTrig"))
+            if (gameObject.CompareTag("rightTrig"))
             {
                 gameManager.EnteredNewRoom();
+
+
+                //pwr2
+                if (power != null)
+                {
+                    gameManager.storedPower = power;
+                }
+
+                transition = true;
+
+                fade = true;
+                ePress = false;
+
+            }
+
+            if (gameObject.CompareTag("leftTrig"))
+            {
+                gameManager.EnteredNewRoom();
+
+
+                //pwr1 
+                if (power != null)
+                {
+                    gameManager.storedPower = power;
+                }
                 
                 transition = true;
 
@@ -109,8 +162,8 @@ public class LevelTransition : MonoBehaviour
 
             }
 
-            
-            
+
+
         }
 
 
@@ -155,10 +208,28 @@ public class LevelTransition : MonoBehaviour
 
             transition = false;
 
-
+            
         }
 
+        if (checkDis)
+        {
+            if (waveScript != null)
+            {
+                canDisplay = waveScript.Display;
+            }
+            
+        }
 
+        
+
+        if (canDisplay)
+        {
+            if (gameManager.roomsEntered > 0)
+            {
+                DisplayPowers();
+            }
+            
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -187,6 +258,69 @@ public class LevelTransition : MonoBehaviour
         }
     }
 
-    
+    private void DisplayPowers()
+    {
 
+        displayPosL = GameObject.FindGameObjectWithTag("ArrowPointL");
+        displayPosR = GameObject.FindGameObjectWithTag("ArrowPointR");
+
+        if (gameObject.CompareTag("leftTrig"))
+        {
+            GameObject pwr1 = Instantiate(power, displayPosL.transform);
+            pwr1.GetComponent<Collider2D>().enabled = false;
+            Debug.Log("Display Left");
+        }
+
+        if (gameObject.CompareTag("rightTrig"))
+        {
+            GameObject pwr2 = Instantiate(power, displayPosR.transform);
+            pwr2.GetComponent<Collider2D>().enabled = false;
+            Debug.Log("Display right");
+        }
+
+
+        canDisplay = false;
+        checkDis = false;
+    }
+
+    private GameObject ChoosePowerUp(GameObject pwr)
+    {
+        RarePwrs = FindObjectOfType<LevelList>().LessCommonPowerUps;
+        CommonPwrs = FindObjectOfType<LevelList>().CommonPowerUps;
+
+
+        if (RarePwrs.Count() != 0 && CommonPwrs.Count() != 0)
+        {
+            int num = Random.Range(0, 10);
+
+            //if the number is 10 then give the player a rare power up choice (10%)
+            if (num == 10)
+            {
+                int x = Random.Range(0, RarePwrs.Count());
+                pwr = RarePwrs[x];
+                Debug.Log("Random Power Generated");
+                // gameManager.storedPower = RarePwrs[x];
+            }
+            //if the number is 0-9 give the player a common power up choice (90%)
+            else
+            {
+                int x = Random.Range(0, CommonPwrs.Count());
+                pwr = CommonPwrs[x];
+                Debug.Log("Random Power Generated");
+                //gameManager.storedPower = CommonPwrs[x];
+            }
+
+
+            //displayPowerUps;
+            
+        }
+
+
+        if (pwr == null)
+        {
+            Debug.LogWarning("No valid power-up selected, returning default.");
+        }
+
+        return pwr;
+    }
 }

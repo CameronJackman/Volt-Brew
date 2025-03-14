@@ -44,10 +44,14 @@ public class Enemy : MonoBehaviour
 
     // end AI Variables
 
-    
+    private GameObject curPower;
+
+    private GameManager gameManager;
 
     private void Awake()
     {
+        gameManager = FindAnyObjectByType<GameManager>();
+
         //ai pathfinding start
         target = GameObject.FindGameObjectWithTag("Player").transform;
         seeker = GetComponent<Seeker>();
@@ -69,6 +73,8 @@ public class Enemy : MonoBehaviour
         CoinsParent = GameObject.FindGameObjectWithTag("CurrentCoinsObj");
 
     }
+
+
     void FixedUpdate()
     {
         //Ai Stuff
@@ -189,6 +195,8 @@ public class Enemy : MonoBehaviour
 
 
         damageCooldown -= Time.deltaTime;
+
+        curPower = gameManager.storedPower;
     }
 
 
@@ -281,5 +289,13 @@ public class Enemy : MonoBehaviour
         coin.transform.localScale = new Vector2(2.32f, 2.32f);
         Debug.Log("Coin Dropped");
 
+    }
+
+    public void DropPowerUp()
+    {
+        GameObject PowerUpCollectable = Instantiate(curPower, gameObject.transform);
+        PowerUpCollectable.transform.SetParent(CoinsParent.transform, true);
+
+        Debug.Log("PowerUp Dropped");
     }
 }

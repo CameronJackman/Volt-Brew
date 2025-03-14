@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     public double coins;
 
 
+    //hide this
+    public GameObject storedPower;
     
 
 
