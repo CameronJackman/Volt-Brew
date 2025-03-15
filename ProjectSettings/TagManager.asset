@@ -21,6 +21,7 @@ TagManager:
   - LeftArrow
   - RightArrow
   - arrowSetPoint
+  - bullets
   layers:
   - Default
   - TransparentFX
@@ -31,7 +32,7 @@ TagManager:
   - Enemy
   - Colliders
   - EnemyBullets
-  - 
+  - Bullets
   - 
   - 
   - 
