@@ -19,6 +19,7 @@ public class Health : MonoBehaviour
 
     private enemyWaveSpawns curEnemySpawnScpt;
 
+    private Enemy enemyScript;
 
 
     void Start()
@@ -26,6 +27,11 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth;
         
         gameManager = FindAnyObjectByType<GameManager>();
+
+        if (gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            enemyScript = GetComponent<Enemy>();
+        }
         
     }
 
@@ -54,10 +60,19 @@ public class Health : MonoBehaviour
 
         else if (currentHealth <= 0 && gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
+            if (curEnemySpawnScpt.currentAmtEnemys == 1 && curEnemySpawnScpt.enemiesToSpawn.Count == 0 && curEnemySpawnScpt.amountOfWaves == 0 && gameManager.storedPower != null)
+            {
+                enemyScript.DropPowerUp();
+                curEnemySpawnScpt.currentAmtEnemys--;
+                Destroy(gameObject);
+            }
+            else
+            {
+                curEnemySpawnScpt.currentAmtEnemys--;
+                enemyScript.DropCoin();
+                Destroy(gameObject);
+            }
             
-            Destroy(gameObject);
-            curEnemySpawnScpt.currentAmtEnemys--;
-
         }
 
     }

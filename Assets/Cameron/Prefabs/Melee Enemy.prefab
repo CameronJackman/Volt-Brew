@@ -103,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  spawner: {fileID: 0}
 --- !u!114 &1836340044178911992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,10 +118,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contactDamage: 10
   damageCooldown: 1
-  player: {fileID: 0}
-  moveSpeed: 0.5
   spawnCooldown: 2
   enemyDistance: 4
+  amountOfCoinsDropped: 0
+  coinPrefab: {fileID: 0}
+  moveSpeed: 0.5
+  nextWayPointDistance: 3
+  aiPath: {fileID: 0}
 --- !u!50 &6554746233631369408
 Rigidbody2D:
   serializedVersion: 4

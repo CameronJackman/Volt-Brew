@@ -12,6 +12,15 @@ TagManager:
   - EnemyMelee
   - EnemyRange
   - WaveTxt
+  - ShopMenu
+  - Coin
+  - CurrentCoinsObj
+  - PathFinder
+  - ArrowPointL
+  - ArrowPointR
+  - LeftArrow
+  - RightArrow
+  - arrowSetPoint
   layers:
   - Default
   - TransparentFX
@@ -20,8 +29,8 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - 
-  - 
+  - Colliders
+  - EnemyBullets
   - 
   - 
   - 

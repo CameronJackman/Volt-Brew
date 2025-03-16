@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerMovement2 : MonoBehaviour
 {
+
     [SerializeField] private RobotScript _rs;
-    public SpriteRenderer sr;
 
     public float moveSpeed = 1.5f;
+    
 
-    public float acceleration = 11f;
+    public float acceleration = 11f;   
     public float deceleration = 15f;
 
     //Dash Settings
@@ -19,22 +20,19 @@ public class PlayerMovement2 : MonoBehaviour
     public float dashSpeedMultiplier = 3f;
     public float dashCoolDownTime = 1.5f;
 
-    private float dashCoolDownTimer = 0f;
+    [HideInInspector] public float dashCoolDownTimer = 0f;
 
     public bool isoToggle = false;
     private Vector2 isoRight = new Vector2(-1.75f, 1.0f);
     private Vector2 isoUp = new Vector2(1.75f, 1.0f);
 
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     private Vector2 currentVelocity = Vector2.zero;
     private Vector2 rawInput = Vector2.zero;
 
+    
     public bool isDashing = false;
-    public bool isKnockback = false;
-    private float knockbackTimer = 0f;
-    public float knockbackDuration = 0.1f;
-
     private bool spawnLeft = true;
 
     private PlayerDefault _PD;
@@ -45,13 +43,17 @@ public class PlayerMovement2 : MonoBehaviour
     public string _mouseInputName = "MouseKey";
     public string _controllerInputName = "Controller";
 
+    private GameManager gameManager;
+
+
+    //Projectile shield variables
+    public GameObject shieldPrefab;
+    private GameObject activeProjectileShield;
+
+    [HideInInspector] public bool isProjectileShieldOwned;
 
     void Awake()
     {
-        if (sr == null)
-        {
-            sr = GetComponent<SpriteRenderer>();
-        }
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0f;
         _PD = new PlayerDefault();
@@ -59,7 +61,11 @@ public class PlayerMovement2 : MonoBehaviour
         Transform rotatePoint = transform.Find("RotatePoint");
         _rs = rotatePoint.GetComponent<RobotScript>();
         _onAimWithController = ctx => _rs.AimAtScreenPosition(ctx.ReadValue<Vector2>());
+        gameManager = FindAnyObjectByType<GameManager>();
+
     }
+
+  
 
     public void UpdateCurrentControlScheme()
     {
@@ -82,10 +88,18 @@ public class PlayerMovement2 : MonoBehaviour
 
     void Update()
     {
+        //shield
+        if (Input.GetKeyDown(KeyCode.C) && activeProjectileShield == null && isProjectileShieldOwned == true)
+        {
+            ActivateProjectileShield();
+        }
+
+
         if (dashCoolDownTimer > 0)
         {
             dashCoolDownTimer -= Time.deltaTime;
         }
+
     }
 
     void MovePlayer(InputAction.CallbackContext ctx)
@@ -96,28 +110,25 @@ public class PlayerMovement2 : MonoBehaviour
         rawInput = new Vector2(horizontal, vertical).normalized;
     }
 
+   
+
     void FixedUpdate()
     {
-        // If the player is dashing or in knockback, skip normal movement logic.
-        if (isDashing)
-            return;
-        if (isKnockback)
-        {
-            knockbackTimer -= Time.fixedDeltaTime;
-            if (knockbackTimer <= 0f)
-            {
-                isKnockback = false;
-            }
-            // Do not override the knockback velocity.
-            return;
-        }
+
+        if (isDashing) return;
 
         if (isoToggle)
         {
             Vector2 desiredMove = rawInput.x * -isoRight + rawInput.y * isoUp;
+
+
             Vector2 targetVelocity = (desiredMove * moveSpeed);
+
+
+
             if (desiredMove != Vector2.zero)
             {
+
                 currentVelocity = Vector2.MoveTowards(
                     currentVelocity,
                     targetVelocity,
@@ -126,20 +137,29 @@ public class PlayerMovement2 : MonoBehaviour
             }
             else
             {
+
                 currentVelocity = Vector2.MoveTowards(
                     currentVelocity,
                     Vector2.zero,
                     deceleration * Time.fixedDeltaTime
                 );
             }
+
+
             rb.velocity = currentVelocity;
         }
         else
         {
-            Vector2 desiredMove = new Vector2(rawInput.x * 2, rawInput.y * 2);
+            Vector2 desiredMove = new Vector2 (rawInput.x * 2 , rawInput.y * 2);
+
+
             Vector2 targetVelocity = desiredMove * moveSpeed;
+
+
+
             if (desiredMove != Vector2.zero)
             {
+
                 currentVelocity = Vector2.MoveTowards(
                     currentVelocity,
                     targetVelocity,
@@ -148,15 +168,23 @@ public class PlayerMovement2 : MonoBehaviour
             }
             else
             {
+
                 currentVelocity = Vector2.MoveTowards(
                     currentVelocity,
                     Vector2.zero,
                     deceleration * Time.fixedDeltaTime
                 );
             }
+
+
             rb.velocity = currentVelocity;
         }
+
+        
+        
     }
+
+
 
     private void OnDashPerformed(InputAction.CallbackContext ctx)
     {
@@ -167,8 +195,12 @@ public class PlayerMovement2 : MonoBehaviour
     }
     private void OnAimWithMouse(InputAction.CallbackContext ctx)
     {
+        // This is for actual mouse SCREEN coordinates
         _rs.AimAtScreenPosition(ctx.ReadValue<Vector2>());
     }
+
+    
+
     private void OnFiring(InputAction.CallbackContext ctx)
     {
         _rs.Firing();
@@ -176,67 +208,128 @@ public class PlayerMovement2 : MonoBehaviour
     private void OnEnable()
     {
         _PD.Enable();
+
         _PD.DefaultMovement.Movement.performed += MovePlayer;
         _PD.DefaultMovement.Movement.canceled += MovePlayer;
+
         _PD.DefaultMovement.Dash.performed += OnDashPerformed;
+
         _PD.DefaultMovement.Aiming.performed += OnAimWithMouse;
         _PD.DefaultMovement.Aiming.canceled += OnAimWithMouse;
+
         _PD.DefaultMovement.AimingController.performed += OnAimWithController;
         _PD.DefaultMovement.AimingController.canceled += OnAimWithController;
+
         _PD.DefaultMovement.firing.started += OnFiring;
     }
     private void OnDisable()
     {
         _PD.Disable();
+
         _PD.DefaultMovement.Movement.performed -= MovePlayer;
         _PD.DefaultMovement.Movement.canceled -= MovePlayer;
+
         _PD.DefaultMovement.Dash.performed -= OnDashPerformed;
+
         _PD.DefaultMovement.Aiming.performed -= OnAimWithMouse;
         _PD.DefaultMovement.Aiming.canceled -= OnAimWithMouse;
+
         _PD.DefaultMovement.Aiming.performed -= OnAimWithController;
-        _PD.DefaultMovement.AimingController.performed -= OnAimWithController;
-        _PD.DefaultMovement.AimingController.canceled -= OnAimWithController;
+        _PD.DefaultMovement.Aiming.canceled -= OnAimWithController;
+
         _PD.DefaultMovement.firing.started -= OnFiring;
+
     }
+
     private void OnAimWithController(InputAction.CallbackContext ctx)
     {
         _rs.AimWithController(ctx.ReadValue<Vector2>());
     }
+
     private IEnumerator PerformDash()
     {
         isDashing = true;
+
         Vector2 originalVelocity = rb.velocity;
         rb.velocity = originalVelocity * dashSpeedMultiplier;
+
         yield return new WaitForSeconds(dashDuration);
+
         isDashing = false;
         rb.velocity = originalVelocity;
+
         dashCoolDownTimer = dashCoolDownTime;
     }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("leftTrig"))
         {
             spawnLeft = true;
         }
+
         if (collision.CompareTag("rightTrig"))
         {
             spawnLeft = false;
         }
+
+        if (collision.CompareTag("Coin"))
+        {
+            gameManager.coins++;
+            Destroy(collision.gameObject);
+        }
     }
+
     public bool spawnLocationCheck()
     {
         return spawnLeft;
     }
+
     public void setLocation(GameObject targetLocation)
     {
         gameObject.transform.position = targetLocation.transform.position;
     }
 
-    public void ApplyKnockback(Vector2 force)
-    {
 
-        isKnockback = true;
-        knockbackTimer = knockbackDuration;
-        rb.velocity = force;
+
+
+
+
+
+    //Sheild Stuff
+
+    //Activates projectile shield
+    public void ActivateProjectileShield()
+    {
+        activeProjectileShield = Instantiate(shieldPrefab, transform.position, Quaternion.identity);
+
+        //Set proper scale of shield 
+        activeProjectileShield.transform.localScale = Vector3.one * 0.4f;
+
+        //Start coroutine to follow player
+        StartCoroutine(FollowPlayerForSeconds(5f));
+    }
+
+    //Makes the projectile shield follow the player 
+    IEnumerator FollowPlayerForSeconds(float seconds)
+    {
+        float timer = 0f;
+        while (timer < seconds)
+        {
+            if (activeProjectileShield != null)
+            {
+                //Keeps shield on player
+                activeProjectileShield.transform.position = gameObject.transform.position;
+            }
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        if (activeProjectileShield != null)
+        {
+            Destroy(activeProjectileShield);
+        }
     }
 }
+

@@ -35,6 +35,8 @@ public class EnemyProjectileScript : MonoBehaviour
             _player = playerObj.GetComponent<PlayerMovement2>();
         }
 
+        
+
         //Destroy after projectileLife seconds
         Destroy(gameObject, projectileLife); 
     }
@@ -66,6 +68,10 @@ public class EnemyProjectileScript : MonoBehaviour
         //{
         //    Destroy(gameObject);
         //}
+
+
+        //Destroys On collision with anything with collider
+        Destroy(gameObject);
     }
 
     private IEnumerator DamageFeedback()
