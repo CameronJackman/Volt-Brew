@@ -6,7 +6,7 @@ public class ParrallaxBackgroundEffect : MonoBehaviour
 {
     private float startPos;
     private float startPosY;
-    public GameObject cam;
+    private GameObject cam;
     public float parallaxEffect;
 
 
@@ -16,7 +16,7 @@ public class ParrallaxBackgroundEffect : MonoBehaviour
         startPos = transform.position.x;
         startPosY = transform.position.y;
 
-
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     // Update is called once per frame
