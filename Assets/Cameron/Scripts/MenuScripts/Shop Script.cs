@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShopScript : MonoBehaviour
 {
     [SerializeField] private TMP_Text Interact;
-    [SerializeField] private GameObject shopMenu;
+    private shopHud shopMenu;
     private bool ePress = false;
 
     private Health playerHealth;
     private PlayerMovement2 playerMovement;
     private GameManager gameManager;
+    
 
     private bool canBuy = true;
 
@@ -20,7 +22,6 @@ public class ShopScript : MonoBehaviour
     private float healthCost;
     public float projectileShieldCost;
 
-    
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,10 @@ public class ShopScript : MonoBehaviour
         playerMovement = FindAnyObjectByType<PlayerMovement2>();
         playerHealth = playerMovement.GetComponent<Health>();
         gameManager = FindAnyObjectByType<GameManager>();
+        
+        shopMenu = FindObjectOfType<shopHud>(true);
+
+        shopMenu.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,7 +44,7 @@ public class ShopScript : MonoBehaviour
         //Set shop menu active
         if (ePress == true && Input.GetKeyDown(KeyCode.E) && shopMenu != null && canBuy == true)
         {
-            shopMenu.SetActive(true);
+            shopMenu.gameObject.SetActive(true);
 
             Time.timeScale = 0.0f;
         }
@@ -76,7 +81,7 @@ public class ShopScript : MonoBehaviour
     public void CloseMenu()
     {
         Time.timeScale = 1.0f;
-        shopMenu.SetActive(false);
+        shopMenu.gameObject.SetActive(false);
     }
 
     //SHOP ITEM #1 --> Health Pot

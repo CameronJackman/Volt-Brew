@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
 
         // display coins
 
-        coinsTxt.text = ("Coins: " + coins);
+        coinsTxt.text = ("Scrap: " + coins);
         
     }
 
