@@ -8,6 +8,7 @@ public class EnemyMovementDiya : MonoBehaviour
     public Transform[] patrolPoints;
     public float moveSpeed;
     public int patrolDestination;
+    private float pauseTime = 0.5f;
 
     public Transform playerTransform;
     public bool isChasing;
@@ -42,21 +43,40 @@ public class EnemyMovementDiya : MonoBehaviour
 
             if (patrolDestination == 0)
             {
-                transform.position = Vector2.MoveTowards(transform.position, patrolPoints[0].position, moveSpeed * Time.deltaTime);
-                if (Vector2.Distance(transform.position, patrolPoints[0].position) < .2f)
-                {
-                    patrolDestination = 1;
-                }
+                
+                    transform.position = Vector2.MoveTowards(transform.position, patrolPoints[0].position, moveSpeed * Time.deltaTime);
+                    if (Vector2.Distance(transform.position, patrolPoints[0].position) < .2f)
+                    {
+                        pauseTime -= Time.deltaTime;
+                        if (pauseTime <= 0)
+                        {
+                            patrolDestination = 1;
+                            pauseTime = 0.5f;
+                        }
+                        
+                    }
+                
             }
+            
 
             if (patrolDestination == 1)
             {
-                transform.position = Vector2.MoveTowards(transform.position, patrolPoints[1].position, moveSpeed * Time.deltaTime);
-                if (Vector2.Distance(transform.position, patrolPoints[1].position) < .2f)
-                {
-                    patrolDestination = 0;
+               
+                    transform.position = Vector2.MoveTowards(transform.position, patrolPoints[1].position, moveSpeed * Time.deltaTime);
+                    if (Vector2.Distance(transform.position, patrolPoints[1].position) < .2f)
+                    {
+                        pauseTime -= Time.deltaTime;
+
+                        if (pauseTime <= 0)
+                        {
+                            patrolDestination = 0;
+                            pauseTime = 0.5f;
+                        }
+                        
+                    }
                 }
+                
             }
+            
         }
     }               
-}
