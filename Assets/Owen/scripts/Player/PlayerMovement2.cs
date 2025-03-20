@@ -46,6 +46,9 @@ public class PlayerMovement2 : MonoBehaviour
     private GameManager gameManager;
 
 
+    [SerializeField]
+    private SpriteRenderer playerGFX;
+
     //Projectile shield variables
     public GameObject shieldPrefab;
     private GameObject activeProjectileShield;
@@ -108,6 +111,15 @@ public class PlayerMovement2 : MonoBehaviour
         float horizontal = input.x;
         float vertical = input.y;
         rawInput = new Vector2(horizontal, vertical).normalized;
+
+        if (horizontal >= 1)
+        {
+            playerGFX.flipX = true;
+        }
+        else if (horizontal <= -1)
+        {
+            playerGFX.flipX = false;
+        }
     }
 
    

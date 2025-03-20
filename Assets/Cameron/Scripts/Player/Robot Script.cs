@@ -8,6 +8,10 @@ public class RobotScript : MonoBehaviour
     private GameObject bullet;
     [SerializeField]
     private GameObject bulletSpawn;
+    [SerializeField]
+    private SpriteRenderer robotGFX;
+
+    
 
    
     
@@ -31,6 +35,15 @@ public class RobotScript : MonoBehaviour
             Vector3 direction = worldPos - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+            if (angle <= 90 && angle >= -90)
+            {
+                robotGFX.flipY = false;
+            }
+            else
+            {
+                robotGFX.flipY = true;
+            }
         }
     }
 
@@ -44,6 +57,8 @@ public class RobotScript : MonoBehaviour
             {
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(0, 0, angle);
+
+              
             }
         }
            
@@ -54,6 +69,7 @@ public class RobotScript : MonoBehaviour
         if (Time.deltaTime != 0)
         {
             Instantiate(bullet, bulletSpawn.transform.position, transform.rotation);
+            
         }
         
     }

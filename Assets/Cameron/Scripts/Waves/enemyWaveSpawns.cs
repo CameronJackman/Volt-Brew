@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
 public class enemyWaveSpawns : MonoBehaviour
@@ -42,6 +43,10 @@ public class enemyWaveSpawns : MonoBehaviour
     [HideInInspector]
     public bool Display;
 
+    [SerializeField]
+    private GameObject SpawnParticle;
+
+    private bool start;
     
 
     void Start()
@@ -59,6 +64,8 @@ public class enemyWaveSpawns : MonoBehaviour
 
         dircArrows.SetActive(false);
     }
+
+    
 
     void FixedUpdate()
     {
@@ -79,7 +86,10 @@ public class enemyWaveSpawns : MonoBehaviour
                     if (enemiesToSpawn.Count > 0 && spawnTimer <= 0)
                     {
                         int spawnPoint = Random.Range(0, spawnLocations.Count);
-                        Instantiate(enemiesToSpawn[0], spawnLocations[spawnPoint].position, Quaternion.identity);
+                        GameObject particleSpawn = Instantiate(SpawnParticle, spawnLocations[spawnPoint].position, Quaternion.identity);
+
+                        Destroy(particleSpawn, 5);
+                        GameObject Enemy = Instantiate(enemiesToSpawn[0], spawnLocations[spawnPoint].position, Quaternion.identity);
                         currentAmtEnemys++;
                         enemiesToSpawn.RemoveAt(0);
                         spawnTimer = spawnInterval;

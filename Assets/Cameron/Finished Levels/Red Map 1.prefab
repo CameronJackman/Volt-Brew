@@ -11615,7 +11615,7 @@ MonoBehaviour:
   - {x: 1.2627023, y: -3.8488448, z: 0}
   m_ShapePathHash: -1097978694
   m_Mesh: {fileID: 0}
-  m_InstanceId: -246696
+  m_InstanceId: 452178
   m_LocalBounds:
     m_Center: {x: -0.2062366, y: -1.0017495, z: 0}
     m_Extent: {x: 3.424351, y: 3.022427, z: 0}
@@ -24651,7 +24651,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0dd12bc10c29f42b96c76b14923b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
   parallaxEffect: -1
 --- !u!1 &5596925149435552771
 GameObject:
@@ -27819,7 +27818,7 @@ MonoBehaviour:
   - {x: -7.0255604, y: -0.6344399, z: 0}
   m_ShapePathHash: -496457658
   m_Mesh: {fileID: 0}
-  m_InstanceId: -246738
+  m_InstanceId: 451866
   m_LocalBounds:
     m_Center: {x: -7.800174, y: 1.3330102, z: 0}
     m_Extent: {x: 0.77461386, y: 1.9844419, z: 0}
@@ -28724,7 +28723,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -246678
+  m_InstanceId: 451828
   m_LocalBounds:
     m_Center: {x: -0.000000059604645, y: 0, z: 0}
     m_Extent: {x: 0.5, y: 0.5, z: 0}
@@ -30364,6 +30363,7 @@ MonoBehaviour:
   nextRoomInteract: {fileID: 4411210719545654050}
   currentAmtEnemys: 0
   Display: 0
+  SpawnParticle: {fileID: 6583330533235266405, guid: 26da0eab84b658e4dad8c48ff97d031a, type: 3}
 --- !u!60 &1408577567522694836
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -37329,7 +37329,7 @@ MonoBehaviour:
   - {x: 17.831253, y: -1.1094859, z: 0}
   m_ShapePathHash: 960931461
   m_Mesh: {fileID: 0}
-  m_InstanceId: -246744
+  m_InstanceId: 452210
   m_LocalBounds:
     m_Center: {x: 17.793522, y: 1.1654227, z: 0}
     m_Extent: {x: 0.69390583, y: 2.2749085, z: 0}

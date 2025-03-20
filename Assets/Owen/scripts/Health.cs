@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -20,6 +21,10 @@ public class Health : MonoBehaviour
     private enemyWaveSpawns curEnemySpawnScpt;
 
     private Enemy enemyScript;
+
+    [SerializeField]
+    private GameObject enemyDeathParticle;
+
 
 
     void Start()
@@ -43,8 +48,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(float damage)
     {
             currentHealth -= damage;
-            
-            
+        Debug.Log(currentHealth -= damage);
     }
 
     private void Update()
@@ -64,6 +68,7 @@ public class Health : MonoBehaviour
             {
                 enemyScript.DropPowerUp();
                 curEnemySpawnScpt.currentAmtEnemys--;
+                Instantiate(enemyDeathParticle, gameObject.transform.position, gameObject.transform.rotation);
                 Destroy(gameObject);
             }
             else
