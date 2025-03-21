@@ -45,6 +45,10 @@ public class PlayerMovement2 : MonoBehaviour
 
     private GameManager gameManager;
 
+    public GameObject shieldBreakParticle;
+    public Transform particlePoint;
+    private bool shieldCoroutineFinished;
+
 
     [SerializeField]
     private SpriteRenderer playerGFX;
@@ -95,6 +99,11 @@ public class PlayerMovement2 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C) && activeProjectileShield == null && isProjectileShieldOwned == true)
         {
             ActivateProjectileShield();
+        }
+
+        if (shieldCoroutineFinished)
+        {
+            BreakShield();
         }
 
 
@@ -309,18 +318,24 @@ public class PlayerMovement2 : MonoBehaviour
 
 
 
-    //Sheild Stuff
+    //Shield Stuff
 
     //Activates projectile shield
     public void ActivateProjectileShield()
     {
         activeProjectileShield = Instantiate(shieldPrefab, transform.position, Quaternion.identity);
+        //shieldBreak = Instantiate(shieldBreak, transform.position, Quaternion.identity);
 
         //Set proper scale of shield 
         activeProjectileShield.transform.localScale = Vector3.one * 0.4f;
 
         //Start coroutine to follow player
         StartCoroutine(FollowPlayerForSeconds(5f));
+
+        //if (shieldCoroutineFinished)
+        //{
+        //    BreakShield();
+        //}
     }
 
     //Makes the projectile shield follow the player 
@@ -334,6 +349,7 @@ public class PlayerMovement2 : MonoBehaviour
                 //Keeps shield on player
                 activeProjectileShield.transform.position = gameObject.transform.position;
             }
+
             timer += Time.deltaTime;
             yield return null;
         }
@@ -341,6 +357,22 @@ public class PlayerMovement2 : MonoBehaviour
         if (activeProjectileShield != null)
         {
             Destroy(activeProjectileShield);
+
+            Debug.Log("shield broke");
+
+            shieldCoroutineFinished = false;
+
+        }
+        shieldCoroutineFinished = true;
+    }
+
+    public void BreakShield()
+    {
+        if (particlePoint != null && shieldBreakParticle != null)
+        {
+            GameObject shieldBreak = Instantiate(shieldBreakParticle, particlePoint.position, particlePoint.rotation, particlePoint);
+            //Destroy(shieldBreak);
+            Debug.Log("Shield particlessss");
         }
     }
 }
