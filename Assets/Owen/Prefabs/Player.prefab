@@ -47,6 +47,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 7791308116691661569, guid: 9f9e336e4911ca04db06709779b430c1, type: 3}
   bulletSpawn: {fileID: 7536218441642393950}
+--- !u!1 &4865227077705330241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6416033304735727442}
+  m_Layer: 3
+  m_Name: ParticlePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6416033304735727442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4865227077705330241}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2916840406023471784}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5161750051331654105
 GameObject:
   m_ObjectHideFlags: 0
@@ -83,6 +114,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3261126167491627114}
+  - {fileID: 6416033304735727442}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9025159931729128916
@@ -171,9 +203,15 @@ MonoBehaviour:
   dashDuration: 0.25
   dashSpeedMultiplier: 3
   dashCoolDownTime: 1.5
+  dashCoolDownTimer: 0
+  isoToggle: 0
   isDashing: 0
   _mouseInputName: MouseKey
   _controllerInputName: Controller
+  shieldBreakParticle: {fileID: 0}
+  particlePoint: {fileID: 6416033304735727442}
+  shieldPrefab: {fileID: 0}
+  isProjectileShieldOwned: 0
 --- !u!50 &1750101640549065154
 Rigidbody2D:
   serializedVersion: 4

@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 7081645330283787551}
   - component: {fileID: 4154274624363762674}
   - component: {fileID: 7959404015330037147}
-  - component: {fileID: 8335670370927566093}
   - component: {fileID: 8830470855324173546}
+  - component: {fileID: 741887587726924308}
   m_Layer: 6
   m_Name: RoboD
   m_TagString: EnemyRange
@@ -190,21 +190,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.25219256, y: 0.80242586}
   m_Size: {x: 1.840637, y: 4.6747527}
   m_Direction: 0
---- !u!114 &8335670370927566093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 710197135316769247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abdc4fff70bf844d4986dd8083411a09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 4760067515189485537, guid: 6c0b9d23308da1642808196c5842cc7b, type: 3}
-  firePoint: {fileID: 5663944694149593763}
-  fireRate: 1.5
 --- !u!114 &8830470855324173546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +218,25 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &741887587726924308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710197135316769247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e1b459f9c5714ecabcfa9e082310a14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beamPrefab: {fileID: 2941790372162230208, guid: a7062a79440824a069a7c8c2003d3088, type: 3}
+  firePoint: {fileID: 5663944694149593763}
+  beamDuration: 2
+  pauseTime: 1
+  chargeTime: 0.5
+  shootInterval: 3
+  beamFinalSize: {x: 1, y: 3}
 --- !u!1 &1064850456858958596
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,7 +705,7 @@ Transform:
   m_GameObject: {fileID: 8636293066883887020}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.79, y: 1.57, z: 0}
+  m_LocalPosition: {x: -0.16, y: 1.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

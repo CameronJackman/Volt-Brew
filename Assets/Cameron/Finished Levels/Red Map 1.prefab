@@ -12442,7 +12442,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 54738
+  m_InstanceId: 333886
   m_LocalBounds:
     m_Center: {x: -0.000000059604645, y: 0, z: 0}
     m_Extent: {x: 0.5, y: 0.5, z: 0}
@@ -13197,6 +13197,7 @@ MonoBehaviour:
   fadeSpeed: 3
   fadeDuration: 200
   Interact: {fileID: 208107679377280770}
+  power: {fileID: 0}
 --- !u!1 &4506460453354931889
 GameObject:
   m_ObjectHideFlags: 0
@@ -20145,6 +20146,7 @@ MonoBehaviour:
   amountOfWaves: 3
   nextRoomInteract: {fileID: 8349697321155959793}
   currentAmtEnemys: 0
+  Display: 0
 --- !u!60 &7588953263355607264
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -26311,6 +26313,7 @@ MonoBehaviour:
   fadeSpeed: 3
   fadeDuration: 200
   Interact: {fileID: 8888301497358382266}
+  power: {fileID: 0}
 --- !u!1 &8436099401749290050
 GameObject:
   m_ObjectHideFlags: 0

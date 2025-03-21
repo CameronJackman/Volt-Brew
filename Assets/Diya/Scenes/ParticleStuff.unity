@@ -14966,6 +14966,10 @@ PrefabInstance:
       propertyPath: shieldPrefab
       value: 
       objectReference: {fileID: 6192802755375333213, guid: 276c49f8468774000a45eb305e156f05, type: 3}
+    - target: {fileID: 7379014621859030182, guid: 7c3ad681b25bbb8468ca2dfdb35445b4, type: 3}
+      propertyPath: shieldBreakParticle
+      value: 
+      objectReference: {fileID: 1696261754146646202, guid: bb1635af66c7b4ed78061ecb38747513, type: 3}
     - target: {fileID: 9025159931729128916, guid: 7c3ad681b25bbb8468ca2dfdb35445b4, type: 3}
       propertyPath: m_SortingOrder
       value: 3
@@ -17415,7 +17419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f6eedd7d30214aae08b4821038da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomsEntered: 5
+  roomsEntered: 4
   difficulty: 2
   secBetweenEnemySpawns: 3
   wavesLeftTxt: {fileID: 1393441382}
@@ -17423,6 +17427,7 @@ MonoBehaviour:
   enemysLeftTxt: {fileID: 1964286555}
   coinsTxt: {fileID: 1434201072}
   coins: 10
+  storedPower: {fileID: 0}
 --- !u!4 &967058033
 Transform:
   m_ObjectHideFlags: 0
@@ -22215,6 +22220,8 @@ MonoBehaviour:
   - {fileID: 8194350268129316975, guid: 715ad8a305cd474438ef563814728059, type: 3}
   - {fileID: 3602008551736579265, guid: bd21a489cc1f0d648b721cdbab907d81, type: 3}
   shopLevel: {fileID: 3909430958154520766, guid: 94e4bf292f3b68047be1905bad45378c, type: 3}
+  CommonPowerUps: []
+  LessCommonPowerUps: []
 --- !u!156049354 &1245480530
 Grid:
   m_ObjectHideFlags: 0
@@ -23007,6 +23014,7 @@ MonoBehaviour:
   fadeSpeed: 3
   fadeDuration: 200
   Interact: {fileID: 1660776827}
+  power: {fileID: 0}
 --- !u!60 &1327353389
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -44069,6 +44077,7 @@ MonoBehaviour:
   fadeSpeed: 3
   fadeDuration: 200
   Interact: {fileID: 736882342}
+  power: {fileID: 0}
 --- !u!60 &1837796122
 PolygonCollider2D:
   m_ObjectHideFlags: 0
