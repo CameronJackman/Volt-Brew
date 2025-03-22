@@ -45,6 +45,10 @@ public class PlayerMovement2 : MonoBehaviour
 
     private GameManager gameManager;
 
+    public GameObject shieldBreakParticle;
+    public Transform particlePoint;
+    private bool shieldCoroutineFinished;
+
 
     [SerializeField]
     private SpriteRenderer playerGFX;
@@ -52,6 +56,16 @@ public class PlayerMovement2 : MonoBehaviour
     //Projectile shield variables
     public GameObject shieldPrefab;
     private GameObject activeProjectileShield;
+
+
+    Animator _animator;  ///-----------------------------------------------------------------Q ADDED
+
+    public Transform _DashPoint;
+    public GameObject _DashParticle;
+
+
+    private Animator gfxAnimator;
+
 
     [HideInInspector] public bool isProjectileShieldOwned;
 
@@ -68,11 +82,17 @@ public class PlayerMovement2 : MonoBehaviour
         _onAimWithController = ctx => _rs.AimAtScreenPosition(ctx.ReadValue<Vector2>());
         gameManager = FindAnyObjectByType<GameManager>();
 
+        _animator = GetComponent<Animator>(); ///-----------------------------------------------------------------Q ADDED
+
         gfxAnimator = playerGFX.gameObject.GetComponent<Animator>();
+
+        UnityEngine.Cursor.visible = false; ///-----------------------------------------------------------------Q ADDED
+        UnityEngine.Cursor.lockState = CursorLockMode.Confined; ///-----------------------------------------------------------------Q ADDED
+
 
     }
 
-  
+
 
     public void UpdateCurrentControlScheme()
     {
@@ -101,24 +121,52 @@ public class PlayerMovement2 : MonoBehaviour
             ActivateProjectileShield();
         }
 
+        if (shieldCoroutineFinished)
+        {
+            BreakShield();
+        }
+
 
         if (dashCoolDownTimer > 0)
         {
             dashCoolDownTimer -= Time.deltaTime;
         }
 
+     /*   if(_PD.DefaultMovement.Movement.performed)
+        {
+             gfxAnimator.SetBool("isRunning", true);
+        } */
+
     }
 
     void MovePlayer(InputAction.CallbackContext ctx)
     {
+
+        
+
+      
+
         Vector2 input = ctx.ReadValue<Vector2>();
         float horizontal = input.x;
         float vertical = input.y;
+
         rawInput = new Vector2(horizontal, vertical).normalized;
+        if(rawInput == Vector2.zero)
+        {
+            gfxAnimator.SetBool("isRunning", false);
+        }
+        else 
+        {
+            gfxAnimator.SetBool("isRunning", true);
+        }
+
+        
 
         if (horizontal >= 1)
         {
             playerGFX.flipX = true;
+            
+
         }
         else if (horizontal <= -1)
         {
@@ -130,7 +178,8 @@ public class PlayerMovement2 : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        //_animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x)); ///-----------------------------------------------------------------Q ADDED
+        //_animator.SetFloat("yVelocity", Math.Abs(rb.velocity.x)); ///-----------------------------------------------------------------Q ADDED
         if (isDashing) return;
 
         if (isoToggle)
@@ -144,7 +193,8 @@ public class PlayerMovement2 : MonoBehaviour
 
             if (desiredMove != Vector2.zero)
             {
-
+               // gfxAnimator.SetBool("isRunning", true);  ///-----------------------------------------------------------------Q ADDED
+               
                 currentVelocity = Vector2.MoveTowards(
                     currentVelocity,
                     targetVelocity,
@@ -153,7 +203,7 @@ public class PlayerMovement2 : MonoBehaviour
             }
             else
             {
-
+               // gfxAnimator.SetBool("isRunning", false);
                 currentVelocity = Vector2.MoveTowards(
                     currentVelocity,
                     Vector2.zero,
@@ -184,7 +234,7 @@ public class PlayerMovement2 : MonoBehaviour
             }
             else
             {
-
+                // _animator.SetBool("isRunning", false); ///-----------------------------------------------------------------Q ADDED
                 currentVelocity = Vector2.MoveTowards(
                     currentVelocity,
                     Vector2.zero,
@@ -264,6 +314,11 @@ public class PlayerMovement2 : MonoBehaviour
 
     private IEnumerator PerformDash()
     {
+        Debug.Log("Dash");  ///-----------------------------------------------------------------Q ADDED
+
+        GameObject spawnedDash = Instantiate(_DashParticle, _DashPoint.position, _DashPoint.rotation, _DashPoint);  ///-----------------------------------------------------------------Q ADDED
+        Destroy(spawnedDash, 0.7f);  ///-----------------------------------------------------------------Q ADDED
+
         isDashing = true;
 
         Vector2 originalVelocity = rb.velocity;
@@ -313,18 +368,24 @@ public class PlayerMovement2 : MonoBehaviour
 
 
 
-    //Sheild Stuff
+    //Shield Stuff
 
     //Activates projectile shield
     public void ActivateProjectileShield()
     {
         activeProjectileShield = Instantiate(shieldPrefab, transform.position, Quaternion.identity);
+        //shieldBreak = Instantiate(shieldBreak, transform.position, Quaternion.identity);
 
         //Set proper scale of shield 
         activeProjectileShield.transform.localScale = Vector3.one * 0.4f;
 
         //Start coroutine to follow player
         StartCoroutine(FollowPlayerForSeconds(5f));
+
+        //if (shieldCoroutineFinished)
+        //{
+        //    BreakShield();
+        //}
     }
 
     //Makes the projectile shield follow the player 
@@ -338,6 +399,7 @@ public class PlayerMovement2 : MonoBehaviour
                 //Keeps shield on player
                 activeProjectileShield.transform.position = gameObject.transform.position;
             }
+
             timer += Time.deltaTime;
             yield return null;
         }
@@ -345,6 +407,22 @@ public class PlayerMovement2 : MonoBehaviour
         if (activeProjectileShield != null)
         {
             Destroy(activeProjectileShield);
+
+            Debug.Log("shield broke");
+
+            shieldCoroutineFinished = false;
+
+        }
+        shieldCoroutineFinished = true;
+    }
+
+    public void BreakShield()
+    {
+        if (particlePoint != null && shieldBreakParticle != null)
+        {
+            GameObject shieldBreak = Instantiate(shieldBreakParticle, particlePoint.position, particlePoint.rotation, particlePoint);
+            //Destroy(shieldBreak);
+            Debug.Log("Shield particlessss");
         }
     }
 }

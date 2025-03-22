@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/TitleScreen.unity
-    guid: 5e0a3e586c5bc844d8648be5600b4778
+    path: Assets/TitleScreen Quinn Version.unity
+    guid: 1dfe216e13fd827499d5c10c6218a9da
   - enabled: 1
     path: Assets/Cameron/GameScene.unity
     guid: b7f666eb3b8acf14ea53c9ee00d2e60f
