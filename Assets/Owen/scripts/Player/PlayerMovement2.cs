@@ -55,6 +55,8 @@ public class PlayerMovement2 : MonoBehaviour
 
     [HideInInspector] public bool isProjectileShieldOwned;
 
+    private Animator gfxAnimator;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -65,6 +67,8 @@ public class PlayerMovement2 : MonoBehaviour
         _rs = rotatePoint.GetComponent<RobotScript>();
         _onAimWithController = ctx => _rs.AimAtScreenPosition(ctx.ReadValue<Vector2>());
         gameManager = FindAnyObjectByType<GameManager>();
+
+        gfxAnimator = playerGFX.gameObject.GetComponent<Animator>();
 
     }
 
