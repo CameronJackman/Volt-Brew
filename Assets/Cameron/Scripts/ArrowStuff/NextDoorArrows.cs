@@ -43,26 +43,52 @@ public class NextDoorArrows : MonoBehaviour
 
     void Update()
     {
+        doorPositionL = GameObject.FindGameObjectWithTag("ArrowPointL");
+        doorPositionR = GameObject.FindGameObjectWithTag("ArrowPointR");
         if (arrowRectTransformL != null && doorPositionL != null)
         {
+            Debug.Log("Pointing Left");
+            pointerImage.color = new Color(pointerImage.color.r, pointerImage.color.g, pointerImage.color.b, 0.2705882f);
             DoorLeft();
+            
         }
         else if (gameObject.CompareTag("LeftArrow"))
         {
-            pointerImage.gameObject.SetActive(false);
+            pointerImage.color = new Color(pointerImage.color.r, pointerImage.color.g, pointerImage.color.b, 0f);
+            Debug.Log("Pointing Left off");
         }
 
 
 
         if (arrowRectTransformR != null && doorPositionR != null)
         {
+            pointerImage.color = new Color(pointerImage.color.r, pointerImage.color.g, pointerImage.color.b, 0.2705882f);
             DoorRight();
+            Debug.Log("Pointing Right");
         }
         else if (gameObject.CompareTag("RightArrow"))
         {
-            pointerImage.gameObject.SetActive(false);
+            pointerImage.color = new Color(pointerImage.color.r, pointerImage.color.g, pointerImage.color.b, 0f);
         }
 
+
+        //debug stuff 
+        if (arrowRectTransformL == null)
+        {
+            Debug.LogError("arrowRectTransformL Null");
+        }
+        if (arrowRectTransformR == null)
+        {
+            Debug.LogError("arrowRectTransformR null");
+        }
+        if (doorPositionL == null)
+        {
+            Debug.LogError("doorPositionL null");
+        }
+        if (doorPositionR == null)
+        {
+            Debug.LogError("doorPositionR null");
+        }
     }
 
 

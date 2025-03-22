@@ -46,7 +46,7 @@ public class enemyWaveSpawns : MonoBehaviour
     [SerializeField]
     private GameObject SpawnParticle;
 
-    private bool start;
+    private GameObject ArrowL, ArrowR;
     
 
     void Start()
@@ -62,6 +62,8 @@ public class enemyWaveSpawns : MonoBehaviour
         //Starts GridScanOnStart after 0.05ms second to give the next room to load 
         Invoke("GridScanOnStart", 0.05f);
 
+        ArrowL = GameObject.FindGameObjectWithTag("LeftArrow");
+        ArrowR = GameObject.FindGameObjectWithTag("RightArrow");
         dircArrows.SetActive(false);
     }
 
@@ -115,6 +117,8 @@ public class enemyWaveSpawns : MonoBehaviour
                         waveTimer = 0;
                         nextRoomInteract.SetActive(true);
                         dircArrows.SetActive(true);
+                        ArrowL.SetActive(true);
+                        ArrowR.SetActive(true);
                         Display = true;
                     }
                 }
