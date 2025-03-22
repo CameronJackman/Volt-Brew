@@ -312,7 +312,7 @@ MonoBehaviour:
   speed: 25
   projectileLife: 2
   projectileCount: 1
-  projectileDamage: 50
+  projectileDamage: 25
 --- !u!82 &7726412289391150348
 AudioSource:
   m_ObjectHideFlags: 0

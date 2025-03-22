@@ -57,6 +57,16 @@ public class PlayerMovement2 : MonoBehaviour
     public GameObject shieldPrefab;
     private GameObject activeProjectileShield;
 
+
+    Animator _animator;  ///-----------------------------------------------------------------Q ADDED
+
+    public Transform _DashPoint;
+    public GameObject _DashParticle;
+
+
+    private Animator gfxAnimator;
+
+
     [HideInInspector] public bool isProjectileShieldOwned;
 
     void Awake()
@@ -70,9 +80,17 @@ public class PlayerMovement2 : MonoBehaviour
         _onAimWithController = ctx => _rs.AimAtScreenPosition(ctx.ReadValue<Vector2>());
         gameManager = FindAnyObjectByType<GameManager>();
 
+        _animator = GetComponent<Animator>(); ///-----------------------------------------------------------------Q ADDED
+
+        gfxAnimator = playerGFX.gameObject.GetComponent<Animator>();
+
+        UnityEngine.Cursor.visible = false; ///-----------------------------------------------------------------Q ADDED
+        UnityEngine.Cursor.lockState = CursorLockMode.Confined; ///-----------------------------------------------------------------Q ADDED
+
+
     }
 
-  
+
 
     public void UpdateCurrentControlScheme()
     {
@@ -112,18 +130,41 @@ public class PlayerMovement2 : MonoBehaviour
             dashCoolDownTimer -= Time.deltaTime;
         }
 
+     /*   if(_PD.DefaultMovement.Movement.performed)
+        {
+             gfxAnimator.SetBool("isRunning", true);
+        } */
+
     }
 
     void MovePlayer(InputAction.CallbackContext ctx)
     {
+
+        
+
+      
+
         Vector2 input = ctx.ReadValue<Vector2>();
         float horizontal = input.x;
         float vertical = input.y;
+
         rawInput = new Vector2(horizontal, vertical).normalized;
+        if(rawInput == Vector2.zero)
+        {
+            gfxAnimator.SetBool("isRunning", false);
+        }
+        else 
+        {
+            gfxAnimator.SetBool("isRunning", true);
+        }
+
+        
 
         if (horizontal >= 1)
         {
             playerGFX.flipX = true;
+            
+
         }
         else if (horizontal <= -1)
         {
@@ -135,7 +176,8 @@ public class PlayerMovement2 : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        //_animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x)); ///-----------------------------------------------------------------Q ADDED
+        //_animator.SetFloat("yVelocity", Math.Abs(rb.velocity.x)); ///-----------------------------------------------------------------Q ADDED
         if (isDashing) return;
 
         if (isoToggle)
@@ -149,7 +191,8 @@ public class PlayerMovement2 : MonoBehaviour
 
             if (desiredMove != Vector2.zero)
             {
-
+               // gfxAnimator.SetBool("isRunning", true);  ///-----------------------------------------------------------------Q ADDED
+               
                 currentVelocity = Vector2.MoveTowards(
                     currentVelocity,
                     targetVelocity,
@@ -158,7 +201,7 @@ public class PlayerMovement2 : MonoBehaviour
             }
             else
             {
-
+               // gfxAnimator.SetBool("isRunning", false);
                 currentVelocity = Vector2.MoveTowards(
                     currentVelocity,
                     Vector2.zero,
@@ -189,7 +232,7 @@ public class PlayerMovement2 : MonoBehaviour
             }
             else
             {
-
+                // _animator.SetBool("isRunning", false); ///-----------------------------------------------------------------Q ADDED
                 currentVelocity = Vector2.MoveTowards(
                     currentVelocity,
                     Vector2.zero,
@@ -269,6 +312,11 @@ public class PlayerMovement2 : MonoBehaviour
 
     private IEnumerator PerformDash()
     {
+        Debug.Log("Dash");  ///-----------------------------------------------------------------Q ADDED
+
+        GameObject spawnedDash = Instantiate(_DashParticle, _DashPoint.position, _DashPoint.rotation, _DashPoint);  ///-----------------------------------------------------------------Q ADDED
+        Destroy(spawnedDash, 0.7f);  ///-----------------------------------------------------------------Q ADDED
+
         isDashing = true;
 
         Vector2 originalVelocity = rb.velocity;

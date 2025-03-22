@@ -12,6 +12,7 @@ public class Menus : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            UnityEngine.Cursor.visible = true;
             pauseMenu.SetActive(true);
 
 
@@ -36,6 +37,7 @@ public class Menus : MonoBehaviour
 
     public void loadMainMenu()
     {
+        UnityEngine.Cursor.visible = true;
         SceneManager.LoadScene(0);
 
     }
@@ -43,7 +45,7 @@ public class Menus : MonoBehaviour
     public void resumeGame()
     {
         pauseMenu.SetActive(false);
-
+        UnityEngine.Cursor.visible = false;
         // V sets time back to normal V
         Time.timeScale = 1.0f;
     }

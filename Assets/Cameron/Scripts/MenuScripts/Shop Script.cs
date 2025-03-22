@@ -45,7 +45,7 @@ public class ShopScript : MonoBehaviour
         if (ePress == true && Input.GetKeyDown(KeyCode.E) && shopMenu != null && canBuy == true)
         {
             shopMenu.gameObject.SetActive(true);
-
+            UnityEngine.Cursor.visible = true;
             Time.timeScale = 0.0f;
         }
 
@@ -82,6 +82,7 @@ public class ShopScript : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         shopMenu.gameObject.SetActive(false);
+        UnityEngine.Cursor.visible = false;
     }
 
     //SHOP ITEM #1 --> Health Pot
@@ -117,7 +118,9 @@ public class ShopScript : MonoBehaviour
             playerMovement.isProjectileShieldOwned = true;
 
             //Include this at end of every buff/power up for the shop so the shop cant be opened again
-            canBuy = false; 
+            canBuy = false;
+             ///-----------------------------------------------------------------Q ADDED
+            
             CloseMenu();
         }
     }

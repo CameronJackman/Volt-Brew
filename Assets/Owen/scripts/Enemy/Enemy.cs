@@ -295,7 +295,7 @@ public class Enemy : MonoBehaviour
     {
         GameObject PowerUpCollectable = Instantiate(curPower, gameObject.transform);
         PowerUpCollectable.transform.SetParent(CoinsParent.transform, true);
-        PowerUpCollectable.transform.localScale = new Vector2(2.32f, 2.32f);
+        PowerUpCollectable.transform.localScale = new Vector2(0.09f, 0.09f);
         Debug.Log("PowerUp Dropped");
     }
 }
