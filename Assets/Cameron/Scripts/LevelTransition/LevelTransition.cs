@@ -58,6 +58,8 @@ public class LevelTransition : MonoBehaviour
     private bool canDisplay;
     private bool checkDis;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -100,29 +102,33 @@ public class LevelTransition : MonoBehaviour
         }
 
         
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
         if (fade)
         {
             
             _blackFade.alpha = Mathf.Lerp(_blackFade.alpha, 1.0f, fadeSpeed/ fadeDuration);
+
+            
             
             
             
         } else if (!fade)
             {
                 _blackFade.alpha = Mathf.Lerp(_blackFade.alpha, 0.0f, fadeSpeed / fadeDuration);
-                
-
-                
             }
 
-
+        if (_blackFade.alpha <= 0.5f)
+        {
+            // Camera Zoom in
+            
+            
+        }
 
         if (ePress && Input.GetKeyDown(KeyCode.E))
         {
@@ -294,7 +300,7 @@ public class LevelTransition : MonoBehaviour
             int num = Random.Range(0, 10);
 
             //if the number is 10 then give the player a rare power up choice (10%)
-            if (num == 10)
+            if (num >= 8)
             {
                 int x = Random.Range(0, RarePwrs.Count());
                 pwr = RarePwrs[x];

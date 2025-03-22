@@ -10,7 +10,8 @@ public class PowerUps : MonoBehaviour
     {
         Health,
         Coins,
-        Sheild
+        Sheild,
+        HealthUpgrade
     }
 
     public PowerUpList PowerUpChoice;
@@ -51,6 +52,11 @@ public class PowerUps : MonoBehaviour
             GrantSheild();
             Destroy(gameObject);
         }
+        if (PowerUpChoice == PowerUpList.HealthUpgrade)
+        {
+            MoreHealth();
+            Destroy(gameObject);
+        }
     }
 
     //gives the player back 50 HP
@@ -60,18 +66,12 @@ public class PowerUps : MonoBehaviour
 
         if (playerHealth != null)
         {
+            playerHealth.currentHealth += 50;
 
-            if (playerHealth.currentHealth >= 50)
+            if (playerHealth.currentHealth > playerHealth.maxHealth)
             {
-                playerHealth.currentHealth = 100;
-            }
-            else
-            {
-                playerHealth.currentHealth += 50;
-            }
-                
-
-            
+                playerHealth.currentHealth = playerHealth.maxHealth;
+            }   
         }
     }
 
@@ -92,6 +92,17 @@ public class PowerUps : MonoBehaviour
         if (playerScript != null)
         {
             playerScript.isProjectileShieldOwned = true;
+        }
+    }
+
+    //Upgrades health
+    public void MoreHealth()
+    {
+        Health playerHealth = playerScript.gameObject.GetComponent<Health>();
+        if (playerHealth != null)
+        {
+            playerHealth.maxHealth += 15;
+            playerHealth.currentHealth += 15;
         }
     }
 }
