@@ -69,6 +69,9 @@ public class PlayerMovement2 : MonoBehaviour
 
     [HideInInspector] public bool isProjectileShieldOwned;
 
+    private float shootingCooldown = 0.5f;
+    [HideInInspector] public float resetCooldownCount;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -80,12 +83,14 @@ public class PlayerMovement2 : MonoBehaviour
         _onAimWithController = ctx => _rs.AimAtScreenPosition(ctx.ReadValue<Vector2>());
         gameManager = FindAnyObjectByType<GameManager>();
 
+        resetCooldownCount = shootingCooldown;
+
         _animator = GetComponent<Animator>(); ///-----------------------------------------------------------------Q ADDED
 
         gfxAnimator = playerGFX.gameObject.GetComponent<Animator>();
 
-        UnityEngine.Cursor.visible = false; ///-----------------------------------------------------------------Q ADDED
-        UnityEngine.Cursor.lockState = CursorLockMode.Confined; ///-----------------------------------------------------------------Q ADDED
+       // UnityEngine.Cursor.visible = false; ///-----------------------------------------------------------------Q ADDED
+       // UnityEngine.Cursor.lockState = CursorLockMode.Confined; ///-----------------------------------------------------------------Q ADDED
 
 
     }
@@ -130,11 +135,16 @@ public class PlayerMovement2 : MonoBehaviour
             dashCoolDownTimer -= Time.deltaTime;
         }
 
-     /*   if(_PD.DefaultMovement.Movement.performed)
-        {
-             gfxAnimator.SetBool("isRunning", true);
-        } */
+        /*   if(_PD.DefaultMovement.Movement.performed)
+           {
+                gfxAnimator.SetBool("isRunning", true);
+           } */
 
+        if (shootingCooldown > 0)
+        {
+            shootingCooldown -= Time.deltaTime;
+        }
+        
     }
 
     void MovePlayer(InputAction.CallbackContext ctx)
@@ -267,7 +277,13 @@ public class PlayerMovement2 : MonoBehaviour
 
     private void OnFiring(InputAction.CallbackContext ctx)
     {
-        _rs.Firing();
+
+        if (shootingCooldown <= 0)
+        {
+            _rs.Firing();
+            shootingCooldown = resetCooldownCount;
+        }
+            
     }
     private void OnEnable()
     {
@@ -285,6 +301,8 @@ public class PlayerMovement2 : MonoBehaviour
         _PD.DefaultMovement.AimingController.canceled += OnAimWithController;
 
         _PD.DefaultMovement.firing.started += OnFiring;
+         
+        
     }
     private void OnDisable()
     {

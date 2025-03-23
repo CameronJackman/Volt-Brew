@@ -10,15 +10,21 @@ public class RobotScript : MonoBehaviour
     private GameObject bulletSpawn;
     [SerializeField]
     private SpriteRenderer robotGFX;
+    [SerializeField]
+    private GameObject bulletAudio;
+
+    public bool shotGun;
+
+    public bool rapid;
+
+    private PlayerMovement2 playerScpt;
 
     
-
-   
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerScpt = FindAnyObjectByType<PlayerMovement2>();
     }
 
     // Update is called once per frame
@@ -57,19 +63,70 @@ public class RobotScript : MonoBehaviour
             {
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(0, 0, angle);
-
-              
             }
         }
            
+    }
+
+    private IEnumerator FireBurst()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            GameObject newbullet = Instantiate(bullet, bulletSpawn.transform.position, transform.rotation);
+
+            ProjectileScript bulletProject = newbullet.GetComponent<ProjectileScript>();
+
+            bulletProject.projectileDamage = 7;
+
+            GameObject Audio4Bullet = Instantiate(bulletAudio, bulletSpawn.transform.position, transform.rotation);
+            Destroy(Audio4Bullet, 4.3f);
+
+            yield return new WaitForSeconds(0.2f);
+        }
     }
 
     public void Firing()
     {
         if (Time.deltaTime != 0)
         {
-            Instantiate(bullet, bulletSpawn.transform.position, transform.rotation);
-            
+            if (shotGun)
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    float randomAngle = Random.Range(-300, 300);
+                    GameObject newbullet = Instantiate(bullet, bulletSpawn.transform.position, transform.rotation);
+
+                    Vector2 direction = Quaternion.Euler(0, 0, randomAngle) * bulletSpawn.transform.right;
+
+                    Rigidbody2D rb = newbullet.GetComponent<Rigidbody2D>();
+                    rb.AddForce(direction, ForceMode2D.Impulse);
+
+                    ProjectileScript bulletProject = newbullet.GetComponent<ProjectileScript>();
+
+                    bulletProject.projectileDamage = 10; 
+                }
+
+                GameObject Audio4Bullet = Instantiate(bulletAudio, bulletSpawn.transform.position, transform.rotation);
+                Destroy(Audio4Bullet, 4.3f);
+                
+            }
+            if (rapid)
+            {
+                StartCoroutine(FireBurst());
+                
+            }
+            else
+            {
+                //bullet
+                Instantiate(bullet, bulletSpawn.transform.position, transform.rotation);
+
+                //bullet audio
+                GameObject Audio4Bullet = Instantiate(bulletAudio, bulletSpawn.transform.position, transform.rotation);
+                Destroy(Audio4Bullet, 4.3f);
+                playerScpt.resetCooldownCount = 0.5f;
+            }
+
+           
         }
         
     }

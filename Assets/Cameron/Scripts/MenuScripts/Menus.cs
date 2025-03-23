@@ -7,6 +7,19 @@ public class Menus : MonoBehaviour
 {
     [SerializeField]
     private GameObject pauseMenu;
+    [SerializeField]
+    private GameObject WeaponSelectMenu;
+
+
+    private PlayerMovement2 playerScpt;
+
+    private RobotScript robotScript;
+
+    private void Start()
+    {
+        playerScpt = FindAnyObjectByType<PlayerMovement2>();
+        robotScript = FindAnyObjectByType<RobotScript>();
+    }
 
     void Update()
     {
@@ -48,6 +61,33 @@ public class Menus : MonoBehaviour
         UnityEngine.Cursor.visible = false;
         // V sets time back to normal V
         Time.timeScale = 1.0f;
+    }
+
+    public void burstSelection()
+    {
+        robotScript.rapid = true;
+        robotScript.shotGun = false;
+        playerScpt.resetCooldownCount = 1.1f;
+        Time.timeScale = 1.0f;
+        WeaponSelectMenu.SetActive(false);
+    }
+
+    public void shotGunSelection()
+    {
+        robotScript.rapid = false;
+        robotScript.shotGun = true;
+        playerScpt.resetCooldownCount = 0.9f;
+        Time.timeScale = 1.0f;
+        WeaponSelectMenu.SetActive(false);
+    }
+
+    public void DeafaultSelection()
+    {
+        robotScript.rapid = false;
+        robotScript.shotGun = false;
+        playerScpt.resetCooldownCount = 0.5f;
+        Time.timeScale = 1.0f;
+        WeaponSelectMenu.SetActive(false);
     }
 
 }

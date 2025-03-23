@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -93,9 +93,106 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Robot Weapon select_0
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 459
+        width: 648
+        height: 997
+      alignment: 9
+      pivot: {x: 0.4703478, y: 0.4795825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8579454da1af641a60c78939d95c81
+      internalID: -407109243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot Weapon select_1
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 382
+        width: 660
+        height: 1074
+      alignment: 9
+      pivot: {x: 0.4703478, y: 0.4795825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c16a955d32c20df4c95f4d7c7c20844f
+      internalID: 534213844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot Weapon select_2
+      rect:
+        serializedVersion: 2
+        x: 2757
+        y: 528
+        width: 598
+        height: 1004
+      alignment: 9
+      pivot: {x: 0.4703478, y: 0.4795825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: facd213a5380343469dd277e3ad34ad1
+      internalID: 415121035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot Weapon select_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 3920
+        height: 2080
+      alignment: 9
+      pivot: {x: 0.4703478, y: 0.4795825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9f63a196c24d5c43a8175093e41a8db
+      internalID: -859973709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +203,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Robot Weapon select_0: -407109243
+      Robot Weapon select_1: 534213844
+      Robot Weapon select_2: 415121035
+      Robot Weapon select_3: -859973709
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

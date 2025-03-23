@@ -11,7 +11,8 @@ public class PowerUps : MonoBehaviour
         Health,
         Coins,
         Sheild,
-        HealthUpgrade
+        HealthUpgrade,
+        FireRateUpgrade
     }
 
     public PowerUpList PowerUpChoice;
@@ -35,26 +36,34 @@ public class PowerUps : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (PowerUpChoice == PowerUpList.Health)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            healthPwer();
-            Destroy(gameObject);
-        }
+            if (PowerUpChoice == PowerUpList.Health)
+            {
+                healthPwer();
+            }
 
-        if (PowerUpChoice == PowerUpList.Coins)
-        {
-            coinPwer();
-            Destroy(gameObject);
-        }
+            if (PowerUpChoice == PowerUpList.Coins)
+            {
+                coinPwer();
+            }
 
-        if (PowerUpChoice == PowerUpList.Sheild)
-        {
-            GrantSheild();
-            Destroy(gameObject);
-        }
-        if (PowerUpChoice == PowerUpList.HealthUpgrade)
-        {
-            MoreHealth();
+            if (PowerUpChoice == PowerUpList.Sheild)
+            {
+                GrantSheild();
+            }
+            if (PowerUpChoice == PowerUpList.HealthUpgrade)
+            {
+                MoreHealth();
+            }
+            if (PowerUpChoice == PowerUpList.FireRateUpgrade)
+            {
+                fasterFireRate();
+            }
+
+
+
+            //destroys the game object after collision and powerup put into effect
             Destroy(gameObject);
         }
     }
@@ -103,6 +112,17 @@ public class PowerUps : MonoBehaviour
         {
             playerHealth.maxHealth += 15;
             playerHealth.currentHealth += 15;
+        }
+    }
+
+    public void fasterFireRate()
+    {
+        if (playerScript != null)
+        {
+            if (playerScript.resetCooldownCount > 0.1)
+            {
+                playerScript.resetCooldownCount -= 0.1f;
+            }
         }
     }
 }
