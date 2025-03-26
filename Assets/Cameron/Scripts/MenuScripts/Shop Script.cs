@@ -10,17 +10,8 @@ public class ShopScript : MonoBehaviour
     private shopHud shopMenu;
     private bool ePress = false;
 
-    private Health playerHealth;
-    private PlayerMovement2 playerMovement;
-    private GameManager gameManager;
+    private Menus menuScript;
     
-
-    private bool canBuy = true;
-
-    [SerializeField]
-    //Costs of shop items
-    private float healthCost;
-    public float projectileShieldCost;
 
 
     // Start is called before the first frame update
@@ -29,23 +20,30 @@ public class ShopScript : MonoBehaviour
         //Sets Interact text to invisible start game
         Interact.CrossFadeAlpha(0.0f, 1.0f, false);
 
-        playerMovement = FindAnyObjectByType<PlayerMovement2>();
-        playerHealth = playerMovement.GetComponent<Health>();
-        gameManager = FindAnyObjectByType<GameManager>();
+        
+       
         
         shopMenu = FindObjectOfType<shopHud>(true);
+        shopMenu.healthBought = false;
 
         shopMenu.gameObject.SetActive(false);
+
+
+
+        menuScript = FindAnyObjectByType<Menus>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //Set shop menu active
-        if (ePress == true && Input.GetKeyDown(KeyCode.E) && shopMenu != null && canBuy == true)
+        if (ePress == true && Input.GetKeyDown(KeyCode.E) && menuScript.canOpenMenu && shopMenu != null )
         {
-            shopMenu.gameObject.SetActive(true);
             UnityEngine.Cursor.visible = true;
+            shopMenu.gameObject.SetActive(true);
+            menuScript.canOpenMenu = false;
+            menuScript.currentOpenMenu = shopMenu.gameObject;
+            
             Time.timeScale = 0.0f;
         }
 
@@ -78,52 +76,9 @@ public class ShopScript : MonoBehaviour
         }
     }
 
-    public void CloseMenu()
-    {
-        Time.timeScale = 1.0f;
-        shopMenu.gameObject.SetActive(false);
-        UnityEngine.Cursor.visible = false;
-    }
+    
 
-    //SHOP ITEM #1 --> Health Pot
-    public void HealthPot()
-    {
-        if (gameManager.coins >= healthCost)
-        {
-
-            playerHealth.currentHealth += 25;
-            gameManager.coins -= healthCost;
-
-            if (playerHealth.currentHealth > playerHealth.maxHealth)
-            {
-                playerHealth.currentHealth = playerHealth.maxHealth;
-            }
-
-            canBuy = false; //include this at end of every buff/power up for the shop so the shop cant be opened again
-            CloseMenu();
-        } 
-    }
-
-    //SHOP ITEM #2 --> Projectile Shield
-    public void ProjectileShield()
-    {
-        if (gameManager.coins >= projectileShieldCost)
-        {
-            //Activate projectile shield  --> Need to add a display & code for shields remaining
-            playerMovement.ActivateProjectileShield();
-
-            //Calculate the player's current balance after purchase
-            gameManager.coins -= projectileShieldCost;
-
-            playerMovement.isProjectileShieldOwned = true;
-
-            //Include this at end of every buff/power up for the shop so the shop cant be opened again
-            canBuy = false;
-             ///-----------------------------------------------------------------Q ADDED
-            
-            CloseMenu();
-        }
-    }
+    
 
     
 }

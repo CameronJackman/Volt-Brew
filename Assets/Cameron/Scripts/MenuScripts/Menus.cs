@@ -7,8 +7,13 @@ public class Menus : MonoBehaviour
 {
     [SerializeField]
     private GameObject pauseMenu;
-    [SerializeField]
-    private GameObject WeaponSelectMenu;
+
+    private InfoMenu infoMenu;
+
+    [HideInInspector]
+    public GameObject currentOpenMenu;
+    [HideInInspector]
+    public bool canOpenMenu;
 
 
     private PlayerMovement2 playerScpt;
@@ -19,19 +24,51 @@ public class Menus : MonoBehaviour
     {
         playerScpt = FindAnyObjectByType<PlayerMovement2>();
         robotScript = FindAnyObjectByType<RobotScript>();
+        infoMenu = FindObjectOfType<InfoMenu>(true);
+
+        canOpenMenu = true;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!canOpenMenu && Input.GetKeyDown(KeyCode.Escape) && currentOpenMenu != null)
         {
-            UnityEngine.Cursor.visible = true;
-            pauseMenu.SetActive(true);
-
-
-            // V freezes game so player cannot move and enemys freeze V
-            Time.timeScale = 0.0f;
+            currentOpenMenu.SetActive(false);
+            canOpenMenu = true;
+            currentOpenMenu = null;
+            Time.timeScale = 1.0f;
         }
+        else if (Input.GetKeyDown(KeyCode.Escape) && canOpenMenu == true)
+        {
+            openPause();
+        }
+        else if (Input.GetKeyDown(KeyCode.P))
+        {
+            openInfoMenu();
+        }
+
+    }
+
+    void openInfoMenu()
+    {
+        UnityEngine.Cursor.visible = true;
+        infoMenu.gameObject.SetActive(true);
+        canOpenMenu = false;
+        currentOpenMenu = infoMenu.gameObject;
+
+        // V freezes game so player cannot move and enemys freeze V
+        Time.timeScale = 0.0f;
+    }
+
+    void openPause()
+    {
+        UnityEngine.Cursor.visible = true;
+        pauseMenu.SetActive(true);
+        canOpenMenu = false;
+        currentOpenMenu = pauseMenu;
+
+        // V freezes game so player cannot move and enemys freeze V
+        Time.timeScale = 0.0f;
     }
     public void startGame()
     {
@@ -69,7 +106,9 @@ public class Menus : MonoBehaviour
         robotScript.shotGun = false;
         playerScpt.resetCooldownCount = 1.1f;
         Time.timeScale = 1.0f;
-        WeaponSelectMenu.SetActive(false);
+        currentOpenMenu.SetActive(false);
+        canOpenMenu = true;
+        currentOpenMenu = null;
     }
 
     public void shotGunSelection()
@@ -78,7 +117,9 @@ public class Menus : MonoBehaviour
         robotScript.shotGun = true;
         playerScpt.resetCooldownCount = 0.9f;
         Time.timeScale = 1.0f;
-        WeaponSelectMenu.SetActive(false);
+        currentOpenMenu.SetActive(false);
+        canOpenMenu = true;
+        currentOpenMenu = null;
     }
 
     public void DeafaultSelection()
@@ -87,7 +128,9 @@ public class Menus : MonoBehaviour
         robotScript.shotGun = false;
         playerScpt.resetCooldownCount = 0.5f;
         Time.timeScale = 1.0f;
-        WeaponSelectMenu.SetActive(false);
+        currentOpenMenu.SetActive(false);
+        canOpenMenu = true;
+        currentOpenMenu = null;
     }
 
 }

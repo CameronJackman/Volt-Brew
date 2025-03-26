@@ -19,6 +19,9 @@ public class RobotScript : MonoBehaviour
 
     private PlayerMovement2 playerScpt;
 
+    [HideInInspector]
+    public float currentDamage;
+
     
     
     // Start is called before the first frame update
@@ -77,6 +80,7 @@ public class RobotScript : MonoBehaviour
             ProjectileScript bulletProject = newbullet.GetComponent<ProjectileScript>();
 
             bulletProject.projectileDamage = 7;
+            currentDamage = bulletProject.projectileDamage;
 
             GameObject Audio4Bullet = Instantiate(bulletAudio, bulletSpawn.transform.position, transform.rotation);
             Destroy(Audio4Bullet, 4.3f);
@@ -103,7 +107,8 @@ public class RobotScript : MonoBehaviour
 
                     ProjectileScript bulletProject = newbullet.GetComponent<ProjectileScript>();
 
-                    bulletProject.projectileDamage = 10; 
+                    bulletProject.projectileDamage = 10;
+                    currentDamage = bulletProject.projectileDamage;
                 }
 
                 GameObject Audio4Bullet = Instantiate(bulletAudio, bulletSpawn.transform.position, transform.rotation);
@@ -118,8 +123,9 @@ public class RobotScript : MonoBehaviour
             else
             {
                 //bullet
-                Instantiate(bullet, bulletSpawn.transform.position, transform.rotation);
-
+                GameObject newbullet = Instantiate(bullet, bulletSpawn.transform.position, transform.rotation);
+                ProjectileScript bulletProject = newbullet.GetComponent<ProjectileScript>();
+                currentDamage = bulletProject.projectileDamage;
                 //bullet audio
                 GameObject Audio4Bullet = Instantiate(bulletAudio, bulletSpawn.transform.position, transform.rotation);
                 Destroy(Audio4Bullet, 4.3f);
