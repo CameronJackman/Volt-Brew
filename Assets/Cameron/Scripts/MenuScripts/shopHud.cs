@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class shopHud : MonoBehaviour
@@ -10,7 +12,7 @@ public class shopHud : MonoBehaviour
     public GameObject[] resetOnStart;
 
     [HideInInspector]
-    public bool shieldOwned, healthBought;
+    public bool shieldOwned, healthBought, powerBought;
 
     private PlayerMovement2 playerMovement;
     private GameManager gameManager;
@@ -22,8 +24,30 @@ public class shopHud : MonoBehaviour
     private float healthCost;
     [SerializeField]
     private float projectileShieldCost;
+    [SerializeField]
+    private float MaxHealthCost;
+    [SerializeField]
+    private float decreaseFireRateCost;
+    [SerializeField]
+    private float jackPotCost;
+    [SerializeField]
+    private float reRollCost;
 
     private Menus menuScript;
+
+    public GameObject[] commonPowerMenus;
+    public GameObject[] rarePowerMenus;
+
+    private int ranNum;
+
+    private bool displayingRarePower;
+
+    private int reRollCount = 0;
+
+    [SerializeField]
+    private TMP_Text reRollText;
+
+    private GameObject currentDisplayingBar;
 
 
     // Start is called before the first frame update
@@ -33,6 +57,9 @@ public class shopHud : MonoBehaviour
         playerMovement = FindAnyObjectByType<PlayerMovement2>();
         playerHealth = playerMovement.GetComponent<Health>();
         gameManager = FindAnyObjectByType<GameManager>();
+
+        ranNum = Random.Range(0, 11);
+        RandomPower();
     }
 
     private void Awake()
@@ -58,6 +85,18 @@ public class shopHud : MonoBehaviour
         {
             resetOnStart[0].SetActive(false);
         }
+
+        if (powerBought)
+        {
+            resetOnStart[2].SetActive(true);
+        }
+        else if (!powerBought)
+        {
+            resetOnStart[2].SetActive(false);
+        }
+
+        
+
     }
 
     //SHOP ITEM #1 --> Health Pot
@@ -97,6 +136,93 @@ public class shopHud : MonoBehaviour
 
 
 
+        }
+    }
+
+    public void MaxHealthIncrease()
+    {
+        if (gameManager.coins >= MaxHealthCost)
+        {
+            playerHealth.maxHealth += 15;
+            playerHealth.currentHealth += 15;
+            gameManager.coins -= MaxHealthCost;
+            powerBought = true;
+        }
+    }
+
+    public void FireRateDecrease()
+    {
+        if (playerMovement.resetCooldownCount > 0.1)
+        {
+            if (gameManager.coins >= decreaseFireRateCost)
+            {
+                playerMovement.resetCooldownCount -= 0.1f;
+                gameManager.coins -= decreaseFireRateCost;
+                powerBought = true;
+            }
+        }
+        else
+        {
+            powerBought = true;
+        }
+
+            
+    }
+
+    public void JackPot()
+    {
+        if (gameManager.coins >= jackPotCost)
+        {
+            gameManager.coins -= jackPotCost;
+            gameManager.coins += 1000;
+
+            powerBought = true;
+        }
+    }
+
+    public void ReRoll()
+    {
+        if (reRollCount < 3 && gameManager.coins >= reRollCost)
+        {
+            gameManager.coins -= reRollCost;
+
+            ranNum = Random.Range(0, 11);
+
+            reRollCount++;
+
+            reRollText.text = "ReRoll PowerUp " + reRollCount + "/3";
+
+            currentDisplayingBar.SetActive(false);
+
+            RandomPower();
+        }
+    }
+
+    public void RandomPower()
+    {
+        if (ranNum == 10)
+        {
+            int i = Random.Range(0, rarePowerMenus.Count());
+
+            Debug.Log(i);
+
+            rarePowerMenus[i].gameObject.SetActive(true);
+
+
+            currentDisplayingBar = rarePowerMenus[i].gameObject;
+
+            displayingRarePower = true;
+
+        }
+        else if (ranNum != 10)
+        {
+            int i = Random.Range(0, commonPowerMenus.Count());
+
+            commonPowerMenus[i].gameObject.SetActive(true);
+
+            currentDisplayingBar = commonPowerMenus[i].gameObject;
+
+            displayingRarePower = false;
         }
     }
 

@@ -28,6 +28,7 @@ public class RobotScript : MonoBehaviour
     void Start()
     {
         playerScpt = FindAnyObjectByType<PlayerMovement2>();
+        playerScpt.resetCooldownCount = 0.5f;
     }
 
     // Update is called once per frame
@@ -129,7 +130,7 @@ public class RobotScript : MonoBehaviour
                 //bullet audio
                 GameObject Audio4Bullet = Instantiate(bulletAudio, bulletSpawn.transform.position, transform.rotation);
                 Destroy(Audio4Bullet, 4.3f);
-                playerScpt.resetCooldownCount = 0.5f;
+                
             }
 
            
