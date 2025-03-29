@@ -408,9 +408,6 @@ MonoBehaviour:
   currentHealth: 0
   spawner: {fileID: 0}
   enemyDeathParticle: {fileID: 4271500981607198558, guid: c539d5093f58b9c44bb3f306afbe7b81, type: 3}
-  playdeathAnimation: {fileID: 0}
-  damageAudioClip: {fileID: 8300000, guid: 62eafb4337b21c34d9ce6e5a8f3cb75e, type: 3}
-  deathAudioClip: {fileID: 8300000, guid: 55ced99530177a5408893b28b5f05584, type: 3}
 --- !u!50 &293859742177803331
 Rigidbody2D:
   serializedVersion: 4

@@ -586,9 +586,6 @@ MonoBehaviour:
   currentHealth: 0
   spawner: {fileID: 0}
   enemyDeathParticle: {fileID: 4271500981607198558, guid: c539d5093f58b9c44bb3f306afbe7b81, type: 3}
-  playdeathAnimation: {fileID: 0}
-  damageAudioClip: {fileID: 8300000, guid: 62eafb4337b21c34d9ce6e5a8f3cb75e, type: 3}
-  deathAudioClip: {fileID: 8300000, guid: 55ced99530177a5408893b28b5f05584, type: 3}
 --- !u!50 &5980729851242935028
 Rigidbody2D:
   serializedVersion: 4
@@ -687,7 +684,6 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4760067515189485537, guid: 6c0b9d23308da1642808196c5842cc7b, type: 3}
   firePoint: {fileID: 6066725980103978234}
   fireRate: 1.5
-  shootingAudioClip: {fileID: 8300000, guid: d2395f36773591a48bf9a9df8bee506a, type: 3}
 --- !u!114 &2502944592341401120
 MonoBehaviour:
   m_ObjectHideFlags: 0

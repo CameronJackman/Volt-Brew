@@ -7,17 +7,11 @@ public class RobotScript : MonoBehaviour
     [SerializeField]
     private GameObject bullet;
     [SerializeField]
-    private GameObject rapidFireBullet;
-    [SerializeField]
-    private GameObject shotgunBullet;
-    [SerializeField]
     private GameObject bulletSpawn;
     [SerializeField]
     private SpriteRenderer robotGFX;
     [SerializeField]
     private GameObject bulletAudio;
-    [SerializeField]
-    private GameObject shotgunAudio;
 
     public bool shotGun;
 
@@ -82,11 +76,11 @@ public class RobotScript : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            GameObject newbullet = Instantiate(rapidFireBullet, bulletSpawn.transform.position, transform.rotation);
+            GameObject newbullet = Instantiate(bullet, bulletSpawn.transform.position, transform.rotation);
 
             ProjectileScript bulletProject = newbullet.GetComponent<ProjectileScript>();
 
-            bulletProject.projectileDamage = 20;
+            bulletProject.projectileDamage = 7;
             currentDamage = bulletProject.projectileDamage;
 
             GameObject Audio4Bullet = Instantiate(bulletAudio, bulletSpawn.transform.position, transform.rotation);
@@ -105,7 +99,7 @@ public class RobotScript : MonoBehaviour
                 for (int i = 0; i < 3; i++)
                 {
                     float randomAngle = Random.Range(-300, 300);
-                    GameObject newbullet = Instantiate(shotgunBullet, bulletSpawn.transform.position, transform.rotation);
+                    GameObject newbullet = Instantiate(bullet, bulletSpawn.transform.position, transform.rotation);
 
                     Vector2 direction = Quaternion.Euler(0, 0, randomAngle) * bulletSpawn.transform.right;
 
@@ -114,11 +108,11 @@ public class RobotScript : MonoBehaviour
 
                     ProjectileScript bulletProject = newbullet.GetComponent<ProjectileScript>();
 
-                    bulletProject.projectileDamage = 20;
+                    bulletProject.projectileDamage = 10;
                     currentDamage = bulletProject.projectileDamage;
                 }
 
-                GameObject Audio4Bullet = Instantiate(shotgunAudio, bulletSpawn.transform.position, transform.rotation);
+                GameObject Audio4Bullet = Instantiate(bulletAudio, bulletSpawn.transform.position, transform.rotation);
                 Destroy(Audio4Bullet, 4.3f);
                 
             }
@@ -127,7 +121,7 @@ public class RobotScript : MonoBehaviour
                 StartCoroutine(FireBurst());
                 
             }
-            else if (!rapid && !shotGun)
+            else
             {
                 //bullet
                 GameObject newbullet = Instantiate(bullet, bulletSpawn.transform.position, transform.rotation);
