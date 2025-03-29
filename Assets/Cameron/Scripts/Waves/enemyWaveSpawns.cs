@@ -47,10 +47,12 @@ public class enemyWaveSpawns : MonoBehaviour
     private GameObject SpawnParticle;
 
     private GameObject ArrowL, ArrowR;
-    
+
+    private Animations GameAnimations;
 
     void Start()
     {
+        GameAnimations = FindAnyObjectByType<Animations>();
         gameManager = FindAnyObjectByType<GameManager>();
         canSpawn = false;
         timeInbetweenWaves = gameManager.secBetweenEnemySpawns;
@@ -82,11 +84,14 @@ public class enemyWaveSpawns : MonoBehaviour
 
             if (timeInbetweenWaves <= 0)
             {
+                
                 if (spawnTimer <= 0)
                 {
                     //spawn enemy
                     if (enemiesToSpawn.Count > 0 && spawnTimer <= 0)
                     {
+                        
+
                         int spawnPoint = Random.Range(0, spawnLocations.Count);
                         GameObject particleSpawn = Instantiate(SpawnParticle, spawnLocations[spawnPoint].position, Quaternion.identity);
 
@@ -99,7 +104,10 @@ public class enemyWaveSpawns : MonoBehaviour
                     else if (currentAmtEnemys == 0 && enemiesToSpawn.Count == 0 && amountOfWaves > 0)
                     {
                         amountOfWaves--;
+                        GameAnimations.waveCount++;
+                        GameAnimations.playWaveDisplay = true;
                         
+
                         GenerateWave();
                         if (spawnInterval >= 0.5)
                         {
@@ -114,6 +122,7 @@ public class enemyWaveSpawns : MonoBehaviour
                     else if (currentAmtEnemys == 0)
                     {
                         // end room
+                        GameAnimations.waveCount = 0;
                         waveTimer = 0;
                         nextRoomInteract.SetActive(true);
                         dircArrows.SetActive(true);

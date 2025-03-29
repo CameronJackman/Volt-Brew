@@ -25,10 +25,21 @@ public class Health : MonoBehaviour
     [SerializeField]
     private GameObject enemyDeathParticle;
 
+    [SerializeField]
+    private GameObject playdeathAnimation;
+
+    private Animations GameAnimations;
+
+    [SerializeField]
+    private AudioClip damageAudioClip;
+    [SerializeField]
+    private AudioClip deathAudioClip;
+
 
 
     void Start()
     {
+        GameAnimations = FindAnyObjectByType<Animations>();
         currentHealth = maxHealth;
         
         gameManager = FindAnyObjectByType<GameManager>();
@@ -47,8 +58,18 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-            currentHealth -= damage;
-        Debug.Log(currentHealth -= damage);
+        currentHealth -= damage;
+        
+        if (gameObject.CompareTag("Player"))
+        {
+            GameAnimations.playDamage = true;
+        }
+
+        if (gameObject.CompareTag("EnemyMelee") || gameObject.CompareTag("EnemyRange"))
+        {
+            GameAnimations.globalAudioSource.PlayOneShot(damageAudioClip);
+        }
+            
     }
 
     private void Update()
@@ -58,8 +79,17 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0 && gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene(0);
-            Debug.Log("Dead");
+            if (playdeathAnimation != null)
+            {
+                StartCoroutine(deathAnimation());
+                
+            }
+            else
+            {
+                SceneManager.LoadScene(0);
+                Debug.Log("Dead");
+            }
+                
         }
 
         else if (currentHealth <= 0 && gameObject.layer == LayerMask.NameToLayer("Enemy"))
@@ -73,6 +103,7 @@ public class Health : MonoBehaviour
             }
             else
             {
+                GameAnimations.globalAudioSource.PlayOneShot(deathAudioClip);
                 curEnemySpawnScpt.currentAmtEnemys--;
                 enemyScript.DropCoin();
                 Destroy(gameObject);
@@ -82,7 +113,17 @@ public class Health : MonoBehaviour
 
     }
 
+    IEnumerator deathAnimation()
+    {
+        playdeathAnimation.SetActive(true);
+
+        yield return new WaitForSeconds(11);
+
+        SceneManager.LoadScene(1);
+
+    }
+
 }
 
 
-    
+
