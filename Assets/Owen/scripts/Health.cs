@@ -30,6 +30,12 @@ public class Health : MonoBehaviour
 
     private Animations GameAnimations;
 
+    [SerializeField]
+    private AudioClip damageAudioClip;
+    [SerializeField]
+    private AudioClip deathAudioClip;
+
+
 
     void Start()
     {
@@ -57,6 +63,11 @@ public class Health : MonoBehaviour
         if (gameObject.CompareTag("Player"))
         {
             GameAnimations.playDamage = true;
+        }
+
+        if (gameObject.CompareTag("EnemyMelee") || gameObject.CompareTag("EnemyRange"))
+        {
+            GameAnimations.globalAudioSource.PlayOneShot(damageAudioClip);
         }
             
     }
@@ -92,6 +103,7 @@ public class Health : MonoBehaviour
             }
             else
             {
+                GameAnimations.globalAudioSource.PlayOneShot(deathAudioClip);
                 curEnemySpawnScpt.currentAmtEnemys--;
                 enemyScript.DropCoin();
                 Destroy(gameObject);
