@@ -58,11 +58,22 @@ public class LevelTransition : MonoBehaviour
     private bool canDisplay;
     private bool checkDis;
 
+    //Animations
+    [SerializeField]
+    private GameObject doorTransition;
+
+    private Animations GameAnimations;
+
+
+    
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        GameAnimations = FindAnyObjectByType<Animations>();
+
         gameManager = FindAnyObjectByType<GameManager>();
 
         GreenlevelList = FindObjectOfType<LevelList>().GreenListOfLevels;
@@ -111,15 +122,14 @@ public class LevelTransition : MonoBehaviour
         
         if (fade)
         {
-            
+
+            GameAnimations.playDoorTransition = true;
             _blackFade.alpha = Mathf.Lerp(_blackFade.alpha, 1.0f, fadeSpeed/ fadeDuration);
 
             
-            
-            
-            
-        } else if (!fade)
+        } else if (!fade && !GameAnimations.playDoorTransition)
             {
+                
                 _blackFade.alpha = Mathf.Lerp(_blackFade.alpha, 0.0f, fadeSpeed / fadeDuration);
             }
 
