@@ -48,8 +48,13 @@ public class Enemy : MonoBehaviour
 
     private GameManager gameManager;
 
+    private Animations GameAnimations;
+
+
     private void Awake()
     {
+        GameAnimations = FindAnyObjectByType<Animations>();
+
         gameManager = FindAnyObjectByType<GameManager>();
 
         //ai pathfinding start
@@ -293,6 +298,7 @@ public class Enemy : MonoBehaviour
 
     public void DropPowerUp()
     {
+        GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.pwrDroppedClip);
         GameObject PowerUpCollectable = Instantiate(curPower, gameObject.transform);
         PowerUpCollectable.transform.SetParent(CoinsParent.transform, true);
         PowerUpCollectable.transform.localScale = new Vector2(0.09f, 0.09f);

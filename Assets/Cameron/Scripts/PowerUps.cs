@@ -20,12 +20,15 @@ public class PowerUps : MonoBehaviour
     private PlayerMovement2 playerScript;
     private GameManager gameManager;
 
+    private Animations GameAnimations;
 
     // Start is called before the first frame update
     void Start()
     {
         playerScript = FindAnyObjectByType<PlayerMovement2>();
         gameManager = FindAnyObjectByType<GameManager>();
+        GameAnimations = FindAnyObjectByType<Animations>();
+
     }
 
     // Update is called once per frame
@@ -62,7 +65,7 @@ public class PowerUps : MonoBehaviour
             }
 
 
-
+            GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.pwrPickupClip);
             //destroys the game object after collision and powerup put into effect
             Destroy(gameObject);
         }
