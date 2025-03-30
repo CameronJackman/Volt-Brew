@@ -7,17 +7,11 @@ public class EnemyShooting : MonoBehaviour
     public Transform firePoint;
 
     //Time between shots fired
-    public float fireRate = 1.5f;
-
-    private Animations GameAnimations;
-
-    [SerializeField]
-    private AudioClip shootingAudioClip;
+    public float fireRate = 1.5f; 
 
     private void Start()
     {
         StartCoroutine(ShootRoutine());
-        GameAnimations = FindAnyObjectByType<Animations>();
     }
 
     private IEnumerator ShootRoutine()
@@ -31,7 +25,6 @@ public class EnemyShooting : MonoBehaviour
 
     private void Shoot()
     {
-        GameAnimations.globalAudioSource.PlayOneShot(shootingAudioClip);
         Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
     }
 }
