@@ -67,7 +67,7 @@ public class Health : MonoBehaviour
 
         if (gameObject.CompareTag("EnemyMelee") || gameObject.CompareTag("EnemyRange"))
         {
-            GameAnimations.globalAudioSource.PlayOneShot(damageAudioClip);
+            GameAnimations.enemyAudioSource.PlayOneShot(damageAudioClip);
         }
             
     }
@@ -103,7 +103,7 @@ public class Health : MonoBehaviour
             }
             else
             {
-                GameAnimations.globalAudioSource.PlayOneShot(deathAudioClip);
+                GameAnimations.enemyAudioSource.PlayOneShot(deathAudioClip);
                 curEnemySpawnScpt.currentAmtEnemys--;
                 enemyScript.DropCoin();
                 Destroy(gameObject);

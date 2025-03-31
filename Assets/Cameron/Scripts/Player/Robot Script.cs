@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class RobotScript : MonoBehaviour
@@ -27,9 +28,15 @@ public class RobotScript : MonoBehaviour
 
     [HideInInspector]
     public float currentDamage;
+    
+    public float rapidDamage = 30;
+    
+    public float singleDamage = 50;
+    
+    public float shotGunDamage = 70;
 
-    
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,8 +93,9 @@ public class RobotScript : MonoBehaviour
 
             ProjectileScript bulletProject = newbullet.GetComponent<ProjectileScript>();
 
-            bulletProject.projectileDamage = 20;
-            currentDamage = bulletProject.projectileDamage;
+            bulletProject.projectileDamage = rapidDamage;
+            currentDamage = rapidDamage;
+            Debug.Log(currentDamage);
 
             GameObject Audio4Bullet = Instantiate(bulletAudio, bulletSpawn.transform.position, transform.rotation);
             Destroy(Audio4Bullet, 4.3f);
@@ -114,8 +122,9 @@ public class RobotScript : MonoBehaviour
 
                     ProjectileScript bulletProject = newbullet.GetComponent<ProjectileScript>();
 
-                    bulletProject.projectileDamage = 20;
-                    currentDamage = bulletProject.projectileDamage;
+                    bulletProject.projectileDamage = shotGunDamage;
+                    currentDamage = shotGunDamage;
+                    Debug.Log(currentDamage);
                 }
 
                 GameObject Audio4Bullet = Instantiate(shotgunAudio, bulletSpawn.transform.position, transform.rotation);
@@ -132,7 +141,9 @@ public class RobotScript : MonoBehaviour
                 //bullet
                 GameObject newbullet = Instantiate(bullet, bulletSpawn.transform.position, transform.rotation);
                 ProjectileScript bulletProject = newbullet.GetComponent<ProjectileScript>();
-                currentDamage = bulletProject.projectileDamage;
+                bulletProject.projectileDamage = singleDamage;
+                currentDamage = singleDamage;
+                Debug.Log(currentDamage);
                 //bullet audio
                 GameObject Audio4Bullet = Instantiate(bulletAudio, bulletSpawn.transform.position, transform.rotation);
                 Destroy(Audio4Bullet, 4.3f);

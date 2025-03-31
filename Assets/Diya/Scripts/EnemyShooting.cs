@@ -31,7 +31,7 @@ public class EnemyShooting : MonoBehaviour
 
     private void Shoot()
     {
-        GameAnimations.globalAudioSource.PlayOneShot(shootingAudioClip);
+        GameAnimations.enemyAudioSource.PlayOneShot(shootingAudioClip);
         Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
     }
 }

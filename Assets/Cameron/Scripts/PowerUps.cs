@@ -12,7 +12,8 @@ public class PowerUps : MonoBehaviour
         Coins,
         Sheild,
         HealthUpgrade,
-        FireRateUpgrade
+        FireRateUpgrade,
+        DamageUpgrade
     }
 
     public PowerUpList PowerUpChoice;
@@ -63,11 +64,37 @@ public class PowerUps : MonoBehaviour
             {
                 fasterFireRate();
             }
+            if (PowerUpChoice == PowerUpList.DamageUpgrade)
+            {
+                DamageUpgrade();
+            }
 
 
             GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.pwrPickupClip);
             //destroys the game object after collision and powerup put into effect
             Destroy(gameObject);
+        }
+    }
+
+    public void DamageUpgrade()
+    {
+        RobotScript rbS = FindAnyObjectByType<RobotScript>();
+
+        if (rbS != null)
+        {
+            if (rbS.rapid)
+            {
+                rbS.rapidDamage += 25;
+            }
+            else if (rbS.shotGun)
+            {
+                rbS.shotGunDamage += 25;
+            }
+            else if (!rbS.rapid && !rbS.shotGun)
+            {
+                rbS.singleDamage += 25;
+            }
+
         }
     }
 

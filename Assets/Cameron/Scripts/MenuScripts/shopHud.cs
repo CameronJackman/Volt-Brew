@@ -17,6 +17,7 @@ public class shopHud : MonoBehaviour
     private PlayerMovement2 playerMovement;
     private GameManager gameManager;
     private Health playerHealth;
+    
 
 
     //Costs of shop items
@@ -28,6 +29,8 @@ public class shopHud : MonoBehaviour
     private float MaxHealthCost;
     [SerializeField]
     private float decreaseFireRateCost;
+    [SerializeField]
+    private float damageUpgradeCost;
     [SerializeField]
     private float jackPotCost;
     [SerializeField]
@@ -49,10 +52,12 @@ public class shopHud : MonoBehaviour
 
     private GameObject currentDisplayingBar;
 
+    private Animations GameAnimations;
 
     // Start is called before the first frame update
     void Start()
     {
+        GameAnimations = FindAnyObjectByType<Animations>();
         menuScript = FindAnyObjectByType<Menus>();
         playerMovement = FindAnyObjectByType<PlayerMovement2>();
         playerHealth = playerMovement.GetComponent<Health>();
@@ -99,6 +104,7 @@ public class shopHud : MonoBehaviour
 
     }
 
+
     //SHOP ITEM #1 --> Health Pot
     public void HealthPot()
     {
@@ -113,9 +119,13 @@ public class shopHud : MonoBehaviour
             {
                 playerHealth.currentHealth = playerHealth.maxHealth;
             }
-
+            GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.itemBought);
             healthBought = true;
             Debug.Log("Health Bought");
+        }
+        else
+        {
+            GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.invalid);
         }
     }
 
@@ -131,14 +141,50 @@ public class shopHud : MonoBehaviour
             gameManager.coins -= projectileShieldCost;
 
             playerMovement.isProjectileShieldOwned = true;
-
+            GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.itemBought);
             shieldOwned = true;
 
 
 
         }
+        else
+        {
+            GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.invalid);
+        }
     }
 
+    public void DamageUpgrade()
+    {
+        if (gameManager.coins >= damageUpgradeCost)
+        {
+            gameManager.coins -= damageUpgradeCost;
+            RobotScript rbS = FindAnyObjectByType<RobotScript>();
+
+            if (rbS != null)
+            {
+                if (rbS.rapid)
+                {
+                    rbS.rapidDamage += 25;
+                }
+                else if (rbS.shotGun)
+                {
+                    rbS.shotGunDamage += 25;
+                }
+                else if (!rbS.rapid && !rbS.shotGun)
+                {
+                    rbS.singleDamage += 25;
+                }
+
+            }
+            powerBought = true;
+
+            GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.itemBought);
+        }
+        else
+        {
+            GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.invalid);
+        }
+    }
     public void MaxHealthIncrease()
     {
         if (gameManager.coins >= MaxHealthCost)
@@ -146,7 +192,12 @@ public class shopHud : MonoBehaviour
             playerHealth.maxHealth += 15;
             playerHealth.currentHealth += 15;
             gameManager.coins -= MaxHealthCost;
+            GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.itemBought);
             powerBought = true;
+        }
+        else
+        {
+            GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.invalid);
         }
     }
 
@@ -158,12 +209,18 @@ public class shopHud : MonoBehaviour
             {
                 playerMovement.resetCooldownCount -= 0.1f;
                 gameManager.coins -= decreaseFireRateCost;
+                GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.itemBought);
                 powerBought = true;
+            }
+            else
+            {
+                GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.invalid);
             }
         }
         else
         {
-            powerBought = true;
+            GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.invalid);
+            powerBought = false;
         }
 
             
@@ -175,9 +232,14 @@ public class shopHud : MonoBehaviour
         {
             gameManager.coins -= jackPotCost;
             gameManager.coins += 1000;
-
+            GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.itemBought);
             powerBought = true;
         }
+        else
+        {
+            GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.invalid);
+        }
+            
     }
 
     public void ReRoll()

@@ -298,7 +298,7 @@ public class Enemy : MonoBehaviour
 
     public void DropPowerUp()
     {
-        GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.pwrDroppedClip);
+        GameAnimations.enemyAudioSource.PlayOneShot(GameAnimations.pwrDroppedClip);
         GameObject PowerUpCollectable = Instantiate(curPower, gameObject.transform);
         PowerUpCollectable.transform.SetParent(CoinsParent.transform, true);
         PowerUpCollectable.transform.localScale = new Vector2(0.09f, 0.09f);

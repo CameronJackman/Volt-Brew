@@ -112,8 +112,8 @@ public class LevelTransition : MonoBehaviour
             checkDis = true;
         }
 
-        
 
+        GameAnimations.transitionPlayed = false;
     }
 
     // Update is called once per frame
@@ -122,11 +122,14 @@ public class LevelTransition : MonoBehaviour
         
         if (fade)
         {
-
-            GameAnimations.playDoorTransition = true;
-            _blackFade.alpha = Mathf.Lerp(_blackFade.alpha, 1.0f, fadeSpeed/ fadeDuration);
-
+            if (!GameAnimations.transitionPlayed)
+            {
+                GameAnimations.playDoorTransition = true;
+            }
             
+            _blackFade.alpha = Mathf.Lerp(_blackFade.alpha, 1.0f, fadeSpeed/ fadeDuration);
+            
+
         } else if (!fade && !GameAnimations.playDoorTransition)
             {
                 

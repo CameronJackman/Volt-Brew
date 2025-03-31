@@ -22,10 +22,15 @@ public class Animations : MonoBehaviour
     public bool playRespawn;
 
     [HideInInspector]
+    public bool transitionPlayed;
+
+    [HideInInspector]
     public int waveCount;
 
     
     public AudioSource globalAudioSource;
+    public AudioSource playerAudioSource;
+    public AudioSource enemyAudioSource;
 
     [SerializeField]
     private AudioClip damageClip;
@@ -35,6 +40,10 @@ public class Animations : MonoBehaviour
     public AudioClip pwrDroppedClip;
 
     public AudioClip doorTransClip;
+
+    public AudioClip itemBought;
+
+    public AudioClip invalid;
 
 
 
@@ -79,12 +88,13 @@ public class Animations : MonoBehaviour
 
     IEnumerator doorTransition()
     {
-
+        playDoorTransition = false;
+        transitionPlayed = true;
         doorAnimatiuon.SetActive(true);
-
+        Debug.Log("Playing Door Transition");
         globalAudioSource.PlayOneShot(doorTransClip);
         yield return new WaitForSeconds(1.5f);
-        playDoorTransition = false;
+        
         doorAnimatiuon.SetActive(false);
 
     }
@@ -101,7 +111,7 @@ public class Animations : MonoBehaviour
 
     IEnumerator damageAnimation()
     {
-        globalAudioSource.PlayOneShot(damageClip);
+        playerAudioSource.PlayOneShot(damageClip);
 
         playDamage = false;
         damageAni.SetActive(true);
