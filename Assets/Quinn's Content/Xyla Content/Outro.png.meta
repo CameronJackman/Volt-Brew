@@ -100,10 +100,10 @@ TextureImporter:
       name: Outro_0
       rect:
         serializedVersion: 2
-        x: 872
-        y: 3815
-        width: 340
-        height: 695
+        x: 826
+        y: 3769
+        width: 433
+        height: 787
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,10 +121,10 @@ TextureImporter:
       name: Outro_1
       rect:
         serializedVersion: 2
-        x: 2810
-        y: 3814
-        width: 325
-        height: 699
+        x: 2763
+        y: 3768
+        width: 419
+        height: 792
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,10 +142,10 @@ TextureImporter:
       name: Outro_2
       rect:
         serializedVersion: 2
-        x: 4736
-        y: 3815
-        width: 321
-        height: 709
+        x: 4689
+        y: 3769
+        width: 415
+        height: 801
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +163,10 @@ TextureImporter:
       name: Outro_3
       rect:
         serializedVersion: 2
-        x: 6666
-        y: 3813
-        width: 314
-        height: 714
+        x: 6620
+        y: 3766
+        width: 407
+        height: 808
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: Outro_4
       rect:
         serializedVersion: 2
-        x: 8598
-        y: 3814
-        width: 306
-        height: 721
+        x: 8551
+        y: 3768
+        width: 400
+        height: 814
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +205,10 @@ TextureImporter:
       name: Outro_5
       rect:
         serializedVersion: 2
-        x: 930
-        y: 2146
-        width: 307
-        height: 725
+        x: 884
+        y: 2099
+        width: 400
+        height: 819
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,10 +226,10 @@ TextureImporter:
       name: Outro_6
       rect:
         serializedVersion: 2
-        x: 2858
-        y: 2146
-        width: 306
-        height: 729
+        x: 2810
+        y: 2099
+        width: 401
+        height: 823
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,10 +247,10 @@ TextureImporter:
       name: Outro_7
       rect:
         serializedVersion: 2
-        x: 4789
-        y: 2147
-        width: 308
-        height: 731
+        x: 4743
+        y: 2100
+        width: 402
+        height: 824
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,10 +268,10 @@ TextureImporter:
       name: Outro_8
       rect:
         serializedVersion: 2
-        x: 6718
-        y: 2147
-        width: 308
-        height: 734
+        x: 6670
+        y: 2100
+        width: 403
+        height: 827
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,10 +289,10 @@ TextureImporter:
       name: Outro_9
       rect:
         serializedVersion: 2
-        x: 8664
-        y: 2147
-        width: 310
-        height: 739
+        x: 8618
+        y: 2100
+        width: 403
+        height: 832
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,10 +310,10 @@ TextureImporter:
       name: Outro_10
       rect:
         serializedVersion: 2
-        x: 968
-        y: 479
-        width: 310
-        height: 737
+        x: 922
+        y: 432
+        width: 403
+        height: 830
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
