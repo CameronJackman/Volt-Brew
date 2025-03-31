@@ -9522,6 +9522,7 @@ MonoBehaviour:
   fadeDuration: 200
   Interact: {fileID: 8487487437185950467}
   power: {fileID: 0}
+  doorTransition: {fileID: 0}
 --- !u!1 &189014342286251357
 GameObject:
   m_ObjectHideFlags: 0
@@ -11909,6 +11910,7 @@ MonoBehaviour:
   nextRoomInteract: {fileID: 8284345062874878027}
   currentAmtEnemys: 0
   Display: 0
+  SpawnParticle: {fileID: 6583330533235266405, guid: 26da0eab84b658e4dad8c48ff97d031a, type: 3}
 --- !u!60 &5085739438706347339
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -19151,6 +19153,7 @@ MonoBehaviour:
   fadeDuration: 200
   Interact: {fileID: 3076469487612827881}
   power: {fileID: 0}
+  doorTransition: {fileID: 0}
 --- !u!1 &3869588468997188206
 GameObject:
   m_ObjectHideFlags: 0
@@ -21552,7 +21555,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 336680
+  m_InstanceId: 60776
   m_LocalBounds:
     m_Center: {x: -0.000000059604645, y: 0, z: 0}
     m_Extent: {x: 0.5, y: 0.5, z: 0}
