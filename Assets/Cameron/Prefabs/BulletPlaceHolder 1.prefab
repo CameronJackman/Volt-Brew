@@ -932,6 +932,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4733981526579250474, guid: 4bd24f188d7662847a5ff19d49ba8bea, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1cb8a52b48e972847ac06a03926fe80d, type: 2}
     - target: {fileID: 5044225775712764120, guid: 4bd24f188d7662847a5ff19d49ba8bea, type: 3}
       propertyPath: m_Name
       value: Sparks
