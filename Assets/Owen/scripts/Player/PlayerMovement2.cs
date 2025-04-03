@@ -364,6 +364,10 @@ public class PlayerMovement2 : MonoBehaviour
         if (collision.CompareTag("Coin"))
         {
             gameManager.coins++;
+            gameManager.coins++;
+            gameManager.coins++;
+            gameManager.coins++;
+            gameManager.coins++;
             Destroy(collision.gameObject);
         }
     }

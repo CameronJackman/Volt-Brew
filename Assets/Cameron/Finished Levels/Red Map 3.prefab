@@ -9679,7 +9679,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 406af8d4926e0b041959ae211087f663, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -9699,7 +9699,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 1241513562596628690}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 406af8d4926e0b041959ae211087f663, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -9742,7 +9742,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 1241513562596628690}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 406af8d4926e0b041959ae211087f663, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -58707,7 +58707,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -475030
+  m_InstanceId: 170702
   m_LocalBounds:
     m_Center: {x: -0.000000059604645, y: 0, z: 0}
     m_Extent: {x: 0.5, y: 0.5, z: 0}
