@@ -121,7 +121,7 @@ public class Health : MonoBehaviour
     {
         playdeathAnimation.SetActive(true);
 
-        yield return new WaitForSeconds(11);
+        yield return new WaitForSecondsRealtime(11);
 
         SceneManager.LoadScene(1);
 
