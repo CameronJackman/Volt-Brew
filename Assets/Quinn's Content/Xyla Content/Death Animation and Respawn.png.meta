@@ -1,0 +1,3309 @@
+fileFormatVersion: 2
+guid: e7a3bf18ad2340c4eb5a8a130a113c8b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Death Animation and Respawn_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 14750
+        width: 119
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac7a41daffecf73449d9780165047da3
+      internalID: 361553151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_3
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 14552
+        width: 117
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12b02e3df3249b4c819afc6986cfe75
+      internalID: 437497297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_5
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 14552
+        width: 109
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 498a6042aea6e994f94bf53bf68d10b6
+      internalID: -1015360870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_8
+      rect:
+        serializedVersion: 2
+        x: 2116
+        y: 14556
+        width: 117
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 201fcb7fbd953b046963ac51f785f42a
+      internalID: -927417888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_10
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 14552
+        width: 118
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06c1113f24b9fb24e8b8ee07a9bec1a7
+      internalID: -1089544258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_12
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 14556
+        width: 111
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9f927d5424a5743bda24fef7f51955
+      internalID: -2074572319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_15
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 13926
+        width: 94
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8078eaad1296f9429f959b33187932e
+      internalID: 896980183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_16
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 13926
+        width: 117
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92358b3630e049e40b07e75d3371ab10
+      internalID: 1375821925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_17
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 13926
+        width: 95
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c728ab521e330354495e58ab3d904bf6
+      internalID: 1271759722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_19
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 13926
+        width: 116
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b6e4047cfd7681438231f8ace8d7f32
+      internalID: -565970251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_20
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 13926
+        width: 117
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a3ffc4e1e5cf9429e2e2698bb4d8b5
+      internalID: -1074597187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_21
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 13926
+        width: 95
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e7c14d0039b51b4ead5c6d9d5a4f0b4
+      internalID: 122000670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_24
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 13304
+        width: 74
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72bae7a1169cc3246a7e4f4c17996bd5
+      internalID: -1477762539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_26
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 13304
+        width: 117
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98f18d5c8331ebb4cac762fc50098f38
+      internalID: -1395475324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_27
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 13304
+        width: 110
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a030adc901c8e134093bf8766041c5e1
+      internalID: 206973620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_28
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 13304
+        width: 117
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1457ff95f3eaf6a4fa43d3f8f8892c5b
+      internalID: 1265690030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_29
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 13304
+        width: 117
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69fa29cb17bf6c54e8f691d335717827
+      internalID: -488080998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_30
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 13304
+        width: 110
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 245e3cc578136bc47b41fb1697e98cc7
+      internalID: -2072638513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_31
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 12674
+        width: 117
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22c46708e0c0b26419f36e6940e55f39
+      internalID: -274924875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_32
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 12674
+        width: 117
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b631bc72ceb117408ce980e78ceb85f
+      internalID: 1442063887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_33
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 12674
+        width: 110
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e2da96305dd9e5488e811213ff0de9a
+      internalID: -1884624705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_34
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 12674
+        width: 117
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d508d1de25772dd42af880f80c5dc954
+      internalID: -896413783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_35
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 12674
+        width: 117
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db4af7e6b9632b24c9966bd52dc45856
+      internalID: -521722212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_36
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 12674
+        width: 110
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e60971d65899eec40b3cb33e34580604
+      internalID: 408840920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_37
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 12051
+        width: 117
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e02b1fe30835ab4a8c63fb301b50e4d
+      internalID: 1823765235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_38
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 12051
+        width: 117
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c386cb613a08e2488eae6e770843630
+      internalID: -1312725384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_39
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 12051
+        width: 110
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2ac7902f35749448b80fa4d0d8e4c79
+      internalID: 1608945603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_40
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 12051
+        width: 117
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02ff6df6451997843864ccb693e4e056
+      internalID: 589144322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_41
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 12051
+        width: 117
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d380c09938f01d9469e379e471176ad5
+      internalID: 1276528611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_42
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 12051
+        width: 110
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53414de022dbe714eb956a2691ee35b1
+      internalID: 1902208684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_43
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 11429
+        width: 117
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd16176b5baedd42aecf8f2a4cc5e69
+      internalID: 508140579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_44
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 11429
+        width: 117
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8765a301b93239744820f27f4c737395
+      internalID: -1523346685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_45
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 11429
+        width: 110
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc267b961fa15646b683c35ecd0a96e
+      internalID: -758717656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_46
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 11429
+        width: 117
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be41192351c8db6439ee965d66caded1
+      internalID: 1654331595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_47
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 11429
+        width: 117
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3c7766904d24a048b67e271f7231f0f
+      internalID: -863334288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_48
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 11429
+        width: 110
+        height: 278
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f2b6ef040ce13d4dace5cdf9a46a153
+      internalID: -559509637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_49
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 10799
+        width: 117
+        height: 285
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ff2d9fad9b32947a1779cdf330484d
+      internalID: -1942819769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_50
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 10799
+        width: 117
+        height: 293
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb17908c6189c9b43b404d782c658068
+      internalID: -1792024539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_51
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 10799
+        width: 110
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2115af7fbafa0d4393f212f3db2d9f8
+      internalID: 755386842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_52
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 10799
+        width: 117
+        height: 307
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aabc7ef6d3e53684d9a4c291ee309207
+      internalID: -1700488616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_53
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 10799
+        width: 117
+        height: 314
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b84c7f0e1ff8519438cf0f31996e3250
+      internalID: -879766344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_54
+      rect:
+        serializedVersion: 2
+        x: 3366
+        y: 10799
+        width: 124
+        height: 307
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0020e416d21b61d478f914e1a20d8729
+      internalID: 59586524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_55
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 10176
+        width: 125
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c1b93b0cf1277049984ebff7d49fed6
+      internalID: -1201672125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_56
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 10176
+        width: 117
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 883aa8d30b240824e9aca301d66edaa9
+      internalID: -857470013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_57
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 10176
+        width: 117
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f734c43408b5f43a9ecf4c09942627
+      internalID: 1171535564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_58
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 10176
+        width: 117
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a80f0ad31ad4d479b81d48ba03cd88
+      internalID: 1296957041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_59
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 10176
+        width: 117
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05df8c2c7fc304e418a25bfc86ab9305
+      internalID: 1962755866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_60
+      rect:
+        serializedVersion: 2
+        x: 3366
+        y: 10176
+        width: 117
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 457263af6c730254c88ed533a7d29f11
+      internalID: 709100644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_61
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 9554
+        width: 124
+        height: 307
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c87f2fa2545c5409faefec3d6920ed
+      internalID: -305714969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_62
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 9554
+        width: 117
+        height: 307
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e516ab6571757fb478db9e2642117164
+      internalID: 1229886454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_63
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 9554
+        width: 117
+        height: 315
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11ca4a5f88a80354d93c0c08a393fcdd
+      internalID: 1388008550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_64
+      rect:
+        serializedVersion: 2
+        x: 2121
+        y: 9554
+        width: 116
+        height: 315
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b06ab9e792cb2145bc9470daaca62fb
+      internalID: 229495221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_65
+      rect:
+        serializedVersion: 2
+        x: 2750
+        y: 9554
+        width: 110
+        height: 315
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3da26815b798454382477991b6923de
+      internalID: -2013581182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_66
+      rect:
+        serializedVersion: 2
+        x: 3380
+        y: 9554
+        width: 103
+        height: 322
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5846d80eec675a34bafe42c52b4c244d
+      internalID: -1062923270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_67
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 8925
+        width: 102
+        height: 321
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f17672a45ec43d64f8c4da5cc2ba9f0b
+      internalID: -1481657711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_68
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 8954
+        width: 110
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01343302d7a88d043adbde5d4fa8bfb3
+      internalID: 320577558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_69
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 8975
+        width: 102
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c7c79603fe73a14cb0a8c9063cb53ae
+      internalID: -42956356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_70
+      rect:
+        serializedVersion: 2
+        x: 2128
+        y: 8983
+        width: 102
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39acd69a07e02754f934b37949abbf01
+      internalID: -2078987168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_71
+      rect:
+        serializedVersion: 2
+        x: 2765
+        y: 9005
+        width: 87
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc383a7c9351da74b82619c918d8894a
+      internalID: 1976610654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_72
+      rect:
+        serializedVersion: 2
+        x: 3387
+        y: 9019
+        width: 88
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9259520e1a7fd3843a5d88ab5a16198d
+      internalID: 1095790974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_73
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 8411
+        width: 74
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d18175e18de9edd40891f4148f3e671f
+      internalID: -1716307023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_74
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 8426
+        width: 73
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a51a841a124554cb3d5eb497cc6398
+      internalID: -1662975430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_75
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 8441
+        width: 80
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59080e66ec5528440860e0ad2c02ead9
+      internalID: 1832812917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_76
+      rect:
+        serializedVersion: 2
+        x: 2143
+        y: 8448
+        width: 80
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5153bc3666732bc4891acf434422a13a
+      internalID: 1500470707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_77
+      rect:
+        serializedVersion: 2
+        x: 2765
+        y: 8463
+        width: 73
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be01f5e53f03e5341b368156e40dc0c0
+      internalID: 1324840567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_78
+      rect:
+        serializedVersion: 2
+        x: 3395
+        y: 8477
+        width: 58
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb7e3ddea55d9b4994bfd909cdab149
+      internalID: -1279739565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_79
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 7869
+        width: 51
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d14243e1d931d34485f303c18d2809d
+      internalID: 1502862657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_80
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 7884
+        width: 58
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b349b8a0502be05459316fae8c47b689
+      internalID: -1585502413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_81
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 7899
+        width: 51
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2c5880205fb1834bb93989d13376234
+      internalID: -1905404736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_82
+      rect:
+        serializedVersion: 2
+        x: 2150
+        y: 7913
+        width: 51
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9801e16d4fabd2f459d3deea3d009860
+      internalID: 486425195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_83
+      rect:
+        serializedVersion: 2
+        x: 2780
+        y: 7929
+        width: 43
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b451c6114bb4ec940ae9bcd3e32e46fa
+      internalID: 1601369517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_84
+      rect:
+        serializedVersion: 2
+        x: 3409
+        y: 7957
+        width: 37
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc4ff64acdf6fe40bdbb3fdd427b022
+      internalID: 1590212367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_85
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 7335
+        width: 35
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 047f44f10ea11b7409bb6be6f8cdd15a
+      internalID: -840624257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_86
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 7306
+        width: 44
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b655b033b2675624e93da5c19a986f64
+      internalID: -417400373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_87
+      rect:
+        serializedVersion: 2
+        x: 2150
+        y: 7284
+        width: 51
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a882adf7a5f8c11468fcba96cf1fbb02
+      internalID: -23946726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_88
+      rect:
+        serializedVersion: 2
+        x: 2780
+        y: 7276
+        width: 43
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa227c65e522ae458edcc15d08d83f8
+      internalID: 1000804061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_89
+      rect:
+        serializedVersion: 2
+        x: 3402
+        y: 7254
+        width: 51
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f3de40db9ec6cf4590015541a967899
+      internalID: -1365529645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_90
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 6617
+        width: 51
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af28cbc50e9190147b3b4ce749f21680
+      internalID: -737551123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_91
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 6603
+        width: 59
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eea092cd76f7eaa4c8ab3503655cd274
+      internalID: -1618834901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_92
+      rect:
+        serializedVersion: 2
+        x: 1513
+        y: 6588
+        width: 80
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e5def75476c64489ac8386a4756c5c
+      internalID: -1009234365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_93
+      rect:
+        serializedVersion: 2
+        x: 2143
+        y: 6573
+        width: 80
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e370d59cff06a643b5530b1716c9c28
+      internalID: -1355502254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_94
+      rect:
+        serializedVersion: 2
+        x: 2772
+        y: 6566
+        width: 73
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f6d90a1afdaf04d9a9e8c5342da838
+      internalID: 870141747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_95
+      rect:
+        serializedVersion: 2
+        x: 3395
+        y: 6551
+        width: 73
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8287df83e019a644481ba484c4776bc1
+      internalID: -1448166130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_96
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 5908
+        width: 74
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf7563685be6904a8b563d682b1f653
+      internalID: 1750807006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_97
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 5899
+        width: 87
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d94b0b8e4fcca4c8ac7c967f3bcd81
+      internalID: 31002058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_98
+      rect:
+        serializedVersion: 2
+        x: 1512
+        y: 5877
+        width: 88
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f40b5c83d7a457d469e2609ef7356b39
+      internalID: 2061884367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_99
+      rect:
+        serializedVersion: 2
+        x: 2128
+        y: 5863
+        width: 95
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6c5667b7fe76c64186e6e957b291486
+      internalID: -184488729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_100
+      rect:
+        serializedVersion: 2
+        x: 2750
+        y: 5848
+        width: 103
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73820effa8e548b4c8de8bfae80143d3
+      internalID: -1137586493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_101
+      rect:
+        serializedVersion: 2
+        x: 3380
+        y: 5833
+        width: 103
+        height: 297
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68a2683b9a6ac5b4b95e2bfb38804df4
+      internalID: -1138992093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_102
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 5175
+        width: 102
+        height: 321
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffe1bc4cfdff6c843b5f5dea796db6bf
+      internalID: 1645199060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_103
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 5175
+        width: 110
+        height: 321
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27f7027a79924384c80ad76595bd7979
+      internalID: -594314776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_104
+      rect:
+        serializedVersion: 2
+        x: 1505
+        y: 5174
+        width: 103
+        height: 322
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 443a36f8370f1814ea0c4a1159931ede
+      internalID: -135852316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_105
+      rect:
+        serializedVersion: 2
+        x: 2121
+        y: 5174
+        width: 116
+        height: 322
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28d39f493f725ce4a9bc17bae4c9301e
+      internalID: 1054170829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_106
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 5175
+        width: 124
+        height: 321
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8181a697396afb9418c843c50b47f944
+      internalID: -1660127898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_107
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 5174
+        width: 117
+        height: 315
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cee9e4db781ea5e40b24c0a64ce8ad1e
+      internalID: -289933433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_108
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 4552
+        width: 124
+        height: 307
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668f47ae3fc25ba41b1f6396c9a3ae18
+      internalID: -911791116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_109
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 4552
+        width: 117
+        height: 307
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf0a00218f53544783556306e62a4a2
+      internalID: -89854214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_110
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 4552
+        width: 117
+        height: 307
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f37291b135249a4f8db2e61a04cc5b8
+      internalID: -1708971127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_111
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 4552
+        width: 117
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 461bbe1c1e7391d4182833fccd8c7c3d
+      internalID: 1205866860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_112
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 4552
+        width: 117
+        height: 307
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae8a1bb3936ee084399cf7acff7858fa
+      internalID: 978952035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_113
+      rect:
+        serializedVersion: 2
+        x: 3366
+        y: 4552
+        width: 124
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e76ba6fd101f2469c1514c17567d39
+      internalID: -156107998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_114
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 3929
+        width: 132
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21fceb170b6633b46963b38d2c4de0ac
+      internalID: 99009526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_115
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 3929
+        width: 117
+        height: 307
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce62e7a8db4d1a41a07ea8f9f74d7ca
+      internalID: -1271769668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_116
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 3929
+        width: 117
+        height: 307
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41656dc9770fea34a969a0d20793abe4
+      internalID: -1643176039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_117
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 3929
+        width: 117
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e71eee1b42490241b8fcc59e98acecf
+      internalID: 1801471251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_118
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 3929
+        width: 117
+        height: 293
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23f44c126e237af40a918bba30a3b6a8
+      internalID: 2038372143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_119
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 3929
+        width: 110
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046bf3e72f801764fb5d65a6171007b2
+      internalID: -2005342784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_120
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 3300
+        width: 117
+        height: 285
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71a337fd3677a994c93edd3b12357000
+      internalID: 610147589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_121
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 3300
+        width: 117
+        height: 281
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 120bf284ec79b4347a02929538d3eae9
+      internalID: 1683452323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_122
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 3300
+        width: 110
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaad7544b627d654a960758280ba2333
+      internalID: 2060351535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_123
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 3300
+        width: 117
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b13fcd236b1c748be5cc3b46676281
+      internalID: -293545158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_124
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 3300
+        width: 117
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86cf0073f020a3d459ed5e28eabb1dad
+      internalID: 2026562712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_125
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 3300
+        width: 110
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0831584a731704459d0e7bf3c639a54
+      internalID: 495856758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_126
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 2677
+        width: 117
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d2597a45df58540a2d980506c3d93e
+      internalID: -191560808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_127
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 2677
+        width: 117
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 149675beef025f94189ef218cfd76a52
+      internalID: -862438302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_128
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 2677
+        width: 110
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fec2f79d76c35f48b7170ff888e08b0
+      internalID: -587894635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_129
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 2677
+        width: 117
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3af4712323d08d04f93681106c9695f4
+      internalID: 1021505872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_130
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 2677
+        width: 117
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7545a6d95d68f8446b30a2d179a3774c
+      internalID: 2089986247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_131
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 2677
+        width: 110
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7b39a342fe2c9408af1b91fbbe1550
+      internalID: -1847523341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_132
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 2054
+        width: 117
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea5846fdae7145247baafc86f22f9e32
+      internalID: 1138801616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_133
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 2054
+        width: 117
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccda98661031c0d4b8bcf0114af205b2
+      internalID: -547087698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_134
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 2054
+        width: 110
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99058d09ed3a7f04fb4ada437c63573c
+      internalID: 39089063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_135
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 2054
+        width: 117
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f10cb02d9fc57cb4a9aef76906ad4241
+      internalID: -1709585288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_136
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 2054
+        width: 117
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d036307f20f41fc40a5783c5af9512ca
+      internalID: 1035548601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_137
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 2054
+        width: 110
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629c5a9106c305d409383c63db3c793f
+      internalID: -144665901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_138
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 1425
+        width: 117
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fb099bda75f26648aca20f8fac0c2a4
+      internalID: 1899135554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_139
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 1425
+        width: 117
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c9a96ca8c7062f4891f22013f4464cd
+      internalID: -1425617802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_140
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 1432
+        width: 110
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02cbc919443ef8743b56d1dbda8f2570
+      internalID: -1639026986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_141
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 1432
+        width: 117
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ffafe14d25b5d3429ecc8bc58375df1
+      internalID: -2122973570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_142
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 1428
+        width: 117
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9df2cd74b24b3894b82283d90446da50
+      internalID: -736151943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_143
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 1428
+        width: 110
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ce43e6329863041bd4b9c689569254
+      internalID: 1751207459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_145
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 802
+        width: 81
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d966d95b654f5341af3b8795ff97e8e
+      internalID: -845593429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_147
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 802
+        width: 102
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf5bbac124febe49978d5cf4708c08b
+      internalID: 2074537956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_149
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 802
+        width: 95
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c0c4d356ba5fa747b59819530566706
+      internalID: 1811418166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_151
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 802
+        width: 103
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96565b3711fc471468f285dfedd597ea
+      internalID: 644258068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_152
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 4823
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a214bbf006d0d1947a97e944e4e424ff
+      internalID: 387654167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_153
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 802
+        width: 102
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0881608862ea27f4c987f1ac72cc11ed
+      internalID: -987463571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_155
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 802
+        width: 95
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36c85435d4de83f459d1adca361e4cad
+      internalID: -1621759992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_158
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 180
+        width: 74
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e118ffe608f7c434db45abdb92d8db64
+      internalID: 2005565694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_160
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 180
+        width: 102
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95d7f17d4302f9046acd9675fdb15a26
+      internalID: 150845632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_162
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 180
+        width: 95
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abcad57371e481a4590845d506a0cb93
+      internalID: 1037243588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_165
+      rect:
+        serializedVersion: 2
+        x: 2142
+        y: 180
+        width: 81
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fd0b50a1e22ebe4eb2f86577f3cb744
+      internalID: -805798338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_167
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 180
+        width: 102
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e65068846df2f4cbea955978364185
+      internalID: 1069467214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Animation and Respawn_169
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 180
+        width: 95
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36e0553080dc7b64f9b1ff76e512a306
+      internalID: -1389155342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Death Animation and Respawn_0: 134157815
+      Death Animation and Respawn_1: 361553151
+      Death Animation and Respawn_10: -1089544258
+      Death Animation and Respawn_100: -1137586493
+      Death Animation and Respawn_101: -1138992093
+      Death Animation and Respawn_102: 1645199060
+      Death Animation and Respawn_103: -594314776
+      Death Animation and Respawn_104: -135852316
+      Death Animation and Respawn_105: 1054170829
+      Death Animation and Respawn_106: -1660127898
+      Death Animation and Respawn_107: -289933433
+      Death Animation and Respawn_108: -911791116
+      Death Animation and Respawn_109: -89854214
+      Death Animation and Respawn_11: 2102572595
+      Death Animation and Respawn_110: -1708971127
+      Death Animation and Respawn_111: 1205866860
+      Death Animation and Respawn_112: 978952035
+      Death Animation and Respawn_113: -156107998
+      Death Animation and Respawn_114: 99009526
+      Death Animation and Respawn_115: -1271769668
+      Death Animation and Respawn_116: -1643176039
+      Death Animation and Respawn_117: 1801471251
+      Death Animation and Respawn_118: 2038372143
+      Death Animation and Respawn_119: -2005342784
+      Death Animation and Respawn_12: -2074572319
+      Death Animation and Respawn_120: 610147589
+      Death Animation and Respawn_121: 1683452323
+      Death Animation and Respawn_122: 2060351535
+      Death Animation and Respawn_123: -293545158
+      Death Animation and Respawn_124: 2026562712
+      Death Animation and Respawn_125: 495856758
+      Death Animation and Respawn_126: -191560808
+      Death Animation and Respawn_127: -862438302
+      Death Animation and Respawn_128: -587894635
+      Death Animation and Respawn_129: 1021505872
+      Death Animation and Respawn_13: 718035970
+      Death Animation and Respawn_130: 2089986247
+      Death Animation and Respawn_131: -1847523341
+      Death Animation and Respawn_132: 1138801616
+      Death Animation and Respawn_133: -547087698
+      Death Animation and Respawn_134: 39089063
+      Death Animation and Respawn_135: -1709585288
+      Death Animation and Respawn_136: 1035548601
+      Death Animation and Respawn_137: -144665901
+      Death Animation and Respawn_138: 1899135554
+      Death Animation and Respawn_139: -1425617802
+      Death Animation and Respawn_14: 1852328041
+      Death Animation and Respawn_140: -1639026986
+      Death Animation and Respawn_141: -2122973570
+      Death Animation and Respawn_142: -736151943
+      Death Animation and Respawn_143: 1751207459
+      Death Animation and Respawn_144: -1718732684
+      Death Animation and Respawn_145: -845593429
+      Death Animation and Respawn_146: 597886904
+      Death Animation and Respawn_147: 2074537956
+      Death Animation and Respawn_148: -678699546
+      Death Animation and Respawn_149: 1811418166
+      Death Animation and Respawn_15: 896980183
+      Death Animation and Respawn_150: 908851559
+      Death Animation and Respawn_151: 644258068
+      Death Animation and Respawn_152: 387654167
+      Death Animation and Respawn_153: -987463571
+      Death Animation and Respawn_154: -274023792
+      Death Animation and Respawn_155: -1621759992
+      Death Animation and Respawn_156: -330789170
+      Death Animation and Respawn_157: 50654233
+      Death Animation and Respawn_158: 2005565694
+      Death Animation and Respawn_159: -912658498
+      Death Animation and Respawn_16: 1375821925
+      Death Animation and Respawn_160: 150845632
+      Death Animation and Respawn_161: -1050226258
+      Death Animation and Respawn_162: 1037243588
+      Death Animation and Respawn_163: 548847734
+      Death Animation and Respawn_164: 5752769
+      Death Animation and Respawn_165: -805798338
+      Death Animation and Respawn_166: -1633409295
+      Death Animation and Respawn_167: 1069467214
+      Death Animation and Respawn_168: 586605918
+      Death Animation and Respawn_169: -1389155342
+      Death Animation and Respawn_17: 1271759722
+      Death Animation and Respawn_170: -526525987
+      Death Animation and Respawn_18: 2046866391
+      Death Animation and Respawn_19: -565970251
+      Death Animation and Respawn_2: -150887053
+      Death Animation and Respawn_20: -1074597187
+      Death Animation and Respawn_21: 122000670
+      Death Animation and Respawn_22: 1760483100
+      Death Animation and Respawn_23: -682111211
+      Death Animation and Respawn_24: -1477762539
+      Death Animation and Respawn_25: 1345809328
+      Death Animation and Respawn_26: -1395475324
+      Death Animation and Respawn_27: 206973620
+      Death Animation and Respawn_28: 1265690030
+      Death Animation and Respawn_29: -488080998
+      Death Animation and Respawn_3: 437497297
+      Death Animation and Respawn_30: -2072638513
+      Death Animation and Respawn_31: -274924875
+      Death Animation and Respawn_32: 1442063887
+      Death Animation and Respawn_33: -1884624705
+      Death Animation and Respawn_34: -896413783
+      Death Animation and Respawn_35: -521722212
+      Death Animation and Respawn_36: 408840920
+      Death Animation and Respawn_37: 1823765235
+      Death Animation and Respawn_38: -1312725384
+      Death Animation and Respawn_39: 1608945603
+      Death Animation and Respawn_4: 152510442
+      Death Animation and Respawn_40: 589144322
+      Death Animation and Respawn_41: 1276528611
+      Death Animation and Respawn_42: 1902208684
+      Death Animation and Respawn_43: 508140579
+      Death Animation and Respawn_44: -1523346685
+      Death Animation and Respawn_45: -758717656
+      Death Animation and Respawn_46: 1654331595
+      Death Animation and Respawn_47: -863334288
+      Death Animation and Respawn_48: -559509637
+      Death Animation and Respawn_49: -1942819769
+      Death Animation and Respawn_5: -1015360870
+      Death Animation and Respawn_50: -1792024539
+      Death Animation and Respawn_51: 755386842
+      Death Animation and Respawn_52: -1700488616
+      Death Animation and Respawn_53: -879766344
+      Death Animation and Respawn_54: 59586524
+      Death Animation and Respawn_55: -1201672125
+      Death Animation and Respawn_56: -857470013
+      Death Animation and Respawn_57: 1171535564
+      Death Animation and Respawn_58: 1296957041
+      Death Animation and Respawn_59: 1962755866
+      Death Animation and Respawn_6: 464833263
+      Death Animation and Respawn_60: 709100644
+      Death Animation and Respawn_61: -305714969
+      Death Animation and Respawn_62: 1229886454
+      Death Animation and Respawn_63: 1388008550
+      Death Animation and Respawn_64: 229495221
+      Death Animation and Respawn_65: -2013581182
+      Death Animation and Respawn_66: -1062923270
+      Death Animation and Respawn_67: -1481657711
+      Death Animation and Respawn_68: 320577558
+      Death Animation and Respawn_69: -42956356
+      Death Animation and Respawn_7: -758956227
+      Death Animation and Respawn_70: -2078987168
+      Death Animation and Respawn_71: 1976610654
+      Death Animation and Respawn_72: 1095790974
+      Death Animation and Respawn_73: -1716307023
+      Death Animation and Respawn_74: -1662975430
+      Death Animation and Respawn_75: 1832812917
+      Death Animation and Respawn_76: 1500470707
+      Death Animation and Respawn_77: 1324840567
+      Death Animation and Respawn_78: -1279739565
+      Death Animation and Respawn_79: 1502862657
+      Death Animation and Respawn_8: -927417888
+      Death Animation and Respawn_80: -1585502413
+      Death Animation and Respawn_81: -1905404736
+      Death Animation and Respawn_82: 486425195
+      Death Animation and Respawn_83: 1601369517
+      Death Animation and Respawn_84: 1590212367
+      Death Animation and Respawn_85: -840624257
+      Death Animation and Respawn_86: -417400373
+      Death Animation and Respawn_87: -23946726
+      Death Animation and Respawn_88: 1000804061
+      Death Animation and Respawn_89: -1365529645
+      Death Animation and Respawn_9: -925517107
+      Death Animation and Respawn_90: -737551123
+      Death Animation and Respawn_91: -1618834901
+      Death Animation and Respawn_92: -1009234365
+      Death Animation and Respawn_93: -1355502254
+      Death Animation and Respawn_94: 870141747
+      Death Animation and Respawn_95: -1448166130
+      Death Animation and Respawn_96: 1750807006
+      Death Animation and Respawn_97: 31002058
+      Death Animation and Respawn_98: 2061884367
+      Death Animation and Respawn_99: -184488729
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
