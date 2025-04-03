@@ -39,6 +39,7 @@ public class Health : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         GameAnimations = FindAnyObjectByType<Animations>();
         currentHealth = maxHealth;
         
@@ -81,6 +82,7 @@ public class Health : MonoBehaviour
         {
             if (playdeathAnimation != null)
             {
+                Time.timeScale = 0.0f;
                 StartCoroutine(deathAnimation());
                 
             }
@@ -111,6 +113,8 @@ public class Health : MonoBehaviour
             
         }
 
+      
+
     }
 
     IEnumerator deathAnimation()
@@ -122,6 +126,7 @@ public class Health : MonoBehaviour
         SceneManager.LoadScene(1);
 
     }
+
 
 }
 

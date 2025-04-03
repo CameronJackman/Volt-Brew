@@ -48,6 +48,13 @@ public class ProjectileScript : MonoBehaviour
             enemyHeatlh.TakeDamage(projectileDamage);
         }
 
+        if (collision.gameObject.layer == LayerMask.NameToLayer("tutorialDummy"))
+        {
+            Health dummyHealth = collision.gameObject.GetComponent<Health>();
+
+            dummyHealth.TakeDamage(projectileDamage);
+        }
+
         Destroy(gameObject);
     }
   

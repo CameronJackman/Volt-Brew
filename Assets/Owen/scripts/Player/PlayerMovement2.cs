@@ -330,6 +330,8 @@ public class PlayerMovement2 : MonoBehaviour
 
     private IEnumerator PerformDash()
     {
+        Physics2D.IgnoreLayerCollision(3, 6, true);
+
         Debug.Log("Dash");  ///-----------------------------------------------------------------Q ADDED
 
         GameObject spawnedDash = Instantiate(_DashParticle, _DashPoint.position, _DashPoint.rotation, _DashPoint);  ///-----------------------------------------------------------------Q ADDED
@@ -340,12 +342,14 @@ public class PlayerMovement2 : MonoBehaviour
         Vector2 originalVelocity = rb.velocity;
         rb.velocity = originalVelocity * dashSpeedMultiplier;
 
+        
         yield return new WaitForSeconds(dashDuration);
 
         isDashing = false;
         rb.velocity = originalVelocity;
 
         dashCoolDownTimer = dashCoolDownTime;
+        Physics2D.IgnoreLayerCollision(3, 6, false);
     }
 
 
