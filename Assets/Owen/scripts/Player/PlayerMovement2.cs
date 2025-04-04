@@ -72,8 +72,11 @@ public class PlayerMovement2 : MonoBehaviour
     private float shootingCooldown = 0.5f;
     [HideInInspector] public float resetCooldownCount;
 
+    private Animations GameAnimations;
+
     void Awake()
     {
+        GameAnimations = FindAnyObjectByType<Animations>();
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0f;
         _PD = new PlayerDefault();
@@ -367,11 +370,10 @@ public class PlayerMovement2 : MonoBehaviour
 
         if (collision.CompareTag("Coin"))
         {
-            gameManager.coins++;
-            gameManager.coins++;
-            gameManager.coins++;
-            gameManager.coins++;
-            gameManager.coins++;
+            gameManager.coins += 5;
+
+            GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.coinSfx);
+
             Destroy(collision.gameObject);
         }
     }
@@ -401,7 +403,7 @@ public class PlayerMovement2 : MonoBehaviour
         //shieldBreak = Instantiate(shieldBreak, transform.position, Quaternion.identity);
 
         //Set proper scale of shield 
-        activeProjectileShield.transform.localScale = Vector3.one * 0.4f;
+        activeProjectileShield.transform.localScale = Vector3.one * 0.64f;
 
         //Start coroutine to follow player
         StartCoroutine(FollowPlayerForSeconds(5f));

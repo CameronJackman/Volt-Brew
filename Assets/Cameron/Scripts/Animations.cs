@@ -37,6 +37,8 @@ public class Animations : MonoBehaviour
     
     public AudioClip pwrPickupClip;
 
+    public AudioClip coinSfx;
+
     public AudioClip pwrDroppedClip;
 
     public AudioClip doorTransClip;

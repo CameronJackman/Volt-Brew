@@ -66,6 +66,7 @@ public class EnemyBeamShooting : MonoBehaviour
         SpriteRenderer beamRenderer = beam.GetComponent<SpriteRenderer>();
         BeamDamage beamDamage = beam.GetComponent<BeamDamage>();
         BoxCollider2D beamCollider = beam.GetComponent<BoxCollider2D>();
+        Destroy(beam, beamDuration);
 
         // Set beam opacity and disable damage
         Color beamColor = beamRenderer.color;
@@ -105,7 +106,7 @@ public class EnemyBeamShooting : MonoBehaviour
 
         yield return new WaitForSeconds(beamDuration);
 
-        Destroy(beam);
+        
 
         if (enemyMovement != null)
             enemyMovement.enabled = true; // Allow enemy to move again

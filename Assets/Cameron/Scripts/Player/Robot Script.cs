@@ -19,6 +19,8 @@ public class RobotScript : MonoBehaviour
     private GameObject bulletAudio;
     [SerializeField]
     private GameObject shotgunAudio;
+    [SerializeField]
+    private GameObject rapidAudio;
 
     public bool shotGun;
 
@@ -97,7 +99,7 @@ public class RobotScript : MonoBehaviour
             currentDamage = rapidDamage;
             Debug.Log(currentDamage);
 
-            GameObject Audio4Bullet = Instantiate(bulletAudio, bulletSpawn.transform.position, transform.rotation);
+            GameObject Audio4Bullet = Instantiate(rapidAudio, bulletSpawn.transform.position, transform.rotation);
             Destroy(Audio4Bullet, 4.3f);
 
             yield return new WaitForSeconds(0.2f);
