@@ -5546,7 +5546,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!328 &703602847
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -6271,12 +6271,12 @@ GameObject:
   - component: {fileID: 740370870}
   - component: {fileID: 740370869}
   m_Layer: 0
-  m_Name: VideoPLayer
+  m_Name: VideoPLayer(build)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!328 &740370869
 VideoPlayer:
   m_ObjectHideFlags: 0
