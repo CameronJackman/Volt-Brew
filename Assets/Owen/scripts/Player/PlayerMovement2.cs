@@ -370,7 +370,7 @@ public class PlayerMovement2 : MonoBehaviour
 
         if (collision.CompareTag("Coin"))
         {
-            gameManager.coins += 5;
+            gameManager.coins += 3;
 
             GameAnimations.globalAudioSource.PlayOneShot(GameAnimations.coinSfx);
 
